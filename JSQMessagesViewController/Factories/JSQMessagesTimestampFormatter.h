@@ -72,7 +72,7 @@
  *  @see `dateTextAttributes`.
  *  @see `timeTextAttributes`.
  */
-- (NSAttributedString *)attributedTimestampForDate:(NSDate *)date;
+- (NSAttributedString *)attributedTimestampForDate:(NSDate *)date withTextAlligment:(NSTextAlignment)textAlligment;
 
 /**
  *  Returns a string representation of *only* the minute and hour components of the given date formatted in the current locale styled using `NSDateFormatterShortStyle`.

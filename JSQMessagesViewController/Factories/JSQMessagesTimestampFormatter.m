@@ -86,7 +86,7 @@
     return [self.dateFormatter stringFromDate:date];
 }
 
-- (NSAttributedString *)attributedTimestampForDate:(NSDate *)date
+- (NSAttributedString *)attributedTimestampForDate:(NSDate *)date withTextAlligment:(NSTextAlignment)textAlligment
 {
     if (!date) {
         return nil;
@@ -95,8 +95,13 @@
     NSString *relativeDate = [self relativeDateForDate:date];
     NSString *time = [self timeForDate:date];
     
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setAlignment:textAlligment];
+
     NSMutableAttributedString *timestamp = [[NSMutableAttributedString alloc] initWithString:relativeDate
                                                                                   attributes:self.dateTextAttributes];
+    [timestamp addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [timestamp length])];
+
     
     [timestamp appendAttributedString:[[NSAttributedString alloc] initWithString:@" "]];
     

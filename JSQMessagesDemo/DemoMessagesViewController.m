@@ -447,7 +447,7 @@
      */
     if (indexPath.item % 3 == 0) {
         JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
-        return [[JSQMessagesTimestampFormatter sharedFormatter] attributedTimestampForDate:message.date];
+        return [[JSQMessagesTimestampFormatter sharedFormatter] attributedTimestampForDate:message.date withTextAlligment:NSTextAlignmentRight];
     }
     
     return nil;
