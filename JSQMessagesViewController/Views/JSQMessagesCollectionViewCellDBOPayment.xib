@@ -44,7 +44,7 @@
                                 <animations/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnP-aa-M0d">
-                                <rect key="frame" x="15" y="62" width="214" height="40"/>
+                                <rect key="frame" x="15" y="66" width="214" height="40"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.4693707292" blue="0.16173283660000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -52,7 +52,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQ1-Wh-sH2" customClass="JSQMessagesCellTextView">
-                                <rect key="frame" x="0.0" y="0.0" width="238" height="54"/>
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="61"/>
                                 <animations/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -68,11 +68,11 @@
                             <constraint firstAttribute="trailing" secondItem="hQ1-Wh-sH2" secondAttribute="trailing" constant="6" id="FXf-BI-VpA"/>
                             <constraint firstItem="cKt-lI-ECh" firstAttribute="top" secondItem="Hj6-J3-qB5" secondAttribute="top" id="Is8-pX-Zmx"/>
                             <constraint firstItem="hQ1-Wh-sH2" firstAttribute="leading" secondItem="Hj6-J3-qB5" secondAttribute="leading" id="MER-x9-gjQ"/>
-                            <constraint firstItem="vnP-aa-M0d" firstAttribute="top" secondItem="hQ1-Wh-sH2" secondAttribute="bottom" constant="8" id="WsT-p0-Oyv"/>
                             <constraint firstItem="hQ1-Wh-sH2" firstAttribute="top" secondItem="Hj6-J3-qB5" secondAttribute="top" id="WuR-Mi-gAK"/>
                             <constraint firstAttribute="trailing" secondItem="vnP-aa-M0d" secondAttribute="trailing" constant="15" id="XhR-3W-oyK"/>
+                            <constraint firstItem="vnP-aa-M0d" firstAttribute="top" secondItem="hQ1-Wh-sH2" secondAttribute="bottom" constant="5" id="ler-Xq-F6J"/>
                             <constraint firstAttribute="width" constant="244" id="mhR-mA-ZhO"/>
-                            <constraint firstAttribute="bottom" secondItem="vnP-aa-M0d" secondAttribute="bottom" constant="12" id="tdE-xF-U1a"/>
+                            <constraint firstAttribute="bottom" secondItem="vnP-aa-M0d" secondAttribute="bottom" constant="8" id="tdE-xF-U1a"/>
                             <constraint firstAttribute="trailing" secondItem="cKt-lI-ECh" secondAttribute="trailing" id="vxJ-bO-NNu"/>
                         </constraints>
                     </view>
@@ -145,6 +145,7 @@
                 <outlet property="messageBubbleTopLabelHeightConstraint" destination="9Qv-gY-vx9" id="8lW-wh-BMa"/>
                 <outlet property="textView" destination="hQ1-Wh-sH2" id="xHN-Sr-6j8"/>
                 <outlet property="textViewAvatarHorizontalSpaceConstraint" destination="FXf-BI-VpA" id="Wze-Fk-wYQ"/>
+                <outlet property="textViewBottomVerticalSpaceConstraint" destination="ler-Xq-F6J" id="Nql-Jk-TgE"/>
                 <outlet property="textViewMarginHorizontalSpaceConstraint" destination="MER-x9-gjQ" id="lRy-bS-LXr"/>
                 <outlet property="textViewTopVerticalSpaceConstraint" destination="WuR-Mi-gAK" id="txg-bE-Z6F"/>
             </connections>

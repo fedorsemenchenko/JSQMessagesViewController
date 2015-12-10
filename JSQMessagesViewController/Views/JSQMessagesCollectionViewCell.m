@@ -21,6 +21,7 @@
 #import "JSQMessagesCollectionViewCellIncoming.h"
 #import "JSQMessagesCollectionViewCellOutgoing.h"
 #import "JSQMessagesCollectionViewLayoutAttributes.h"
+#import "JSQMessagesCollectionViewCellDBOPayment.h"
 
 #import "UIView+JSQMessages.h"
 #import "UIDevice+JSQMessages.h"
@@ -207,6 +208,17 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     else if ([self isKindOfClass:[JSQMessagesCollectionViewCellOutgoing class]]) {
         self.avatarViewSize = customAttributes.outgoingAvatarViewSize;
     }
+  
+//    if ([self isKindOfClass:[JSQMessagesCollectionViewCellDBOPayment class]]) {
+//        [self jsq_updateConstraint:self.textViewBottomVerticalSpaceConstraint
+//                      withConstant:60.f];
+//    }
+
+//    if ([self isKindOfClass:[JSQMessagesCollectionViewCellDBOPayment class]]) {
+//        CGRect frame = self.frame;
+//        frame.size.height = frame.size.height + 60.f;
+//        self.frame = frame;
+//    }
 }
 
 - (void)setHighlighted:(BOOL)highlighted
