@@ -55,14 +55,15 @@
                                          senderDisplayName:self.senderDisplayName
                                                       date:self.date
                                                       text:self.text
-                                              isDBOPayment:NO];
+                                              isDBOPayment:NO
+                                            dboPaymentView:nil];
     XCTAssertNotNil(msg, @"Message should not be nil");
 }
 
 - (void)testTextMessageInvalidInit
 {
     XCTAssertThrows([[JSQMessage alloc] init], @"Invalid init should throw");
-    XCTAssertThrows([[JSQMessage alloc] initWithSenderId:nil senderDisplayName:nil date:nil text:nil isDBOPayment:NO], @"Invalid init should throw" );
+    XCTAssertThrows([[JSQMessage alloc] initWithSenderId:nil senderDisplayName:nil date:nil text:nil isDBOPayment:NO dboPaymentView:nil], @"Invalid init should throw" );
 }
 
 - (void)testTextMessageIsEqual
@@ -71,7 +72,8 @@
                                          senderDisplayName:self.senderDisplayName
                                                       date:self.date
                                                       text:self.text
-                                              isDBOPayment:NO];
+                                              isDBOPayment:NO
+                                            dboPaymentView:nil];
     JSQMessage *copy = [msg copy];
     
     XCTAssertEqualObjects(msg, copy, @"Copied messages should be equal");
@@ -87,7 +89,8 @@
                                          senderDisplayName:self.senderDisplayName
                                                       date:self.date
                                                       text:self.text
-                                              isDBOPayment:NO];
+                                              isDBOPayment:NO
+                                            dboPaymentView:nil];
     NSData *msgData = [NSKeyedArchiver archivedDataWithRootObject:msg];
     
     JSQMessage *unarchivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:msgData];

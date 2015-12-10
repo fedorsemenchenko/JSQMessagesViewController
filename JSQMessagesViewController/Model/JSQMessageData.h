@@ -73,8 +73,12 @@
  */
 - (BOOL)isMediaMessage;
 
-// dbo payment cell
+// is dbo payment cell
 - (BOOL)isDBOPaymentMessage;
+
+// dbo payment view
+
+- (UIView *)dboPaymentView;
 
 /**
  *  @return An integer that can be used as a table address in a hash table structure.

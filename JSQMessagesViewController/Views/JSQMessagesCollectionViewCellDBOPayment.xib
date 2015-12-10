@@ -46,7 +46,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnP-aa-M0d">
                                 <rect key="frame" x="15" y="66" width="214" height="40"/>
                                 <animations/>
-                                <color key="backgroundColor" red="1" green="0.4693707292" blue="0.16173283660000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="bEm-jR-z8B"/>
                                 </constraints>
@@ -137,7 +137,7 @@
                 <outlet property="cellBottomLabelHeightConstraint" destination="sLs-rm-guV" id="Mum-Jb-aWP"/>
                 <outlet property="cellTopLabel" destination="Eq6-1L-aj0" id="qdv-7E-bLM"/>
                 <outlet property="cellTopLabelHeightConstraint" destination="sWH-SK-PDy" id="icn-Z2-npf"/>
-                <outlet property="dboPaymentView" destination="vnP-aa-M0d" id="ArY-l7-5R4"/>
+                <outlet property="dboPaymentContainerView" destination="vnP-aa-M0d" id="Lf3-d4-zhJ"/>
                 <outlet property="messageBubbleContainerView" destination="Hj6-J3-qB5" id="aNU-pA-cqG"/>
                 <outlet property="messageBubbleContainerWidthConstraint" destination="mhR-mA-ZhO" id="5nK-iQ-o3U"/>
                 <outlet property="messageBubbleImageView" destination="cKt-lI-ECh" id="HCR-SO-cbI"/>

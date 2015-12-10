@@ -565,7 +565,10 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     else {
         cell.messageBubbleTopLabel.textInsets = UIEdgeInsetsMake(0.0f, bubbleTopLabelInset, 0.0f, 0.0f);
     }
-
+    if (isDBOPayment) {
+        cell.dboPaymentView = messageItem.dboPaymentView;
+    }
+    
     cell.textView.dataDetectorTypes = UIDataDetectorTypeAll;
 
     cell.backgroundColor = [UIColor clearColor];

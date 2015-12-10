@@ -25,7 +25,8 @@
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
                          isMedia:(BOOL)isMedia
-                    isDBOPayment:(BOOL)isDBOPayment;
+                    isDBOPayment:(BOOL)isDBOPayment
+                  dboPaymentView:(UIView *)dboPaymentView;
 
 @end
 
@@ -39,12 +40,14 @@
                         displayName:(NSString *)displayName
                                text:(NSString *)text
                        isDBOPayment:(BOOL)isDBOPayment
+                     dboPaymentView:(UIView *)dboPaymentView
 {
     return [[self alloc] initWithSenderId:senderId
                         senderDisplayName:displayName
                                      date:[NSDate date]
                                      text:text
-                             isDBOPayment:isDBOPayment];
+                             isDBOPayment:isDBOPayment
+                           dboPaymentView:dboPaymentView];
 }
 
 - (instancetype)initWithSenderId:(NSString *)senderId
@@ -52,11 +55,11 @@
                             date:(NSDate *)date
                             text:(NSString *)text
                     isDBOPayment:(BOOL)isDBOPayment
-
+                  dboPaymentView:(UIView *)dboPaymentView
 {
     NSParameterAssert(text != nil);
 
-    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:NO isDBOPayment:(BOOL)isDBOPayment];
+    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:NO isDBOPayment:(BOOL)isDBOPayment dboPaymentView:dboPaymentView];
     if (self) {
         _text = [text copy];
     }
@@ -80,7 +83,7 @@
 {
     NSParameterAssert(media != nil);
 
-    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:YES isDBOPayment:NO];
+    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:YES isDBOPayment:NO dboPaymentView:nil];
     if (self) {
         _media = media;
     }
@@ -92,7 +95,7 @@
                             date:(NSDate *)date
                          isMedia:(BOOL)isMedia
                     isDBOPayment:(BOOL)isDBOPayment
-
+                  dboPaymentView:(UIView *)dboPaymentView
 {
     NSParameterAssert(senderId != nil);
     NSParameterAssert(senderDisplayName != nil);
@@ -105,6 +108,7 @@
         _date = [date copy];
         _isMediaMessage = isMedia;
         _isDBOPaymentMessage = isDBOPayment;
+        _dboPaymentView = dboPaymentView;
     }
     return self;
 }
@@ -163,8 +167,8 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@: senderId=%@, senderDisplayName=%@, date=%@, isMediaMessage=%@, text=%@, media=%@ isDBOPayment=%@>",
-            [self class], self.senderId, self.senderDisplayName, self.date, @(self.isMediaMessage), self.text, self.media, @(self.isDBOPaymentMessage)];
+    return [NSString stringWithFormat:@"<%@: senderId=%@, senderDisplayName=%@, date=%@, isMediaMessage=%@, text=%@, media=%@ isDBOPayment=%@ dboPaymentView=%@>",
+            [self class], self.senderId, self.senderDisplayName, self.date, @(self.isMediaMessage), self.text, self.media, @(self.isDBOPaymentMessage), self.dboPaymentView];
 }
 
 - (id)debugQuickLookObject
@@ -185,6 +189,7 @@
         _isDBOPaymentMessage = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(isDBOPaymentMessage))];
         _text = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(text))];
         _media = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(media))];
+        _dboPaymentView = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(dboPaymentView))];
     }
     return self;
 }
@@ -197,7 +202,8 @@
     [aCoder encodeBool:self.isMediaMessage forKey:NSStringFromSelector(@selector(isMediaMessage))];
     [aCoder encodeBool:self.isDBOPaymentMessage forKey:NSStringFromSelector(@selector(isDBOPaymentMessage))];
     [aCoder encodeObject:self.text forKey:NSStringFromSelector(@selector(text))];
-
+    [aCoder encodeObject:self.dboPaymentView forKey:NSStringFromSelector(@selector(dboPaymentView))];
+    
     if ([self.media conformsToProtocol:@protocol(NSCoding)]) {
         [aCoder encodeObject:self.media forKey:NSStringFromSelector(@selector(media))];
     }
@@ -218,7 +224,8 @@
                                              senderDisplayName:self.senderDisplayName
                                                           date:self.date
                                                           text:self.text
-                                                  isDBOPayment:self.isDBOPaymentMessage];
+                                                  isDBOPayment:self.isDBOPaymentMessage
+                                                dboPaymentView:self.dboPaymentView];
 }
 
 @end

@@ -142,6 +142,12 @@
  */
 @property (weak, nonatomic, readonly) UIImageView *avatarImageView;
 
+
+
+//DBO Payment View
+
+@property (strong, nonatomic) UIView *dboPaymentView;
+
 /**
  *  Returns the avatar container view of the cell. This view is the superview of the cell's avatarImageView.
  *

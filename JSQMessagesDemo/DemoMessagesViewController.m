@@ -161,7 +161,8 @@
         copyMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdJobs
                                           displayName:kJSQDemoAvatarDisplayNameJobs
                                                  text:@"First received!"
-                                         isDBOPayment:NO];
+                                         isDBOPayment:NO
+                                       dboPaymentView:nil];
     }
     
     /**
@@ -235,7 +236,7 @@
              */
             newMessage = [JSQMessage messageWithSenderId:randomUserId
                                              displayName:self.demoData.users[randomUserId]
-                                                    text:copyMessage.text isDBOPayment:NO];
+                                                    text:copyMessage.text isDBOPayment:NO dboPaymentView:nil];
         }
         
         /**
@@ -315,7 +316,9 @@
     JSQMessage *message = [[JSQMessage alloc] initWithSenderId:senderId
                                              senderDisplayName:senderDisplayName
                                                           date:date
-                                                          text:text isDBOPayment:NO];
+                                                          text:text
+                                                  isDBOPayment:NO
+                                                dboPaymentView:nil];
     
     [self.demoData.messages addObject:message];
     

@@ -10,8 +10,6 @@
 
 @interface JSQMessagesCollectionViewCellDBOPayment ()
 
-@property (weak, nonatomic) IBOutlet UIView *dboPaymentView;
-
 @end
 
 @implementation JSQMessagesCollectionViewCellDBOPayment

@@ -52,8 +52,13 @@
 @property (assign, nonatomic, readonly) BOOL isMediaMessage;
 
 
-//DBOPayment
+// is DBO Payment message
 @property (assign, nonatomic, readonly) BOOL isDBOPaymentMessage;
+
+
+//DBO Payment View
+
+@property (strong, nonatomic, readonly) UIView *dboPaymentView;
 
 
 /**
@@ -86,7 +91,8 @@
 + (instancetype)messageWithSenderId:(NSString *)senderId
                         displayName:(NSString *)displayName
                                text:(NSString *)text
-                       isDBOPayment:(BOOL)isDBOPayment;
+                       isDBOPayment:(BOOL)isDBOPayment
+                     dboPaymentView:(UIView *)dboPaymentView;
 
 /**
  *  Initializes and returns a message object having the given senderId, senderDisplayName, date, and text.
@@ -104,7 +110,8 @@
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
                             text:(NSString *)text
-                    isDBOPayment:(BOOL)isDBOPayment;
+                    isDBOPayment:(BOOL)isDBOPayment
+                  dboPaymentView:(UIView *)dboPaymentView;
 /**
  *  Initializes and returns a message object having the given senderId, displayName, media,
  *  and current system date.

@@ -57,6 +57,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewHeightConstraint;
 
+
+@property (weak, nonatomic) IBOutlet UIView *dboPaymentContainerView;
+
 @property (assign, nonatomic) UIEdgeInsets textViewFrameInsets;
 
 @property (assign, nonatomic) CGSize avatarViewSize;
@@ -357,6 +360,14 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
                             self.textViewMarginHorizontalSpaceConstraint.constant,
                             self.textViewBottomVerticalSpaceConstraint.constant,
                             self.textViewAvatarHorizontalSpaceConstraint.constant);
+}
+
+#pragma mark - Set Payment
+
+- (void)setDboPaymentView:(UIView *)dboPaymentView {
+    _dboPaymentView = dboPaymentView;
+    [[self.dboPaymentContainerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self.dboPaymentContainerView addSubview: _dboPaymentView];
 }
 
 #pragma mark - Utilities
