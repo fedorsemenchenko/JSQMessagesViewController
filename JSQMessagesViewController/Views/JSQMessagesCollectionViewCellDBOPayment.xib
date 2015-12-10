@@ -44,15 +44,15 @@
                                 <animations/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnP-aa-M0d">
-                                <rect key="frame" x="15" y="66" width="214" height="40"/>
+                                <rect key="frame" x="15" y="56" width="214" height="50"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="bEm-jR-z8B"/>
+                                    <constraint firstAttribute="height" constant="50" id="bEm-jR-z8B"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQ1-Wh-sH2" customClass="JSQMessagesCellTextView">
-                                <rect key="frame" x="0.0" y="0.0" width="238" height="61"/>
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="51"/>
                                 <animations/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

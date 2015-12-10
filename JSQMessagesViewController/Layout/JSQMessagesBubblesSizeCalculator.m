@@ -135,7 +135,7 @@
 
         CGFloat dboPaymentInset = .0f;
         if ([messageData isDBOPaymentMessage]) {
-            dboPaymentInset = 50.f;
+            dboPaymentInset = 60.f;
         }
         
         finalSize = CGSizeMake(finalWidth, stringSize.height + dboPaymentInset + verticalInsets);
