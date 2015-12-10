@@ -99,13 +99,13 @@
      *  You should have a mutable array or orderedSet, or something.
      */
     
-    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(.0f, .0f, 200, 40)];
+    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(.0f, .0f, 200, 50)];
     view1.backgroundColor = [UIColor purpleColor];
     
-    UIView * view2 = [[UIView alloc] initWithFrame:CGRectMake(.0f, .0f, 200, 40)];
+    UIView * view2 = [[UIView alloc] initWithFrame:CGRectMake(.0f, .0f, 200, 50)];
     view2.backgroundColor = [UIColor redColor];
 
-    UIView * view3 = [[UIView alloc] initWithFrame:CGRectMake(.0f, .0f, 200, 40)];
+    UIView * view3 = [[UIView alloc] initWithFrame:CGRectMake(.0f, .0f, 200, 50)];
     view3.backgroundColor = [UIColor blueColor];
 
     self.messages = [[NSMutableArray alloc] initWithObjects:

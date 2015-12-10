@@ -22,8 +22,7 @@
 
 const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
 
-
-@interface JSQMessagesToolbarContentView ()
+@interface JSQMessagesToolbarContentView () <UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet JSQMessagesComposerTextView *textView;
 
@@ -37,9 +36,6 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightHorizontalSpacingConstraint;
 
 @end
-
-
-
 @implementation JSQMessagesToolbarContentView
 
 #pragma mark - Class methods
@@ -197,5 +193,6 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
     [super setNeedsDisplay];
     [self.textView setNeedsDisplay];
 }
+
 
 @end

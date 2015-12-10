@@ -45,6 +45,7 @@
 
 static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObservingContext;
 
+static NSInteger const kMaxMessageLenght = 100;
 
 
 @interface JSQMessagesViewController () <JSQMessagesInputToolbarDelegate,
@@ -764,6 +765,22 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
 
     [textView resignFirstResponder];
 }
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]){
+        return NO;
+    }
+    
+    if(range.length + range.location > textView.text.length){
+        return NO;
+    }
+    
+    NSUInteger newLength = [textView.text length] + [text length] - range.length;
+    return newLength <= kMaxMessageLenght;
+}
+
+
 
 #pragma mark - Notifications
 
