@@ -130,8 +130,8 @@
 @property (copy, nonatomic) NSString *incomingCellIdentifier;
 
 
-//DBO Cell
-@property (copy, nonatomic) NSString *dboPaymentCellIdentifier;
+//DBO Payment Cell Outgoing
+@property (copy, nonatomic) NSString *dboOutgoingPaymentCellIdentifier;
 
 
 /**

@@ -141,7 +141,8 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     self.incomingCellIdentifier = [JSQMessagesCollectionViewCellIncoming cellReuseIdentifier];
     self.incomingMediaCellIdentifier = [JSQMessagesCollectionViewCellIncoming mediaCellReuseIdentifier];
     
-    self.dboPaymentCellIdentifier = [JSQMessagesCollectionViewCellDBOPayment cellReuseIdentifier];
+    //dbo
+    self.dboOutgoingPaymentCellIdentifier = [JSQMessagesCollectionViewCellDBOPayment cellReuseIdentifier];
 
     // NOTE: let this behavior be opt-in for now
     // [JSQMessagesCollectionViewCell registerMenuAction:@selector(delete:)];
@@ -488,13 +489,18 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
 
     BOOL isOutgoingMessage = [messageSenderId isEqualToString:self.senderId];
     BOOL isMediaMessage = [messageItem isMediaMessage];
-
+    BOOL isDBOPayment = [messageItem isDBOPaymentMessage];
+    
     NSString *cellIdentifier = nil;
     if (isMediaMessage) {
         cellIdentifier = isOutgoingMessage ? self.outgoingMediaCellIdentifier : self.incomingMediaCellIdentifier;
     }
     if (!isMediaMessage) {
         cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
+    }
+
+    if (isDBOPayment) {
+        cellIdentifier = self.dboOutgoingPaymentCellIdentifier;//isOutgoingMessage ? self.dboOutgoingPaymentCellIdentifier : nil;
     }
 
     JSQMessagesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];

@@ -51,6 +51,11 @@
  */
 @property (assign, nonatomic, readonly) BOOL isMediaMessage;
 
+
+//DBOPayment
+@property (assign, nonatomic, readonly) BOOL isDBOPaymentMessage;
+
+
 /**
  *  Returns the body text of the message, or `nil` if the message is a media message.
  *  That is, if `isMediaMessage` is equal to `YES` then this value will be `nil`.
@@ -80,7 +85,8 @@
  */
 + (instancetype)messageWithSenderId:(NSString *)senderId
                         displayName:(NSString *)displayName
-                               text:(NSString *)text;
+                               text:(NSString *)text
+                       isDBOPayment:(BOOL)isDBOPayment;
 
 /**
  *  Initializes and returns a message object having the given senderId, senderDisplayName, date, and text.
@@ -97,7 +103,8 @@
 - (instancetype)initWithSenderId:(NSString *)senderId
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
-                            text:(NSString *)text;
+                            text:(NSString *)text
+                    isDBOPayment:(BOOL)isDBOPayment;
 /**
  *  Initializes and returns a message object having the given senderId, displayName, media,
  *  and current system date.

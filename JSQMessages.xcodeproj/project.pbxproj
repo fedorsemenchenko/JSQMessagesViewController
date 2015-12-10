@@ -525,21 +525,11 @@
 		88A25F8919D8E01A00924534 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E1CFC5731C199BCF00CFBAF7 /* CollectionViewCell */,
 				883C11761A09FB100092A16D /* JSQMessagesCellTextView.h */,
 				883C11771A09FB100092A16D /* JSQMessagesCellTextView.m */,
 				88A25F8A19D8E01A00924534 /* JSQMessagesCollectionView.h */,
 				88A25F8B19D8E01A00924534 /* JSQMessagesCollectionView.m */,
-				88A25F8C19D8E01A00924534 /* JSQMessagesCollectionViewCell.h */,
-				88A25F8D19D8E01A00924534 /* JSQMessagesCollectionViewCell.m */,
-				88A25F8E19D8E01A00924534 /* JSQMessagesCollectionViewCellIncoming.h */,
-				88A25F8F19D8E01A00924534 /* JSQMessagesCollectionViewCellIncoming.m */,
-				88A25F9019D8E01A00924534 /* JSQMessagesCollectionViewCellIncoming.xib */,
-				88A25F9119D8E01A00924534 /* JSQMessagesCollectionViewCellOutgoing.h */,
-				88A25F9219D8E01A00924534 /* JSQMessagesCollectionViewCellOutgoing.m */,
-				88A25F9319D8E01A00924534 /* JSQMessagesCollectionViewCellOutgoing.xib */,
-				E1CFC56E1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.h */,
-				E1CFC56F1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.m */,
-				E1CFC5701C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.xib */,
 				88A25F9419D8E01A00924534 /* JSQMessagesComposerTextView.h */,
 				88A25F9519D8E01A00924534 /* JSQMessagesComposerTextView.m */,
 				88A25F9619D8E01A00924534 /* JSQMessagesInputToolbar.h */,
@@ -630,6 +620,24 @@
 				88A2600019D8E18400924534 /* JSQMessagesTypingIndicatorFooterViewTests.m */,
 			);
 			path = ViewTests;
+			sourceTree = "<group>";
+		};
+		E1CFC5731C199BCF00CFBAF7 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				88A25F8C19D8E01A00924534 /* JSQMessagesCollectionViewCell.h */,
+				88A25F8D19D8E01A00924534 /* JSQMessagesCollectionViewCell.m */,
+				88A25F8E19D8E01A00924534 /* JSQMessagesCollectionViewCellIncoming.h */,
+				88A25F8F19D8E01A00924534 /* JSQMessagesCollectionViewCellIncoming.m */,
+				88A25F9019D8E01A00924534 /* JSQMessagesCollectionViewCellIncoming.xib */,
+				88A25F9119D8E01A00924534 /* JSQMessagesCollectionViewCellOutgoing.h */,
+				88A25F9219D8E01A00924534 /* JSQMessagesCollectionViewCellOutgoing.m */,
+				88A25F9319D8E01A00924534 /* JSQMessagesCollectionViewCellOutgoing.xib */,
+				E1CFC56E1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.h */,
+				E1CFC56F1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.m */,
+				E1CFC5701C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.xib */,
+			);
+			name = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -24,7 +24,8 @@
 - (instancetype)initWithSenderId:(NSString *)senderId
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
-                         isMedia:(BOOL)isMedia;
+                         isMedia:(BOOL)isMedia
+                    isDBOPayment:(BOOL)isDBOPayment;
 
 @end
 
@@ -37,21 +38,25 @@
 + (instancetype)messageWithSenderId:(NSString *)senderId
                         displayName:(NSString *)displayName
                                text:(NSString *)text
+                       isDBOPayment:(BOOL)isDBOPayment
 {
     return [[self alloc] initWithSenderId:senderId
                         senderDisplayName:displayName
                                      date:[NSDate date]
-                                     text:text];
+                                     text:text
+                             isDBOPayment:isDBOPayment];
 }
 
 - (instancetype)initWithSenderId:(NSString *)senderId
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
                             text:(NSString *)text
+                    isDBOPayment:(BOOL)isDBOPayment
+
 {
     NSParameterAssert(text != nil);
 
-    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:NO];
+    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:NO isDBOPayment:(BOOL)isDBOPayment];
     if (self) {
         _text = [text copy];
     }
@@ -75,7 +80,7 @@
 {
     NSParameterAssert(media != nil);
 
-    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:YES];
+    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:YES isDBOPayment:NO];
     if (self) {
         _media = media;
     }
@@ -86,6 +91,8 @@
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
                          isMedia:(BOOL)isMedia
+                    isDBOPayment:(BOOL)isDBOPayment
+
 {
     NSParameterAssert(senderId != nil);
     NSParameterAssert(senderDisplayName != nil);
@@ -97,6 +104,7 @@
         _senderDisplayName = [senderDisplayName copy];
         _date = [date copy];
         _isMediaMessage = isMedia;
+        _isDBOPaymentMessage = isDBOPayment;
     }
     return self;
 }
@@ -155,8 +163,8 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@: senderId=%@, senderDisplayName=%@, date=%@, isMediaMessage=%@, text=%@, media=%@>",
-            [self class], self.senderId, self.senderDisplayName, self.date, @(self.isMediaMessage), self.text, self.media];
+    return [NSString stringWithFormat:@"<%@: senderId=%@, senderDisplayName=%@, date=%@, isMediaMessage=%@, text=%@, media=%@ isDBOPayment=%@>",
+            [self class], self.senderId, self.senderDisplayName, self.date, @(self.isMediaMessage), self.text, self.media, @(self.isDBOPaymentMessage)];
 }
 
 - (id)debugQuickLookObject
@@ -174,6 +182,7 @@
         _senderDisplayName = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(senderDisplayName))];
         _date = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(date))];
         _isMediaMessage = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(isMediaMessage))];
+        _isDBOPaymentMessage = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(isDBOPaymentMessage))];
         _text = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(text))];
         _media = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(media))];
     }
@@ -186,6 +195,7 @@
     [aCoder encodeObject:self.senderDisplayName forKey:NSStringFromSelector(@selector(senderDisplayName))];
     [aCoder encodeObject:self.date forKey:NSStringFromSelector(@selector(date))];
     [aCoder encodeBool:self.isMediaMessage forKey:NSStringFromSelector(@selector(isMediaMessage))];
+    [aCoder encodeBool:self.isDBOPaymentMessage forKey:NSStringFromSelector(@selector(isDBOPaymentMessage))];
     [aCoder encodeObject:self.text forKey:NSStringFromSelector(@selector(text))];
 
     if ([self.media conformsToProtocol:@protocol(NSCoding)]) {
@@ -207,7 +217,8 @@
     return [[[self class] allocWithZone:zone] initWithSenderId:self.senderId
                                              senderDisplayName:self.senderDisplayName
                                                           date:self.date
-                                                          text:self.text];
+                                                          text:self.text
+                                                  isDBOPayment:self.isDBOPaymentMessage];
 }
 
 @end
