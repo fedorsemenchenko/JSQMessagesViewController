@@ -45,7 +45,7 @@
 
 static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObservingContext;
 
-static NSInteger const kMaxMessageLenght = 100;
+static NSInteger const kMaxMessageLenght = 200;
 
 
 @interface JSQMessagesViewController () <JSQMessagesInputToolbarDelegate,
