@@ -25,7 +25,7 @@
 
 #import "UIImage+JSQMessages.h"
 
-static CGFloat const kMinDBOPaymentWidth = 250.f;
+static CGFloat const kMinDBOPaymentWidth = 270.f;
 static CGFloat const kDBOPaymentVerticalInset = 60.f;
 
 @interface JSQMessagesBubblesSizeCalculator ()
@@ -140,7 +140,7 @@ static CGFloat const kDBOPaymentVerticalInset = 60.f;
 
         if ([messageData isDBOPaymentMessage]) {
             dboPaymentVerticalInset = kDBOPaymentVerticalInset;
-            dboPaymentMinWidht = kMinDBOPaymentWidth;
+            dboPaymentMinWidht = self.minimumBubbleWidth + self.additionalInset;
         }
         
         finalSize = CGSizeMake(MAX(finalWidth, dboPaymentMinWidht), stringSize.height + dboPaymentVerticalInset + verticalInsets);
