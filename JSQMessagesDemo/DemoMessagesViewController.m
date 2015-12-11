@@ -50,7 +50,7 @@
      */
     self.demoData = [[DemoModelData alloc] init];
     
-    
+//    [self addToolbarView:[[UIView alloc] initWithFrame:CGRectMake(.0f, .0f, 200.f, 40.f)]];
     /**
      *  You can set custom avatar sizes
      */
@@ -323,6 +323,8 @@
     [self.demoData.messages addObject:message];
     
     [self finishSendingMessageAnimated:YES];
+//    [self removeToolbarView];
+
 }
 
 - (void)didPressAccessoryButton:(UIButton *)sender
@@ -369,7 +371,6 @@
     
     [self finishSendingMessageAnimated:YES];
 }
-
 
 
 #pragma mark - JSQMessages CollectionView DataSource

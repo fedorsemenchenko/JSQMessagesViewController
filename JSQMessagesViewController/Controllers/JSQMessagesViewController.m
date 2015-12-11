@@ -67,6 +67,8 @@ static NSInteger const kMaxMessageLenght = 200;
 
 @property (assign, nonatomic) BOOL textViewWasFirstResponderDuringInteractivePop;
 
+@property (strong, nonatomic) UIView *additionalToolbarView;
+
 - (void)jsq_configureMessagesViewController;
 
 - (NSString *)jsq_currentlyComposedMessageText;
@@ -850,6 +852,18 @@ static NSInteger const kMaxMessageLenght = 200;
             }
         }
     }
+}
+
+#pragma mark - Additional View
+
+- (void)addToolbarView:(UIView *)additionalView {
+    self.additionalToolbarView = additionalView;
+    [self jsq_adjustInputToolbarHeightConstraintByDelta:self.additionalToolbarView.frame.size.height];
+}
+
+- (void)removeToolbarView {
+    [self jsq_adjustInputToolbarHeightConstraintByDelta:-self.additionalToolbarView.frame.size.height];
+    self.additionalToolbarView = nil;
 }
 
 #pragma mark - Keyboard controller delegate

@@ -273,4 +273,10 @@
  */
 - (void)scrollToBottomAnimated:(BOOL)animated;
 
+
+//Add toolbar additional dbo view
+- (void)addToolbarView:(UIView *)additionalView;
+
+- (void)removeToolbarView;
+
 @end
