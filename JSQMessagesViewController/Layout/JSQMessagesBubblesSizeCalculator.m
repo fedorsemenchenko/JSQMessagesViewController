@@ -133,12 +133,15 @@
         //  same as above, an extra 2 points of magix
         CGFloat finalWidth = MAX(stringSize.width + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
 
-        CGFloat dboPaymentInset = .0f;
+        CGFloat dboPaymentVerticalInset = .0f;
+        CGFloat dboPaymentMinWidht = .0f;
+
         if ([messageData isDBOPaymentMessage]) {
-            dboPaymentInset = 60.f;
+            dboPaymentVerticalInset = 60.f;
+            dboPaymentMinWidht = 200.f;
         }
         
-        finalSize = CGSizeMake(finalWidth, stringSize.height + dboPaymentInset + verticalInsets);
+        finalSize = CGSizeMake(MAX(finalWidth, dboPaymentMinWidht), stringSize.height + dboPaymentVerticalInset + verticalInsets);
     }
 
     [self.cache setObject:[NSValue valueWithCGSize:finalSize] forKey:@([messageData messageHash])];
