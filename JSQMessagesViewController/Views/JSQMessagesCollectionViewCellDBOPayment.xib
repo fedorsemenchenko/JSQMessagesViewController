@@ -46,7 +46,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnP-aa-M0d">
                                 <rect key="frame" x="15" y="56" width="214" height="50"/>
                                 <animations/>
-                                <color key="backgroundColor" red="1" green="0.4693707292" blue="0.16173283660000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bEm-jR-z8B"/>
                                 </constraints>
