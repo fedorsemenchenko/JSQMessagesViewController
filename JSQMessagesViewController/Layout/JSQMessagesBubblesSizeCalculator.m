@@ -140,7 +140,7 @@ static CGFloat const kDBOPaymentVerticalInset = 60.f;
 
         if ([messageData isDBOPaymentMessage]) {
             dboPaymentVerticalInset = kDBOPaymentVerticalInset;
-            dboPaymentMinWidht = self.minimumBubbleWidth + self.additionalInset;
+            dboPaymentMinWidht = kMinDBOPaymentWidth;
         }
         
         finalSize = CGSizeMake(MAX(finalWidth, dboPaymentMinWidht), stringSize.height + dboPaymentVerticalInset + verticalInsets);
