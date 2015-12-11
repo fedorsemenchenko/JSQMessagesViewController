@@ -858,11 +858,11 @@ static NSInteger const kMaxMessageLenght = 200;
 
 - (void)addToolbarView:(UIView *)additionalView {
     self.additionalToolbarView = additionalView;
-    [self jsq_adjustInputToolbarHeightConstraintByDelta:self.additionalToolbarView.frame.size.height];
+    [self jsq_adjustInputToolbarHeightConstraintByDelta:self.additionalToolbarView.frame.size.height + 10.f];
 }
 
 - (void)removeToolbarView {
-    [self jsq_adjustInputToolbarHeightConstraintByDelta:-self.additionalToolbarView.frame.size.height];
+    [self jsq_adjustInputToolbarHeightConstraintByDelta:-self.additionalToolbarView.frame.size.height - 10.f];
     self.additionalToolbarView = nil;
 }
 
