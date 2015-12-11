@@ -367,6 +367,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 - (void)setDboPaymentView:(UIView *)dboPaymentView {
     _dboPaymentView = dboPaymentView;
     [[self.dboPaymentContainerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    _dboPaymentView.frame = self.dboPaymentContainerView.frame;
     [self.dboPaymentContainerView addSubview: _dboPaymentView];
 }
 
