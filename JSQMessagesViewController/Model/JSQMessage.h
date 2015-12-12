@@ -42,7 +42,7 @@
 /**
  *  Returns the date that the message was sent.
  */
-@property (copy, nonatomic) NSDate *date;
+@property (copy, nonatomic, readonly) NSDate *date;
 
 /**
  *  Returns a boolean value specifying whether or not the message contains media.
@@ -65,7 +65,7 @@
  *  Returns the body text of the message, or `nil` if the message is a media message.
  *  That is, if `isMediaMessage` is equal to `YES` then this value will be `nil`.
  */
-@property (copy, nonatomic) NSString *text;
+@property (copy, nonatomic, readonly) NSString *text;
 
 /**
  *  Returns the media item attachment of the message, or `nil` if the message is not a media message.
