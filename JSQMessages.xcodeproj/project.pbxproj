@@ -107,6 +107,8 @@
 		88C00A521A44D4E500B004B3 /* JSQVideoMediaItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C00A511A44D4E500B004B3 /* JSQVideoMediaItemTests.m */; };
 		88C4583019F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C4582F19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m */; };
 		94A4FA20C2FBD0D62614D5A8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6750B77E8A7042BA0754B /* libPods.a */; };
+		E1B17A891C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B17A871C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.m */; };
+		E1B17A8A1C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B17A881C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.xib */; };
 		E1CFC5711C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CFC56F1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.m */; };
 		E1CFC5721C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CFC5701C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.xib */; };
 /* End PBXBuildFile section */
@@ -272,6 +274,9 @@
 		88C4582E19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesMediaViewBubbleImageMasker.h; sourceTree = "<group>"; };
 		88C4582F19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesMediaViewBubbleImageMasker.m; sourceTree = "<group>"; };
 		97E6750B77E8A7042BA0754B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1B17A861C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesCollectionViewCellDBOPaymentIncoming.h; sourceTree = "<group>"; };
+		E1B17A871C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesCollectionViewCellDBOPaymentIncoming.m; sourceTree = "<group>"; };
+		E1B17A881C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSQMessagesCollectionViewCellDBOPaymentIncoming.xib; sourceTree = "<group>"; };
 		E1CFC56E1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesCollectionViewCellDBOPayment.h; sourceTree = "<group>"; };
 		E1CFC56F1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesCollectionViewCellDBOPayment.m; sourceTree = "<group>"; };
 		E1CFC5701C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSQMessagesCollectionViewCellDBOPayment.xib; sourceTree = "<group>"; };
@@ -636,6 +641,9 @@
 				E1CFC56E1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.h */,
 				E1CFC56F1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.m */,
 				E1CFC5701C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.xib */,
+				E1B17A861C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.h */,
+				E1B17A871C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.m */,
+				E1B17A881C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.xib */,
 			);
 			name = CollectionViewCell;
 			sourceTree = "<group>";
@@ -739,6 +747,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1B17A8A1C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.xib in Resources */,
 				886C33FF19F45E30006B4997 /* JSQMessagesViewController.podspec in Resources */,
 				8861666D19F492B70025B958 /* JSQMessagesAssets.bundle in Resources */,
 				88A25FCF19D8E01A00924534 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
@@ -893,6 +902,7 @@
 				88A901B619F618B100F99777 /* JSQMediaItem.m in Sources */,
 				88A25FCC19D8E01A00924534 /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
 				88A25FBE19D8E01A00924534 /* JSQMessagesBubbleImageFactory.m in Sources */,
+				E1B17A891C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.m in Sources */,
 				88A25FDF19D8E0C400924534 /* DemoMessagesViewController.m in Sources */,
 				88A25FB719D8E01A00924534 /* UIColor+JSQMessages.m in Sources */,
 				886C33FD19F4371E006B4997 /* JSQVideoMediaItem.m in Sources */,

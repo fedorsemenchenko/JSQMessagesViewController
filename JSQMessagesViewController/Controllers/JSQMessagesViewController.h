@@ -132,6 +132,7 @@
 
 //DBO Payment Cell Outgoing
 @property (copy, nonatomic) NSString *dboOutgoingPaymentCellIdentifier;
+@property (copy, nonatomic) NSString *dboIncomingPaymentCellIdentifier;
 
 
 /**

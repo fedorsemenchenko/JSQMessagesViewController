@@ -22,6 +22,7 @@
 #import "JSQMessagesCollectionViewCellIncoming.h"
 #import "JSQMessagesCollectionViewCellOutgoing.h"
 #import "JSQMessagesCollectionViewCellDBOPayment.h"
+#import "JSQMessagesCollectionViewCellDBOPaymentIncoming.h"
 
 #import "JSQMessagesTypingIndicatorFooterView.h"
 #import "JSQMessagesLoadEarlierHeaderView.h"
@@ -62,7 +63,9 @@
     [self registerNib:[JSQMessagesCollectionViewCellDBOPayment nib]
             forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellDBOPayment cellReuseIdentifier]];
 
-    
+    [self registerNib:[JSQMessagesCollectionViewCellDBOPaymentIncoming nib]
+            forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellDBOPaymentIncoming cellReuseIdentifier]];
+
     
     [self registerNib:[JSQMessagesCollectionViewCellIncoming nib]
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellIncoming mediaCellReuseIdentifier]];
@@ -72,6 +75,8 @@
     
     [self registerNib:[JSQMessagesCollectionViewCellDBOPayment nib]
             forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellDBOPayment mediaCellReuseIdentifier]];
+    [self registerNib:[JSQMessagesCollectionViewCellDBOPaymentIncoming nib]
+            forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellDBOPaymentIncoming mediaCellReuseIdentifier]];
 
     
     

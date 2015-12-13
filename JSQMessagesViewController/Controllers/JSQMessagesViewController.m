@@ -27,6 +27,7 @@
 #import "JSQMessagesCollectionViewCellIncoming.h"
 #import "JSQMessagesCollectionViewCellOutgoing.h"
 #import "JSQMessagesCollectionViewCellDBOPayment.h"
+#import "JSQMessagesCollectionViewCellDBOPaymentIncoming.h"
 
 #import "JSQMessagesTypingIndicatorFooterView.h"
 #import "JSQMessagesLoadEarlierHeaderView.h"
@@ -146,6 +147,7 @@ static NSInteger const kMaxMessageLenght = 200;
     
     //dbo
     self.dboOutgoingPaymentCellIdentifier = [JSQMessagesCollectionViewCellDBOPayment cellReuseIdentifier];
+    self.dboIncomingPaymentCellIdentifier = [JSQMessagesCollectionViewCellDBOPaymentIncoming cellReuseIdentifier];
 
     // NOTE: let this behavior be opt-in for now
     // [JSQMessagesCollectionViewCell registerMenuAction:@selector(delete:)];
@@ -503,7 +505,7 @@ static NSInteger const kMaxMessageLenght = 200;
     }
 
     if (isDBOPayment) {
-        cellIdentifier = self.dboOutgoingPaymentCellIdentifier;//isOutgoingMessage ? self.dboOutgoingPaymentCellIdentifier : nil;
+        cellIdentifier = isOutgoingMessage ? self.dboOutgoingPaymentCellIdentifier : self.dboIncomingPaymentCellIdentifier;
     }
 
     JSQMessagesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];

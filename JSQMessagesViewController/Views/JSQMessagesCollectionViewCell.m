@@ -22,6 +22,7 @@
 #import "JSQMessagesCollectionViewCellOutgoing.h"
 #import "JSQMessagesCollectionViewLayoutAttributes.h"
 #import "JSQMessagesCollectionViewCellDBOPayment.h"
+#import "JSQMessagesCollectionViewCellDBOPaymentIncoming.h"
 
 #import "UIView+JSQMessages.h"
 #import "UIDevice+JSQMessages.h"
