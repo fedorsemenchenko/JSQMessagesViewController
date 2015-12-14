@@ -26,7 +26,7 @@
 #import "UIImage+JSQMessages.h"
 
 static CGFloat const kMinDBOPaymentWidth = 270.f;
-static CGFloat const kDBOPaymentVerticalInset = 60.f;
+static CGFloat const kDBOPaymentVerticalInset = 65.f;
 
 @interface JSQMessagesBubblesSizeCalculator ()
 

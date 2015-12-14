@@ -44,7 +44,7 @@
                                 <animations/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnP-aa-M0d">
-                                <rect key="frame" x="15" y="56" width="214" height="50"/>
+                                <rect key="frame" x="15" y="54" width="214" height="50"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -52,7 +52,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQ1-Wh-sH2" customClass="JSQMessagesCellTextView">
-                                <rect key="frame" x="0.0" y="0.0" width="238" height="51"/>
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="46"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -70,9 +70,9 @@
                             <constraint firstItem="hQ1-Wh-sH2" firstAttribute="leading" secondItem="Hj6-J3-qB5" secondAttribute="leading" id="MER-x9-gjQ"/>
                             <constraint firstItem="hQ1-Wh-sH2" firstAttribute="top" secondItem="Hj6-J3-qB5" secondAttribute="top" id="WuR-Mi-gAK"/>
                             <constraint firstAttribute="trailing" secondItem="vnP-aa-M0d" secondAttribute="trailing" constant="15" id="XhR-3W-oyK"/>
-                            <constraint firstItem="vnP-aa-M0d" firstAttribute="top" secondItem="hQ1-Wh-sH2" secondAttribute="bottom" constant="5" id="ler-Xq-F6J"/>
+                            <constraint firstItem="vnP-aa-M0d" firstAttribute="top" secondItem="hQ1-Wh-sH2" secondAttribute="bottom" constant="8" id="ler-Xq-F6J"/>
                             <constraint firstAttribute="width" constant="244" id="mhR-mA-ZhO"/>
-                            <constraint firstAttribute="bottom" secondItem="vnP-aa-M0d" secondAttribute="bottom" constant="8" id="tdE-xF-U1a"/>
+                            <constraint firstAttribute="bottom" secondItem="vnP-aa-M0d" secondAttribute="bottom" constant="10" id="tdE-xF-U1a"/>
                             <constraint firstAttribute="trailing" secondItem="cKt-lI-ECh" secondAttribute="trailing" id="vxJ-bO-NNu"/>
                         </constraints>
                     </view>
