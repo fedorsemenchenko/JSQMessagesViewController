@@ -142,8 +142,11 @@ static CGFloat const kDBOPaymentVerticalInset = 60.f;
             dboPaymentVerticalInset = kDBOPaymentVerticalInset;
             dboPaymentMinWidht = kMinDBOPaymentWidth;
         }
-        
-        finalSize = CGSizeMake(MAX(finalWidth, dboPaymentMinWidht), stringSize.height + dboPaymentVerticalInset + verticalInsets);
+        CGFloat stringHeight = stringSize.height;
+        if ([[messageData text] length] == 0) {
+            stringHeight = .0f;
+        }
+        finalSize = CGSizeMake(MAX(finalWidth, dboPaymentMinWidht), stringHeight + dboPaymentVerticalInset + verticalInsets);
     }
 
     [self.cache setObject:[NSValue valueWithCGSize:finalSize] forKey:@([messageData messageHash])];
