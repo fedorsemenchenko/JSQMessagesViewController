@@ -198,7 +198,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
                   withConstant:customAttributes.messageBubbleContainerViewWidth];
 
     [self jsq_updateConstraint:self.cellTopLabelHeightConstraint
-                  withConstant:customAttributes.cellTopLabelHeight];
+                  withConstant:customAttributes.cellTopLabelHeight + 5.f];
 
     [self jsq_updateConstraint:self.messageBubbleTopLabelHeightConstraint
                   withConstant:customAttributes.messageBubbleTopLabelHeight];
