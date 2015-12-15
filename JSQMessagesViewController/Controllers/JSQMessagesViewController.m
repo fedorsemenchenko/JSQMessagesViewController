@@ -31,6 +31,7 @@
 
 #import "JSQMessagesTypingIndicatorFooterView.h"
 #import "JSQMessagesLoadEarlierHeaderView.h"
+#import "DBOActivityCollectionReusableView.h"
 
 #import "JSQMessagesToolbarContentView.h"
 #import "JSQMessagesInputToolbar.h"
@@ -156,6 +157,8 @@ static NSInteger const kMaxMessageLenght = 200;
 
     self.showLoadEarlierMessagesHeader = NO;
 
+    self.showLoadActivityIndicator = NO;
+    
     self.topContentAdditionalInset = 0.0f;
 
     [self jsq_updateCollectionViewInsets];
@@ -214,6 +217,17 @@ static NSInteger const kMaxMessageLenght = 200;
     }
 
     _showLoadEarlierMessagesHeader = showLoadEarlierMessagesHeader;
+    [self.collectionView.collectionViewLayout invalidateLayoutWithContext:[JSQMessagesCollectionViewFlowLayoutInvalidationContext context]];
+    [self.collectionView.collectionViewLayout invalidateLayout];
+    [self.collectionView reloadData];
+}
+
+-(void)setShowLoadActivityIndicator:(BOOL)showLoadActivityIndicator {
+    
+    if (_showLoadActivityIndicator == showLoadActivityIndicator) {
+        return;
+    }
+    _showLoadActivityIndicator = showLoadActivityIndicator;
     [self.collectionView.collectionViewLayout invalidateLayoutWithContext:[JSQMessagesCollectionViewFlowLayoutInvalidationContext context]];
     [self.collectionView.collectionViewLayout invalidateLayout];
     [self.collectionView reloadData];
@@ -590,9 +604,14 @@ static NSInteger const kMaxMessageLenght = 200;
     if (self.showTypingIndicator && [kind isEqualToString:UICollectionElementKindSectionFooter]) {
         return [collectionView dequeueTypingIndicatorFooterViewForIndexPath:indexPath];
     }
-    else if (self.showLoadEarlierMessagesHeader && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        return [collectionView dequeueLoadEarlierMessagesViewHeaderForIndexPath:indexPath];
+    if (self.showLoadActivityIndicator && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        return [collectionView dequeueLoadActivityViewHeaderForIndexPath:indexPath];
+    } else {
+        if (self.showLoadEarlierMessagesHeader && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
+            return [collectionView dequeueLoadEarlierMessagesViewHeaderForIndexPath:indexPath];
+        }
     }
+
 
     return nil;
 }
@@ -610,9 +629,14 @@ static NSInteger const kMaxMessageLenght = 200;
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
-    if (!self.showLoadEarlierMessagesHeader) {
+    if (!self.showLoadActivityIndicator) {
         return CGSizeZero;
     }
+//dbo убираем надпись Загрузить новые
+//    if (!self.showLoadEarlierMessagesHeader) {
+//        return CGSizeZero;
+//    }
+//    
 
     return CGSizeMake([collectionViewLayout itemWidth], kJSQMessagesLoadEarlierHeaderViewHeight);
 }

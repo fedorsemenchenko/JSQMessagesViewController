@@ -171,6 +171,9 @@
  */
 @property (assign, nonatomic) BOOL showLoadEarlierMessagesHeader;
 
+//Show load activity indicator at headerview
+@property (assign, nonatomic) BOOL showLoadActivityIndicator;
+
 /**
  *  Specifies an additional inset amount to be added to the collectionView's contentInsets.top value.
  *

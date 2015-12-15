@@ -62,8 +62,9 @@
         self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
     }
     
-    self.showLoadEarlierMessagesHeader = YES;
+//    self.showLoadEarlierMessagesHeader = YES;
     
+    self.showLoadActivityIndicator = YES;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage jsq_defaultTypingIndicatorImage]
                                                                               style:UIBarButtonItemStyleBordered
                                                                              target:self

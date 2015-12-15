@@ -25,7 +25,7 @@
 
 @class JSQMessagesTypingIndicatorFooterView;
 @class JSQMessagesLoadEarlierHeaderView;
-
+@class DBOActivityCollectionReusableView;
 
 /**
  *  The `JSQMessagesCollectionView` class manages an ordered collection of message data items and presents
@@ -97,5 +97,7 @@
  *  @return A valid `JSQMessagesLoadEarlierHeaderView` object.
  */
 - (JSQMessagesLoadEarlierHeaderView *)dequeueLoadEarlierMessagesViewHeaderForIndexPath:(NSIndexPath *)indexPath;
+
+- (DBOActivityCollectionReusableView *)dequeueLoadActivityViewHeaderForIndexPath:(NSIndexPath *)indexPath;
 
 @end

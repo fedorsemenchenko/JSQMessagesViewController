@@ -26,6 +26,7 @@
 
 #import "JSQMessagesTypingIndicatorFooterView.h"
 #import "JSQMessagesLoadEarlierHeaderView.h"
+#import "DBOActivityCollectionReusableView.h"
 
 #import "UIColor+JSQMessages.h"
 
@@ -89,6 +90,10 @@
           forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
           withReuseIdentifier:[JSQMessagesLoadEarlierHeaderView headerReuseIdentifier]];
 
+    [self registerNib:[DBOActivityCollectionReusableView nib]
+    forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+    withReuseIdentifier:[DBOActivityCollectionReusableView headerReuseIdentifier]];
+
     _typingIndicatorDisplaysOnLeft = YES;
     _typingIndicatorMessageBubbleColor = [UIColor jsq_messageBubbleLightGrayColor];
     _typingIndicatorEllipsisColor = [_typingIndicatorMessageBubbleColor jsq_colorByDarkeningColorWithValue:0.3f];
@@ -138,6 +143,18 @@
     headerView.loadButton.tintColor = self.loadEarlierMessagesHeaderTextColor;
     headerView.delegate = self;
 
+    return headerView;
+}
+
+
+#pragma mark - Load activity messages header
+
+- (DBOActivityCollectionReusableView *)dequeueLoadActivityViewHeaderForIndexPath:(NSIndexPath *)indexPath
+{
+    DBOActivityCollectionReusableView *headerView = [super dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                                                                             withReuseIdentifier:[DBOActivityCollectionReusableView headerReuseIdentifier]
+                                                                                    forIndexPath:indexPath];
+    
     return headerView;
 }
 

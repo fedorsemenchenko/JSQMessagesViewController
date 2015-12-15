@@ -109,6 +109,8 @@
 		94A4FA20C2FBD0D62614D5A8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6750B77E8A7042BA0754B /* libPods.a */; };
 		E1B17A891C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B17A871C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.m */; };
 		E1B17A8A1C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B17A881C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.xib */; };
+		E1BB424B1C20511A00F47897 /* DBOActivityCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BB42491C20511A00F47897 /* DBOActivityCollectionReusableView.m */; };
+		E1BB424C1C20511A00F47897 /* DBOActivityCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1BB424A1C20511A00F47897 /* DBOActivityCollectionReusableView.xib */; };
 		E1CFC5711C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CFC56F1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.m */; };
 		E1CFC5721C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CFC5701C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.xib */; };
 /* End PBXBuildFile section */
@@ -277,6 +279,9 @@
 		E1B17A861C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesCollectionViewCellDBOPaymentIncoming.h; sourceTree = "<group>"; };
 		E1B17A871C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesCollectionViewCellDBOPaymentIncoming.m; sourceTree = "<group>"; };
 		E1B17A881C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSQMessagesCollectionViewCellDBOPaymentIncoming.xib; sourceTree = "<group>"; };
+		E1BB42481C20511A00F47897 /* DBOActivityCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBOActivityCollectionReusableView.h; sourceTree = "<group>"; };
+		E1BB42491C20511A00F47897 /* DBOActivityCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBOActivityCollectionReusableView.m; sourceTree = "<group>"; };
+		E1BB424A1C20511A00F47897 /* DBOActivityCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBOActivityCollectionReusableView.xib; sourceTree = "<group>"; };
 		E1CFC56E1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesCollectionViewCellDBOPayment.h; sourceTree = "<group>"; };
 		E1CFC56F1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesCollectionViewCellDBOPayment.m; sourceTree = "<group>"; };
 		E1CFC5701C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSQMessagesCollectionViewCellDBOPayment.xib; sourceTree = "<group>"; };
@@ -530,6 +535,7 @@
 		88A25F8919D8E01A00924534 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E1BB424D1C20512300F47897 /* ReusableViews */,
 				E1CFC5731C199BCF00CFBAF7 /* CollectionViewCell */,
 				883C11761A09FB100092A16D /* JSQMessagesCellTextView.h */,
 				883C11771A09FB100092A16D /* JSQMessagesCellTextView.m */,
@@ -541,17 +547,11 @@
 				88A25F9719D8E01A00924534 /* JSQMessagesInputToolbar.m */,
 				88A25F9819D8E01A00924534 /* JSQMessagesLabel.h */,
 				88A25F9919D8E01A00924534 /* JSQMessagesLabel.m */,
-				88A25F9A19D8E01A00924534 /* JSQMessagesLoadEarlierHeaderView.h */,
-				88A25F9B19D8E01A00924534 /* JSQMessagesLoadEarlierHeaderView.m */,
-				88A25F9C19D8E01A00924534 /* JSQMessagesLoadEarlierHeaderView.xib */,
 				88078A9B19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.h */,
 				88078A9C19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.m */,
 				88A25F9D19D8E01A00924534 /* JSQMessagesToolbarContentView.h */,
 				88A25F9E19D8E01A00924534 /* JSQMessagesToolbarContentView.m */,
 				88A25F9F19D8E01A00924534 /* JSQMessagesToolbarContentView.xib */,
-				88A25FA019D8E01A00924534 /* JSQMessagesTypingIndicatorFooterView.h */,
-				88A25FA119D8E01A00924534 /* JSQMessagesTypingIndicatorFooterView.m */,
-				88A25FA219D8E01A00924534 /* JSQMessagesTypingIndicatorFooterView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -625,6 +625,22 @@
 				88A2600019D8E18400924534 /* JSQMessagesTypingIndicatorFooterViewTests.m */,
 			);
 			path = ViewTests;
+			sourceTree = "<group>";
+		};
+		E1BB424D1C20512300F47897 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				E1BB42481C20511A00F47897 /* DBOActivityCollectionReusableView.h */,
+				E1BB42491C20511A00F47897 /* DBOActivityCollectionReusableView.m */,
+				E1BB424A1C20511A00F47897 /* DBOActivityCollectionReusableView.xib */,
+				88A25F9A19D8E01A00924534 /* JSQMessagesLoadEarlierHeaderView.h */,
+				88A25F9B19D8E01A00924534 /* JSQMessagesLoadEarlierHeaderView.m */,
+				88A25F9C19D8E01A00924534 /* JSQMessagesLoadEarlierHeaderView.xib */,
+				88A25FA019D8E01A00924534 /* JSQMessagesTypingIndicatorFooterView.h */,
+				88A25FA119D8E01A00924534 /* JSQMessagesTypingIndicatorFooterView.m */,
+				88A25FA219D8E01A00924534 /* JSQMessagesTypingIndicatorFooterView.xib */,
+			);
+			name = ReusableViews;
 			sourceTree = "<group>";
 		};
 		E1CFC5731C199BCF00CFBAF7 /* CollectionViewCell */ = {
@@ -756,6 +772,7 @@
 				88A25F3A19D8DF2500924534 /* Images.xcassets in Resources */,
 				88A25FBC19D8E01A00924534 /* JSQMessagesViewController.xib in Resources */,
 				E1CFC5721C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.xib in Resources */,
+				E1BB424C1C20511A00F47897 /* DBOActivityCollectionReusableView.xib in Resources */,
 				88A25FD819D8E01A00924534 /* JSQMessagesTypingIndicatorFooterView.xib in Resources */,
 				88A25F3919D8DF2500924534 /* Main.storyboard in Resources */,
 				88A25FD419D8E01A00924534 /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
@@ -880,6 +897,7 @@
 				88A25FB919D8E01A00924534 /* UIView+JSQMessages.m in Sources */,
 				88A25FCA19D8E01A00924534 /* JSQMessagesCollectionView.m in Sources */,
 				88A25FD219D8E01A00924534 /* JSQMessagesLabel.m in Sources */,
+				E1BB424B1C20511A00F47897 /* DBOActivityCollectionReusableView.m in Sources */,
 				88445B4019E1B4470014F889 /* JSQLocationMediaItem.m in Sources */,
 				88A25FC619D8E01A00924534 /* JSQMessagesAvatarImage.m in Sources */,
 				88A25FD519D8E01A00924534 /* JSQMessagesToolbarContentView.m in Sources */,
