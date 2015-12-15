@@ -96,7 +96,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell bottom label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6R-G2-zn3" userLabel="Cell bottom label" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="3" y="154" width="314" height="20"/>
+                        <rect key="frame" x="5" y="154" width="310" height="20"/>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -112,7 +112,7 @@
             </view>
             <animations/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="e6R-G2-zn3" secondAttribute="trailing" constant="3" id="Ezz-7K-010"/>
+                <constraint firstAttribute="trailing" secondItem="e6R-G2-zn3" secondAttribute="trailing" constant="5" id="Ezz-7K-010"/>
                 <constraint firstAttribute="trailing" secondItem="9xW-08-06l" secondAttribute="trailing" constant="3" id="H0T-fx-o0O"/>
                 <constraint firstItem="rIL-uY-0U8" firstAttribute="top" secondItem="Eq6-1L-aj0" secondAttribute="bottom" id="HK6-HN-HxY"/>
                 <constraint firstItem="e6R-G2-zn3" firstAttribute="top" secondItem="9xW-08-06l" secondAttribute="bottom" id="Moh-v6-lFc"/>
@@ -125,7 +125,7 @@
                 <constraint firstItem="Eq6-1L-aj0" firstAttribute="leading" secondItem="gQj-yX-unH" secondAttribute="leading" id="rBy-1Z-DrK"/>
                 <constraint firstAttribute="trailing" secondItem="Eq6-1L-aj0" secondAttribute="trailing" id="rbL-OA-0Gq"/>
                 <constraint firstAttribute="trailing" secondItem="rIL-uY-0U8" secondAttribute="trailing" id="vY8-R3-X5W"/>
-                <constraint firstItem="e6R-G2-zn3" firstAttribute="leading" secondItem="gQj-yX-unH" secondAttribute="leading" constant="3" id="ydp-0w-Ure"/>
+                <constraint firstItem="e6R-G2-zn3" firstAttribute="leading" secondItem="gQj-yX-unH" secondAttribute="leading" constant="5" id="ydp-0w-Ure"/>
             </constraints>
             <size key="customSize" width="317" height="265"/>
             <connections>

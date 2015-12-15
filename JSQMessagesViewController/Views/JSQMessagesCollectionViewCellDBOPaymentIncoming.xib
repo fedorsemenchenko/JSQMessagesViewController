@@ -96,7 +96,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell bottom label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ol-gx-Lau" userLabel="Cell bottom label" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="3" y="154" width="314" height="20"/>
+                        <rect key="frame" x="5" y="154" width="310" height="20"/>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -119,8 +119,8 @@
                 <constraint firstItem="0C1-kQ-Gwc" firstAttribute="leading" secondItem="qNp-hp-owB" secondAttribute="trailing" constant="2" id="RIT-GF-kgj"/>
                 <constraint firstAttribute="bottom" secondItem="2Ol-gx-Lau" secondAttribute="bottom" id="Xca-qE-R6L"/>
                 <constraint firstItem="qNp-hp-owB" firstAttribute="leading" secondItem="xdf-Ro-J2d" secondAttribute="leading" constant="3" id="aRa-so-eRl"/>
-                <constraint firstItem="2Ol-gx-Lau" firstAttribute="leading" secondItem="xdf-Ro-J2d" secondAttribute="leading" constant="3" id="hNT-1E-rmM"/>
-                <constraint firstAttribute="trailing" secondItem="2Ol-gx-Lau" secondAttribute="trailing" constant="3" id="jD7-eE-Bc7"/>
+                <constraint firstItem="2Ol-gx-Lau" firstAttribute="leading" secondItem="xdf-Ro-J2d" secondAttribute="leading" constant="5" id="hNT-1E-rmM"/>
+                <constraint firstAttribute="trailing" secondItem="2Ol-gx-Lau" secondAttribute="trailing" constant="5" id="jD7-eE-Bc7"/>
                 <constraint firstItem="2Ol-gx-Lau" firstAttribute="top" secondItem="qNp-hp-owB" secondAttribute="bottom" id="lE8-6L-tE2"/>
                 <constraint firstAttribute="trailing" secondItem="WDp-tw-xvS" secondAttribute="trailing" id="sij-t1-mbe"/>
                 <constraint firstItem="7Tt-2o-gMu" firstAttribute="leading" secondItem="xdf-Ro-J2d" secondAttribute="leading" id="suz-mk-LXJ"/>
