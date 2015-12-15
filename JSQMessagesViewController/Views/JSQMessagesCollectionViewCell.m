@@ -192,6 +192,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
         self.textView.textContainerInset = customAttributes.textViewTextContainerInsets;
     }
 
+    CGFloat topLableHeight = customAttributes.messageBubbleTopLabelHeight > 7.f ? customAttributes.messageBubbleTopLabelHeight + 5.f : customAttributes.messageBubbleTopLabelHeight;
+    
+    
     self.textViewFrameInsets = customAttributes.textViewFrameInsets;
 
     [self jsq_updateConstraint:self.messageBubbleContainerWidthConstraint
@@ -201,7 +204,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
                   withConstant:customAttributes.cellTopLabelHeight];
 
     [self jsq_updateConstraint:self.messageBubbleTopLabelHeightConstraint
-                  withConstant:customAttributes.messageBubbleTopLabelHeight];
+                  withConstant:topLableHeight];
 
     [self jsq_updateConstraint:self.cellBottomLabelHeightConstraint
                   withConstant:customAttributes.cellBottomLabelHeight];
