@@ -28,6 +28,8 @@
 #import "JSQMessagesCollectionViewCellOutgoing.h"
 #import "JSQMessagesCollectionViewCellDBOPayment.h"
 #import "JSQMessagesCollectionViewCellDBOPaymentIncoming.h"
+#import "JSQMessageCollectionViewCellDBOImageOutgoing.h"
+#import "JSQMessageCollectionViewCellDBOImageIncoming.h"
 
 #import "JSQMessagesTypingIndicatorFooterView.h"
 #import "JSQMessagesLoadEarlierHeaderView.h"
@@ -150,6 +152,9 @@ static NSInteger const kMaxMessageLenght = 200;
     self.dboOutgoingPaymentCellIdentifier = [JSQMessagesCollectionViewCellDBOPayment cellReuseIdentifier];
     self.dboIncomingPaymentCellIdentifier = [JSQMessagesCollectionViewCellDBOPaymentIncoming cellReuseIdentifier];
 
+    self.dboOutgoingImageWithTextCellIdentifier = [JSQMessageCollectionViewCellDBOImageOutgoing cellReuseIdentifier];
+    self.dboIncomingImageWithTextCellIdentifier = [JSQMessageCollectionViewCellDBOImageIncoming cellReuseIdentifier];
+
     // NOTE: let this behavior be opt-in for now
     // [JSQMessagesCollectionViewCell registerMenuAction:@selector(delete:)];
 
@@ -160,7 +165,7 @@ static NSInteger const kMaxMessageLenght = 200;
     self.showLoadActivityIndicator = NO;
     
     self.topContentAdditionalInset = 0.0f;
-
+    
     [self jsq_updateCollectionViewInsets];
 
     // Don't set keyboardController if client creates custom content view via -loadToolbarContentView
@@ -509,17 +514,22 @@ static NSInteger const kMaxMessageLenght = 200;
     BOOL isOutgoingMessage = [messageSenderId isEqualToString:self.senderId];
     BOOL isMediaMessage = [messageItem isMediaMessage];
     BOOL isDBOPayment = [messageItem isDBOPaymentMessage];
-    
+    BOOL isMediaMessageWithText = [messageItem isMediaMessageWithText];
+
     NSString *cellIdentifier = nil;
     if (isMediaMessage) {
-        cellIdentifier = isOutgoingMessage ? self.outgoingMediaCellIdentifier : self.incomingMediaCellIdentifier;
+        if (isMediaMessageWithText) {
+            cellIdentifier = isOutgoingMessage ? self.dboOutgoingImageWithTextCellIdentifier : self.dboIncomingImageWithTextCellIdentifier;
+        } else {
+            cellIdentifier = isOutgoingMessage ? self.outgoingMediaCellIdentifier : self.incomingMediaCellIdentifier;
+        }
     }
     if (!isMediaMessage) {
-        cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
-    }
-
-    if (isDBOPayment) {
-        cellIdentifier = isOutgoingMessage ? self.dboOutgoingPaymentCellIdentifier : self.dboIncomingPaymentCellIdentifier;
+        if (isDBOPayment) {
+            cellIdentifier = isOutgoingMessage ? self.dboOutgoingPaymentCellIdentifier : self.dboIncomingPaymentCellIdentifier;
+        } else {
+            cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
+        }
     }
 
     JSQMessagesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -542,9 +552,18 @@ static NSInteger const kMaxMessageLenght = 200;
         cell.messageBubbleImageView.highlightedImage = [bubbleImageDataSource messageBubbleHighlightedImage];
     }
     else {
-        id<JSQMessageMediaData> messageMedia = [messageItem media];
-        cell.mediaView = [messageMedia mediaView] ?: [messageMedia mediaPlaceholderView];
-        NSParameterAssert(cell.mediaView != nil);
+        if (isMediaMessageWithText) {
+            id<JSQMessageBubbleImageDataSource> bubbleImageDataSource = [collectionView.dataSource collectionView:collectionView messageBubbleImageDataForItemAtIndexPath:indexPath];
+            cell.messageBubbleImageView.image = [bubbleImageDataSource messageBubbleImage];
+            cell.messageBubbleImageView.highlightedImage = [bubbleImageDataSource messageBubbleHighlightedImage];
+            cell.textView.text = [messageItem text];
+            id<JSQMessageMediaData> messageMedia = [messageItem media];
+            [cell setMessageWithTextImage:[messageMedia mediaViewWithText]];
+        } else {
+            id<JSQMessageMediaData> messageMedia = [messageItem media];
+            cell.mediaView = [messageMedia mediaView] ?: [messageMedia mediaPlaceholderView];
+            NSParameterAssert(cell.mediaView != nil);
+        }
     }
 
     BOOL needsAvatar = YES;

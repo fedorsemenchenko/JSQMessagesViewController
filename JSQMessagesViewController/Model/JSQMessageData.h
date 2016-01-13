@@ -76,6 +76,10 @@
 // is dbo payment cell
 - (BOOL)isDBOPaymentMessage;
 
+
+// is dbo payment cell
+- (BOOL)isMediaMessageWithText;
+
 // dbo payment view
 
 - (UIView *)dboPaymentView;

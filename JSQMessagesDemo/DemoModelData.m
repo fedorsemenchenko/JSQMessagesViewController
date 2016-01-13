@@ -113,15 +113,15 @@
                                         senderDisplayName:kJSQDemoAvatarDisplayNameSquires
                                                      date:[NSDate distantPast]
                                                      text:@"Welcome to JSQMessages: A messaging UI framework for iOS."
-                                             isDBOPayment:YES
-                                           dboPaymentView:view1],
+                                             isDBOPayment:NO
+                                           dboPaymentView:nil],
                      
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdWoz
                                         senderDisplayName:kJSQDemoAvatarDisplayNameWoz
                                                      date:[NSDate distantPast]
                                                      text:@"It is simple, elegant, and easy to use. There are super sweet default settings, but you can customize like crazy. It is simple, elegant, and easy to use. There are super sweet default settings, but you can customize like crazy. It is simple, elegant, and easy to use. There are super sweet default settings, but you can customize like crazy. It is simple, elegant, and easy to use. There are super sweet default settings, but you can customize like crazy."
-                                             isDBOPayment:YES
-                                           dboPaymentView:view2],
+                                             isDBOPayment:NO
+                                           dboPaymentView:nil],
 
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
                                         senderDisplayName:kJSQDemoAvatarDisplayNameSquires
@@ -184,10 +184,12 @@
 
 - (void)addPhotoMediaMessage
 {
-    JSQPhotoMediaItem *photoItem = [[JSQPhotoMediaItem alloc] initWithImage:[UIImage imageNamed:@"goldengate"]];
+    JSQPhotoMediaItem *photoItem = [[JSQPhotoMediaItem alloc] initWithImage:[UIImage imageNamed:@"background"]];
     JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
                                                    displayName:kJSQDemoAvatarDisplayNameSquires
-                                                         media:photoItem];
+                                                         media:photoItem
+                                               isMediaWithText:YES
+                                                          text:@"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."];
     [self.messages addObject:photoMessage];
 }
 
@@ -200,7 +202,9 @@
     
     JSQMessage *locationMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
                                                       displayName:kJSQDemoAvatarDisplayNameSquires
-                                                            media:locationItem];
+                                                            media:locationItem
+                                                  isMediaWithText:NO
+                                                             text:nil];
     [self.messages addObject:locationMessage];
 }
 
@@ -212,7 +216,7 @@
     JSQVideoMediaItem *videoItem = [[JSQVideoMediaItem alloc] initWithFileURL:videoURL isReadyToPlay:YES];
     JSQMessage *videoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
                                                    displayName:kJSQDemoAvatarDisplayNameSquires
-                                                         media:videoItem];
+                                                         media:videoItem isMediaWithText:NO text:nil];
     [self.messages addObject:videoMessage];
 }
 

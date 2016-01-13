@@ -31,6 +31,19 @@
                                                       constant:0.0f]];
 }
 
+
+- (void)jsq_pinSubview:(UIView *)subview toEdge:(NSLayoutAttribute)attribute constant:(CGFloat)constant
+{
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self
+                                                     attribute:attribute
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:subview
+                                                     attribute:attribute
+                                                    multiplier:1.0f
+                                                      constant:constant]];
+}
+
+
 - (void)jsq_pinAllEdgesOfSubview:(UIView *)subview
 {
     [self jsq_pinSubview:subview toEdge:NSLayoutAttributeBottom];
@@ -38,5 +51,15 @@
     [self jsq_pinSubview:subview toEdge:NSLayoutAttributeLeading];
     [self jsq_pinSubview:subview toEdge:NSLayoutAttributeTrailing];
 }
+
+
+- (void)jsq_topInsetEdgesOfSubview:(UIView *)subview
+{
+    [self jsq_pinSubview:subview toEdge:NSLayoutAttributeBottom];
+    [self jsq_pinSubview:subview toEdge:NSLayoutAttributeTop constant:50.f];
+    [self jsq_pinSubview:subview toEdge:NSLayoutAttributeLeading];
+    [self jsq_pinSubview:subview toEdge:NSLayoutAttributeTrailing];
+}
+
 
 @end

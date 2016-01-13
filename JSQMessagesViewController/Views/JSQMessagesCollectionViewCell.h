@@ -145,8 +145,8 @@
 
 
 //DBO Payment View
-
 @property (strong, nonatomic) UIView *dboPaymentView;
+
 
 /**
  *  Returns the avatar container view of the cell. This view is the superview of the cell's avatarImageView.
@@ -208,5 +208,8 @@
  *  @warning Note that all message cells share the all actions registered here.
  */
 + (void)registerMenuAction:(SEL)action;
+
+
+- (void)setMessageWithTextImage:(UIView *)mediaView;
 
 @end

@@ -134,6 +134,8 @@
 @property (copy, nonatomic) NSString *dboOutgoingPaymentCellIdentifier;
 @property (copy, nonatomic) NSString *dboIncomingPaymentCellIdentifier;
 
+@property (copy, nonatomic) NSString *dboOutgoingImageWithTextCellIdentifier;
+@property (copy, nonatomic) NSString *dboIncomingImageWithTextCellIdentifier;
 
 /**
  *  The collection view cell identifier to use for dequeuing incoming message collection view cells 

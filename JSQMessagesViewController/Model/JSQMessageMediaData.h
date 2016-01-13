@@ -44,6 +44,7 @@
  *  @discussion You may return `nil` from this method while the media data is being downloaded.
  */
 - (UIView *)mediaView;
+- (UIView *)mediaViewWithText;
 
 /**
  *  @return The frame size for the mediaView when displayed in a `JSQMessagesCollectionViewCell`. 

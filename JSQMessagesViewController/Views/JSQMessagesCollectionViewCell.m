@@ -58,6 +58,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewHeightConstraint;
 
+//DBO Image with text
+@property (weak, nonatomic) IBOutlet UIView *dboImageContainerView;
+
 
 @property (weak, nonatomic) IBOutlet UIView *dboPaymentContainerView;
 
@@ -116,6 +119,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     self.backgroundColor = [UIColor whiteColor];
 
+    self.dboImageContainerView.clipsToBounds = YES;
+    [self.dboImageContainerView.layer setCornerRadius:20.f];
+    
     self.cellTopLabelHeightConstraint.constant = 0.0f;
     self.messageBubbleTopLabelHeightConstraint.constant = 0.0f;
     self.cellBottomLabelHeightConstraint.constant = 0.0f;
@@ -345,6 +351,18 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
             }
         }
     });
+}
+
+- (void)setMessageWithTextImage:(UIView *)mediaView {
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        for (NSUInteger i = 0; i < self.dboImageContainerView.subviews.count; i++) {
+            if (self.dboImageContainerView.subviews[i] != mediaView) {
+                [self.dboImageContainerView.subviews[i] removeFromSuperview];
+            }
+        }
+    });
+    [self.dboImageContainerView addSubview:mediaView];
 }
 
 #pragma mark - Getters

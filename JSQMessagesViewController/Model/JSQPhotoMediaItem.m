@@ -90,6 +90,26 @@
     return self.cachedImageView;
 }
 
+
+- (UIView *)mediaViewWithText
+{
+    if (self.image == nil) {
+        return nil;
+    }
+    
+    if (self.cachedImageView == nil) {
+        CGSize size = [self mediaViewDisplaySize];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:self.image];
+        imageView.frame = CGRectMake(0.0f, 0.0f, size.width, size.height);
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        imageView.clipsToBounds = YES;
+        self.cachedImageView = imageView;
+    }
+    
+    return self.cachedImageView;
+}
+
+
 - (NSUInteger)mediaHash
 {
     return self.hash;

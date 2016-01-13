@@ -229,7 +229,9 @@
             
             newMessage = [JSQMessage messageWithSenderId:randomUserId
                                              displayName:self.demoData.users[randomUserId]
-                                                   media:newMediaData];
+                                                   media:newMediaData
+                                         isMediaWithText:YES
+                                                    text:@"Test text"];
         }
         else {
             /**
@@ -649,7 +651,6 @@
 
 #pragma mark - JSQMessagesComposerTextViewPasteDelegate methods
 
-
 - (BOOL)composerTextView:(JSQMessagesComposerTextView *)textView shouldPasteWithSender:(id)sender
 {
     if ([UIPasteboard generalPasteboard].image) {
@@ -658,7 +659,9 @@
         JSQMessage *message = [[JSQMessage alloc] initWithSenderId:self.senderId
                                                  senderDisplayName:self.senderDisplayName
                                                               date:[NSDate date]
-                                                             media:item];
+                                                             media:item
+                                                   isMediaWithText:YES
+                                                              text:@"Test 1221312312432"];
         [self.demoData.messages addObject:message];
         [self finishSendingMessage];
         return NO;

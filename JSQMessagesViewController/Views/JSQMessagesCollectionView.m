@@ -23,6 +23,8 @@
 #import "JSQMessagesCollectionViewCellOutgoing.h"
 #import "JSQMessagesCollectionViewCellDBOPayment.h"
 #import "JSQMessagesCollectionViewCellDBOPaymentIncoming.h"
+#import "JSQMessageCollectionViewCellDBOImageOutgoing.h"
+#import "JSQMessageCollectionViewCellDBOImageIncoming.h"
 
 #import "JSQMessagesTypingIndicatorFooterView.h"
 #import "JSQMessagesLoadEarlierHeaderView.h"
@@ -67,6 +69,13 @@
     [self registerNib:[JSQMessagesCollectionViewCellDBOPaymentIncoming nib]
             forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellDBOPaymentIncoming cellReuseIdentifier]];
 
+    [self registerNib:[JSQMessageCollectionViewCellDBOImageOutgoing nib]
+            forCellWithReuseIdentifier:[JSQMessageCollectionViewCellDBOImageOutgoing cellReuseIdentifier]];
+    
+    [self registerNib:[JSQMessageCollectionViewCellDBOImageIncoming nib]
+            forCellWithReuseIdentifier:[JSQMessageCollectionViewCellDBOImageIncoming cellReuseIdentifier]];
+
+    
     
     [self registerNib:[JSQMessagesCollectionViewCellIncoming nib]
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellIncoming mediaCellReuseIdentifier]];
@@ -76,8 +85,15 @@
     
     [self registerNib:[JSQMessagesCollectionViewCellDBOPayment nib]
             forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellDBOPayment mediaCellReuseIdentifier]];
+
     [self registerNib:[JSQMessagesCollectionViewCellDBOPaymentIncoming nib]
             forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellDBOPaymentIncoming mediaCellReuseIdentifier]];
+
+    [self registerNib:[JSQMessageCollectionViewCellDBOImageOutgoing nib]
+            forCellWithReuseIdentifier:[JSQMessageCollectionViewCellDBOImageOutgoing mediaCellReuseIdentifier]];
+    
+    [self registerNib:[JSQMessageCollectionViewCellDBOImageIncoming nib]
+            forCellWithReuseIdentifier:[JSQMessageCollectionViewCellDBOImageIncoming mediaCellReuseIdentifier]];
 
     
     

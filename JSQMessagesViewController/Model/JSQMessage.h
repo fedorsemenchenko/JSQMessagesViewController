@@ -55,10 +55,11 @@
 // is DBO Payment message
 @property (assign, nonatomic, readonly) BOOL isDBOPaymentMessage;
 
-
 //DBO Payment View
-
 @property (strong, nonatomic, readonly) UIView *dboPaymentView;
+
+// is DBO media message with text
+@property (assign, nonatomic, readonly) BOOL isMediaMessageWithText;
 
 
 /**
@@ -126,7 +127,9 @@
  */
 + (instancetype)messageWithSenderId:(NSString *)senderId
                         displayName:(NSString *)displayName
-                              media:(id<JSQMessageMediaData>)media;
+                              media:(id<JSQMessageMediaData>)media
+                    isMediaWithText:(BOOL)isMediaWithText
+                               text:(NSString *)text;
 
 /**
  *  Initializes and returns a message object having the given senderId, displayName, date, and media.
@@ -143,6 +146,8 @@
 - (instancetype)initWithSenderId:(NSString *)senderId
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
-                           media:(id<JSQMessageMediaData>)media;
+                           media:(id<JSQMessageMediaData>)media
+                 isMediaWithText:(BOOL)isMediaWithText
+                            text:(NSString *)text;
 
 @end

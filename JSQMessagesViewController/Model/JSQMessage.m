@@ -26,7 +26,8 @@
                             date:(NSDate *)date
                          isMedia:(BOOL)isMedia
                     isDBOPayment:(BOOL)isDBOPayment
-                  dboPaymentView:(UIView *)dboPaymentView;
+                  dboPaymentView:(UIView *)dboPaymentView
+                 isMediaWithText:(BOOL)isMediaWithText;
 
 @end
 
@@ -59,7 +60,7 @@
 {
     NSParameterAssert(text != nil);
 
-    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:NO isDBOPayment:(BOOL)isDBOPayment dboPaymentView:dboPaymentView];
+    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:NO isDBOPayment:(BOOL)isDBOPayment dboPaymentView:dboPaymentView isMediaWithText:NO];
     if (self) {
         _text = [text copy];
     }
@@ -69,22 +70,29 @@
 + (instancetype)messageWithSenderId:(NSString *)senderId
                         displayName:(NSString *)displayName
                               media:(id<JSQMessageMediaData>)media
+                    isMediaWithText:(BOOL)isMediaWithText
+                               text:(NSString *)text
 {
     return [[self alloc] initWithSenderId:senderId
                         senderDisplayName:displayName
                                      date:[NSDate date]
-                                    media:media];
+                                    media:media
+                          isMediaWithText:isMediaWithText
+                                     text:text];
 }
 
 - (instancetype)initWithSenderId:(NSString *)senderId
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
                            media:(id<JSQMessageMediaData>)media
+                 isMediaWithText:(BOOL)isMediaWithText
+                            text:(NSString *)text
 {
     NSParameterAssert(media != nil);
 
-    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:YES isDBOPayment:NO dboPaymentView:nil];
+    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:YES isDBOPayment:NO dboPaymentView:nil isMediaWithText:isMediaWithText];
     if (self) {
+        _text = text;
         _media = media;
     }
     return self;
@@ -96,6 +104,7 @@
                          isMedia:(BOOL)isMedia
                     isDBOPayment:(BOOL)isDBOPayment
                   dboPaymentView:(UIView *)dboPaymentView
+                 isMediaWithText:(BOOL)isMediaWithText
 {
     NSParameterAssert(senderId != nil);
     NSParameterAssert(senderDisplayName != nil);
@@ -109,6 +118,7 @@
         _isMediaMessage = isMedia;
         _isDBOPaymentMessage = isDBOPayment;
         _dboPaymentView = dboPaymentView;
+        _isMediaMessageWithText = isMediaWithText;
     }
     return self;
 }
@@ -190,6 +200,7 @@
         _text = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(text))];
         _media = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(media))];
         _dboPaymentView = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(dboPaymentView))];
+        _isMediaMessageWithText = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(isMediaMessageWithText))];
     }
     return self;
 }
@@ -203,7 +214,8 @@
     [aCoder encodeBool:self.isDBOPaymentMessage forKey:NSStringFromSelector(@selector(isDBOPaymentMessage))];
     [aCoder encodeObject:self.text forKey:NSStringFromSelector(@selector(text))];
     [aCoder encodeObject:self.dboPaymentView forKey:NSStringFromSelector(@selector(dboPaymentView))];
-    
+    [aCoder encodeBool:self.isMediaMessageWithText forKey:NSStringFromSelector(@selector(isMediaMessageWithText))];
+
     if ([self.media conformsToProtocol:@protocol(NSCoding)]) {
         [aCoder encodeObject:self.media forKey:NSStringFromSelector(@selector(media))];
     }
@@ -217,7 +229,9 @@
         return [[[self class] allocWithZone:zone] initWithSenderId:self.senderId
                                                  senderDisplayName:self.senderDisplayName
                                                               date:self.date
-                                                             media:self.media];
+                                                             media:self.media
+                                                   isMediaWithText:self.isMediaMessageWithText
+                                                              text:self.text];
     }
 
     return [[[self class] allocWithZone:zone] initWithSenderId:self.senderId

@@ -113,6 +113,10 @@
 		E1BB424C1C20511A00F47897 /* DBOActivityCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1BB424A1C20511A00F47897 /* DBOActivityCollectionReusableView.xib */; };
 		E1CFC5711C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CFC56F1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.m */; };
 		E1CFC5721C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CFC5701C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.xib */; };
+		E1D9E0041C29AE34004A7FB4 /* JSQMessageCollectionViewCellDBOImageOutgoing.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D9E0021C29AE34004A7FB4 /* JSQMessageCollectionViewCellDBOImageOutgoing.m */; };
+		E1D9E0051C29AE34004A7FB4 /* JSQMessageCollectionViewCellDBOImageOutgoing.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1D9E0031C29AE34004A7FB4 /* JSQMessageCollectionViewCellDBOImageOutgoing.xib */; };
+		E1E0DCFF1C45605100857255 /* JSQMessageCollectionViewCellDBOImageIncoming.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E0DCFD1C45605100857255 /* JSQMessageCollectionViewCellDBOImageIncoming.m */; };
+		E1E0DD001C45605100857255 /* JSQMessageCollectionViewCellDBOImageIncoming.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1E0DCFE1C45605100857255 /* JSQMessageCollectionViewCellDBOImageIncoming.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -285,6 +289,12 @@
 		E1CFC56E1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesCollectionViewCellDBOPayment.h; sourceTree = "<group>"; };
 		E1CFC56F1C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesCollectionViewCellDBOPayment.m; sourceTree = "<group>"; };
 		E1CFC5701C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSQMessagesCollectionViewCellDBOPayment.xib; sourceTree = "<group>"; };
+		E1D9E0011C29AE34004A7FB4 /* JSQMessageCollectionViewCellDBOImageOutgoing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessageCollectionViewCellDBOImageOutgoing.h; sourceTree = "<group>"; };
+		E1D9E0021C29AE34004A7FB4 /* JSQMessageCollectionViewCellDBOImageOutgoing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessageCollectionViewCellDBOImageOutgoing.m; sourceTree = "<group>"; };
+		E1D9E0031C29AE34004A7FB4 /* JSQMessageCollectionViewCellDBOImageOutgoing.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSQMessageCollectionViewCellDBOImageOutgoing.xib; sourceTree = "<group>"; };
+		E1E0DCFC1C45605100857255 /* JSQMessageCollectionViewCellDBOImageIncoming.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessageCollectionViewCellDBOImageIncoming.h; sourceTree = "<group>"; };
+		E1E0DCFD1C45605100857255 /* JSQMessageCollectionViewCellDBOImageIncoming.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessageCollectionViewCellDBOImageIncoming.m; sourceTree = "<group>"; };
+		E1E0DCFE1C45605100857255 /* JSQMessageCollectionViewCellDBOImageIncoming.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSQMessageCollectionViewCellDBOImageIncoming.xib; sourceTree = "<group>"; };
 		FC5C727E4CCDA2B95A7BA30C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -660,6 +670,12 @@
 				E1B17A861C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.h */,
 				E1B17A871C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.m */,
 				E1B17A881C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.xib */,
+				E1D9E0011C29AE34004A7FB4 /* JSQMessageCollectionViewCellDBOImageOutgoing.h */,
+				E1D9E0021C29AE34004A7FB4 /* JSQMessageCollectionViewCellDBOImageOutgoing.m */,
+				E1D9E0031C29AE34004A7FB4 /* JSQMessageCollectionViewCellDBOImageOutgoing.xib */,
+				E1E0DCFC1C45605100857255 /* JSQMessageCollectionViewCellDBOImageIncoming.h */,
+				E1E0DCFD1C45605100857255 /* JSQMessageCollectionViewCellDBOImageIncoming.m */,
+				E1E0DCFE1C45605100857255 /* JSQMessageCollectionViewCellDBOImageIncoming.xib */,
 			);
 			name = CollectionViewCell;
 			sourceTree = "<group>";
@@ -766,10 +782,12 @@
 				E1B17A8A1C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.xib in Resources */,
 				886C33FF19F45E30006B4997 /* JSQMessagesViewController.podspec in Resources */,
 				8861666D19F492B70025B958 /* JSQMessagesAssets.bundle in Resources */,
+				E1E0DD001C45605100857255 /* JSQMessageCollectionViewCellDBOImageIncoming.xib in Resources */,
 				88A25FCF19D8E01A00924534 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				88A25FCD19D8E01A00924534 /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
 				88A25FD619D8E01A00924534 /* JSQMessagesToolbarContentView.xib in Resources */,
 				88A25F3A19D8DF2500924534 /* Images.xcassets in Resources */,
+				E1D9E0051C29AE34004A7FB4 /* JSQMessageCollectionViewCellDBOImageOutgoing.xib in Resources */,
 				88A25FBC19D8E01A00924534 /* JSQMessagesViewController.xib in Resources */,
 				E1CFC5721C18BB3300CFBAF7 /* JSQMessagesCollectionViewCellDBOPayment.xib in Resources */,
 				E1BB424C1C20511A00F47897 /* DBOActivityCollectionReusableView.xib in Resources */,
@@ -889,6 +907,7 @@
 			files = (
 				88078A9D19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.m in Sources */,
 				88A25FCE19D8E01A00924534 /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
+				E1E0DCFF1C45605100857255 /* JSQMessageCollectionViewCellDBOImageIncoming.m in Sources */,
 				88A25FD119D8E01A00924534 /* JSQMessagesInputToolbar.m in Sources */,
 				88A25FCB19D8E01A00924534 /* JSQMessagesCollectionViewCell.m in Sources */,
 				88A25FBB19D8E01A00924534 /* JSQMessagesViewController.m in Sources */,
@@ -926,6 +945,7 @@
 				886C33FD19F4371E006B4997 /* JSQVideoMediaItem.m in Sources */,
 				88A25FBA19D8E01A00924534 /* JSQMessagesKeyboardController.m in Sources */,
 				88A25FC019D8E01A00924534 /* JSQMessagesToolbarButtonFactory.m in Sources */,
+				E1D9E0041C29AE34004A7FB4 /* JSQMessageCollectionViewCellDBOImageOutgoing.m in Sources */,
 				88A25FC219D8E01A00924534 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
 				88A25FE119D8E0C400924534 /* TableViewController.m in Sources */,
 				88A25FBD19D8E01A00924534 /* JSQMessagesAvatarImageFactory.m in Sources */,

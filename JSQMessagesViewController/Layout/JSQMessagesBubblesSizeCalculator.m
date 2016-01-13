@@ -25,6 +25,8 @@
 
 #import "UIImage+JSQMessages.h"
 
+static CGFloat const kMinDBOImageCellWidth = 210.f;
+
 static CGFloat const kMinDBOPaymentWidth = 270.f;
 static CGFloat const kDBOPaymentVerticalInset = 65.f;
 
@@ -105,7 +107,20 @@ static CGFloat const kDBOPaymentVerticalInset = 65.f;
     CGSize finalSize = CGSizeZero;
 
     if ([messageData isMediaMessage]) {
-        finalSize = [[messageData media] mediaViewDisplaySize];
+        if ([messageData isMediaMessageWithText]) {
+            CGFloat maximumTextWidth = 180.f;
+            CGRect stringRect = [[messageData text] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
+                                                                 options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                              attributes:@{ NSFontAttributeName : layout.messageBubbleFont }
+                                                                 context:nil];
+            
+            CGSize stringSize = CGRectIntegral(stringRect).size;
+            CGFloat stringHeight = stringSize.height;
+  
+            finalSize = CGSizeMake(kMinDBOImageCellWidth, stringHeight + 250.f);
+        } else {
+            finalSize = [[messageData media] mediaViewDisplaySize];
+        }
     }
     else {
         CGSize avatarSize = [self jsq_avatarSizeForMessageData:messageData withLayout:layout];

@@ -35,4 +35,8 @@
  */
 - (void)jsq_pinAllEdgesOfSubview:(UIView *)subview;
 
+
+
+- (void)jsq_topInsetEdgesOfSubview:(UIView *)subview;
+
 @end
