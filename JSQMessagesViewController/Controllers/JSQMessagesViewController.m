@@ -565,7 +565,11 @@ static NSInteger const kMaxMessageLenght = 200;
             NSParameterAssert(cell.mediaView != nil);
         }
     }
+    BOOL needsSupportName = [[messageItem dboSupportName] length] > 0;
 
+    if (needsSupportName) {
+        [cell setSupportNameText:[messageItem dboSupportName]];
+    }
     BOOL needsAvatar = YES;
     if (isOutgoingMessage && CGSizeEqualToSize(collectionView.collectionViewLayout.outgoingAvatarViewSize, CGSizeZero)) {
         needsAvatar = NO;

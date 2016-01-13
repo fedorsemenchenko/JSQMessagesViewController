@@ -211,5 +211,6 @@
 
 
 - (void)setMessageWithTextImage:(UIView *)mediaView;
+- (void)setSupportNameText:(NSString *)supportName;
 
 @end

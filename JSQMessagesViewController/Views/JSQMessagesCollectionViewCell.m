@@ -37,6 +37,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *messageBubbleTopLabel;
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellBottomLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *supportNameLabel;
+
 @property (weak, nonatomic) IBOutlet UIView *messageBubbleContainerView;
 @property (weak, nonatomic) IBOutlet UIImageView *messageBubbleImageView;
 @property (weak, nonatomic) IBOutlet JSQMessagesCellTextView *textView;
@@ -351,6 +353,10 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
             }
         }
     });
+}
+
+- (void)setSupportNameText:(NSString *)supportName {
+    self.supportNameLabel.text = supportName;
 }
 
 - (void)setMessageWithTextImage:(UIView *)mediaView {

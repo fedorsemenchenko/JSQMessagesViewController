@@ -163,7 +163,8 @@
                                           displayName:kJSQDemoAvatarDisplayNameJobs
                                                  text:@"First received!"
                                          isDBOPayment:NO
-                                       dboPaymentView:nil];
+                                       dboPaymentView:nil
+                                       dboSupportName:@"Steave test"];
     }
     
     /**
@@ -231,7 +232,8 @@
                                              displayName:self.demoData.users[randomUserId]
                                                    media:newMediaData
                                          isMediaWithText:YES
-                                                    text:@"Test text"];
+                                                    text:@"Test text"
+                                          dboSupportName:nil];
         }
         else {
             /**
@@ -239,7 +241,7 @@
              */
             newMessage = [JSQMessage messageWithSenderId:randomUserId
                                              displayName:self.demoData.users[randomUserId]
-                                                    text:copyMessage.text isDBOPayment:NO dboPaymentView:nil];
+                                                    text:copyMessage.text isDBOPayment:NO dboPaymentView:nil dboSupportName:@"Test user"];
         }
         
         /**
@@ -321,7 +323,8 @@
                                                           date:date
                                                           text:text
                                                   isDBOPayment:NO
-                                                dboPaymentView:nil];
+                                                dboPaymentView:nil
+                                                dboSupportName:nil];
     
     [self.demoData.messages addObject:message];
     
@@ -661,7 +664,8 @@
                                                               date:[NSDate date]
                                                              media:item
                                                    isMediaWithText:YES
-                                                              text:@"Test 1221312312432"];
+                                                              text:@"Test 1221312312432"
+                                                    dboSupportName:nil];
         [self.demoData.messages addObject:message];
         [self finishSendingMessage];
         return NO;

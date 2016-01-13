@@ -26,6 +26,8 @@
 #import "UIImage+JSQMessages.h"
 
 static CGFloat const kMinDBOImageCellWidth = 210.f;
+static CGFloat const kDBOCellTextWidth = 180.f;
+static CGFloat const kDBOSupportLabelHeight = 20.f;
 
 static CGFloat const kMinDBOPaymentWidth = 270.f;
 static CGFloat const kDBOPaymentVerticalInset = 65.f;
@@ -108,15 +110,9 @@ static CGFloat const kDBOPaymentVerticalInset = 65.f;
 
     if ([messageData isMediaMessage]) {
         if ([messageData isMediaMessageWithText]) {
-            CGFloat maximumTextWidth = 180.f;
-            CGRect stringRect = [[messageData text] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
-                                                                 options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
-                                                              attributes:@{ NSFontAttributeName : layout.messageBubbleFont }
-                                                                 context:nil];
-            
+            CGRect stringRect = [self rectForText:[messageData text] withLayout:layout textWidth:kDBOCellTextWidth];
             CGSize stringSize = CGRectIntegral(stringRect).size;
             CGFloat stringHeight = stringSize.height;
-  
             finalSize = CGSizeMake(kMinDBOImageCellWidth, stringHeight + 250.f);
         } else {
             finalSize = [[messageData media] mediaViewDisplaySize];
@@ -133,11 +129,8 @@ static CGFloat const kDBOPaymentVerticalInset = 65.f;
         CGFloat horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
         CGFloat maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
 
-        CGRect stringRect = [[messageData text] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
-                                                             options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
-                                                          attributes:@{ NSFontAttributeName : layout.messageBubbleFont }
-                                                             context:nil];
-
+        CGRect stringRect = [self rectForText:[messageData text] withLayout:layout textWidth:maximumTextWidth];
+        
         CGSize stringSize = CGRectIntegral(stringRect).size;
 
         CGFloat verticalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.top + layout.messageBubbleTextViewTextContainerInsets.bottom;
@@ -152,6 +145,7 @@ static CGFloat const kDBOPaymentVerticalInset = 65.f;
 
         CGFloat dboPaymentVerticalInset = .0f;
         CGFloat dboPaymentMinWidht = .0f;
+        CGFloat dboSupportNameHeight = [[messageData dboSupportName] length] > 0 ? kDBOSupportLabelHeight : 0.f;
 
         if ([messageData isDBOPaymentMessage]) {
             dboPaymentVerticalInset = kDBOPaymentVerticalInset;
@@ -161,12 +155,25 @@ static CGFloat const kDBOPaymentVerticalInset = 65.f;
         if ([[messageData text] length] == 0) {
             stringHeight = .0f;
         }
-        finalSize = CGSizeMake(MAX(finalWidth, dboPaymentMinWidht), stringHeight + dboPaymentVerticalInset + verticalInsets);
+        finalSize = CGSizeMake(MAX(finalWidth, dboPaymentMinWidht), stringHeight + dboPaymentVerticalInset + verticalInsets + dboSupportNameHeight);
     }
 
     [self.cache setObject:[NSValue valueWithCGSize:finalSize] forKey:@([messageData messageHash])];
 
     return finalSize;
+}
+
+
+- (CGRect)rectForText:(NSString *)text
+           withLayout:(JSQMessagesCollectionViewFlowLayout *)layout
+            textWidth:(CGFloat)width {
+
+    CGRect stringRect = [text boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX)
+                                           options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                        attributes:@{ NSFontAttributeName : layout.messageBubbleFont }
+                                           context:nil];
+    
+    return stringRect;
 }
 
 - (CGSize)jsq_avatarSizeForMessageData:(id<JSQMessageData>)messageData

@@ -27,7 +27,8 @@
                          isMedia:(BOOL)isMedia
                     isDBOPayment:(BOOL)isDBOPayment
                   dboPaymentView:(UIView *)dboPaymentView
-                 isMediaWithText:(BOOL)isMediaWithText;
+                 isMediaWithText:(BOOL)isMediaWithText
+                  dboSupportName:(NSString *)dboSupportName;
 
 @end
 
@@ -42,13 +43,15 @@
                                text:(NSString *)text
                        isDBOPayment:(BOOL)isDBOPayment
                      dboPaymentView:(UIView *)dboPaymentView
+                     dboSupportName:(NSString *)dboSupportName
 {
     return [[self alloc] initWithSenderId:senderId
                         senderDisplayName:displayName
                                      date:[NSDate date]
                                      text:text
                              isDBOPayment:isDBOPayment
-                           dboPaymentView:dboPaymentView];
+                           dboPaymentView:dboPaymentView
+                           dboSupportName:dboSupportName];
 }
 
 - (instancetype)initWithSenderId:(NSString *)senderId
@@ -57,10 +60,18 @@
                             text:(NSString *)text
                     isDBOPayment:(BOOL)isDBOPayment
                   dboPaymentView:(UIView *)dboPaymentView
+                  dboSupportName:(NSString *)dboSupportName
 {
     NSParameterAssert(text != nil);
 
-    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:NO isDBOPayment:(BOOL)isDBOPayment dboPaymentView:dboPaymentView isMediaWithText:NO];
+    self = [self initWithSenderId:senderId
+                senderDisplayName:senderDisplayName
+                             date:date
+                          isMedia:NO
+                     isDBOPayment:(BOOL)isDBOPayment
+                   dboPaymentView:dboPaymentView
+                  isMediaWithText:NO
+                   dboSupportName:dboSupportName];
     if (self) {
         _text = [text copy];
     }
@@ -72,13 +83,15 @@
                               media:(id<JSQMessageMediaData>)media
                     isMediaWithText:(BOOL)isMediaWithText
                                text:(NSString *)text
+                     dboSupportName:(NSString *)dboSupportName
 {
     return [[self alloc] initWithSenderId:senderId
                         senderDisplayName:displayName
                                      date:[NSDate date]
                                     media:media
                           isMediaWithText:isMediaWithText
-                                     text:text];
+                                     text:text
+                           dboSupportName:dboSupportName];
 }
 
 - (instancetype)initWithSenderId:(NSString *)senderId
@@ -87,10 +100,18 @@
                            media:(id<JSQMessageMediaData>)media
                  isMediaWithText:(BOOL)isMediaWithText
                             text:(NSString *)text
+                  dboSupportName:(NSString *)dboSupportName
 {
     NSParameterAssert(media != nil);
 
-    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:YES isDBOPayment:NO dboPaymentView:nil isMediaWithText:isMediaWithText];
+    self = [self initWithSenderId:senderId
+                senderDisplayName:senderDisplayName
+                             date:date
+                          isMedia:YES
+                     isDBOPayment:NO
+                   dboPaymentView:nil
+                  isMediaWithText:isMediaWithText
+                   dboSupportName:dboSupportName];
     if (self) {
         _text = text;
         _media = media;
@@ -105,6 +126,7 @@
                     isDBOPayment:(BOOL)isDBOPayment
                   dboPaymentView:(UIView *)dboPaymentView
                  isMediaWithText:(BOOL)isMediaWithText
+                  dboSupportName:(NSString *)dboSupportName
 {
     NSParameterAssert(senderId != nil);
     NSParameterAssert(senderDisplayName != nil);
@@ -119,6 +141,7 @@
         _isDBOPaymentMessage = isDBOPayment;
         _dboPaymentView = dboPaymentView;
         _isMediaMessageWithText = isMediaWithText;
+        _dboSupportName = dboSupportName;
     }
     return self;
 }
@@ -201,6 +224,8 @@
         _media = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(media))];
         _dboPaymentView = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(dboPaymentView))];
         _isMediaMessageWithText = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(isMediaMessageWithText))];
+        _dboSupportName = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(dboSupportName))];
+
     }
     return self;
 }
@@ -215,6 +240,7 @@
     [aCoder encodeObject:self.text forKey:NSStringFromSelector(@selector(text))];
     [aCoder encodeObject:self.dboPaymentView forKey:NSStringFromSelector(@selector(dboPaymentView))];
     [aCoder encodeBool:self.isMediaMessageWithText forKey:NSStringFromSelector(@selector(isMediaMessageWithText))];
+    [aCoder encodeObject:self.dboSupportName forKey:NSStringFromSelector(@selector(dboSupportName))];
 
     if ([self.media conformsToProtocol:@protocol(NSCoding)]) {
         [aCoder encodeObject:self.media forKey:NSStringFromSelector(@selector(media))];
@@ -231,7 +257,8 @@
                                                               date:self.date
                                                              media:self.media
                                                    isMediaWithText:self.isMediaMessageWithText
-                                                              text:self.text];
+                                                              text:self.text
+                                                    dboSupportName:self.dboSupportName];
     }
 
     return [[[self class] allocWithZone:zone] initWithSenderId:self.senderId
@@ -239,7 +266,8 @@
                                                           date:self.date
                                                           text:self.text
                                                   isDBOPayment:self.isDBOPaymentMessage
-                                                dboPaymentView:self.dboPaymentView];
+                                                dboPaymentView:self.dboPaymentView
+                                                dboSupportName:self.dboSupportName];
 }
 
 @end

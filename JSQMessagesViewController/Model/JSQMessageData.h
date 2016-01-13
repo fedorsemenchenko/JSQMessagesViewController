@@ -77,12 +77,14 @@
 - (BOOL)isDBOPaymentMessage;
 
 
-// is dbo payment cell
+// is dbo mesasge with text
 - (BOOL)isMediaMessageWithText;
 
 // dbo payment view
-
 - (UIView *)dboPaymentView;
+
+// dbo support name
+- (NSString *)dboSupportName;
 
 /**
  *  @return An integer that can be used as a table address in a hash table structure.

@@ -61,6 +61,8 @@
 // is DBO media message with text
 @property (assign, nonatomic, readonly) BOOL isMediaMessageWithText;
 
+// is DBO support name
+@property (copy, nonatomic, readonly) NSString *dboSupportName;
 
 /**
  *  Returns the body text of the message, or `nil` if the message is a media message.
@@ -93,7 +95,8 @@
                         displayName:(NSString *)displayName
                                text:(NSString *)text
                        isDBOPayment:(BOOL)isDBOPayment
-                     dboPaymentView:(UIView *)dboPaymentView;
+                     dboPaymentView:(UIView *)dboPaymentView
+                     dboSupportName:(NSString *)dboSupportName;
 
 /**
  *  Initializes and returns a message object having the given senderId, senderDisplayName, date, and text.
@@ -112,7 +115,8 @@
                             date:(NSDate *)date
                             text:(NSString *)text
                     isDBOPayment:(BOOL)isDBOPayment
-                  dboPaymentView:(UIView *)dboPaymentView;
+                  dboPaymentView:(UIView *)dboPaymentView
+                  dboSupportName:(NSString *)dboSupportName;
 /**
  *  Initializes and returns a message object having the given senderId, displayName, media,
  *  and current system date.
@@ -129,7 +133,8 @@
                         displayName:(NSString *)displayName
                               media:(id<JSQMessageMediaData>)media
                     isMediaWithText:(BOOL)isMediaWithText
-                               text:(NSString *)text;
+                               text:(NSString *)text
+                     dboSupportName:(NSString *)dboSupportName;
 
 /**
  *  Initializes and returns a message object having the given senderId, displayName, date, and media.
@@ -148,6 +153,7 @@
                             date:(NSDate *)date
                            media:(id<JSQMessageMediaData>)media
                  isMediaWithText:(BOOL)isMediaWithText
-                            text:(NSString *)text;
+                            text:(NSString *)text
+                  dboSupportName:(NSString *)dboSupportName;
 
 @end
