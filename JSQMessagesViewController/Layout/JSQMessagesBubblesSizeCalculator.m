@@ -27,7 +27,8 @@
 
 static CGFloat const kMinDBOImageCellWidth = 210.f;
 static CGFloat const kDBOCellTextWidth = 180.f;
-static CGFloat const kDBOSupportLabelHeight = 20.f;
+static CGFloat const kDBOMinimumSupportBubbleWidth = 120.f;
+static CGFloat const kDBOSupportLabelHeight = 35.f;
 
 static CGFloat const kMinDBOPaymentWidth = 270.f;
 static CGFloat const kDBOPaymentVerticalInset = 65.f;
@@ -141,6 +142,7 @@ static CGFloat const kDBOPaymentVerticalInset = 65.f;
         CGFloat verticalInsets = verticalContainerInsets + verticalFrameInsets + self.additionalInset;
 
         //  same as above, an extra 2 points of magix
+        _minimumBubbleWidth = [[messageData dboSupportName] length] > 0 ? kDBOMinimumSupportBubbleWidth : self.minimumBubbleWidth;
         CGFloat finalWidth = MAX(stringSize.width + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
 
         CGFloat dboPaymentVerticalInset = .0f;

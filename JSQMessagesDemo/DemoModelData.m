@@ -120,7 +120,7 @@
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdWoz
                                         senderDisplayName:kJSQDemoAvatarDisplayNameWoz
                                                      date:[NSDate distantPast]
-                                                     text:@"It is simple, elegant, and easy to use. There are super sweet default settings, but you can customize like crazy. It is simple, elegant, and easy to use. There are super sweet default settings, but you can customize like crazy. It is simple, elegant, and easy to use. There are super sweet default settings, but you can customize like crazy. It is simple, elegant, and easy to use. There are super sweet default settings, but you can customize like crazy."
+                                                     text:@"It"
                                              isDBOPayment:NO
                                            dboPaymentView:nil
                                            dboSupportName:@"Steve Wozniak"],
@@ -128,7 +128,7 @@
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
                                         senderDisplayName:kJSQDemoAvatarDisplayNameSquires
                                                      date:[NSDate distantPast]
-                                                     text:@"It even has data detectors. You can call me tonight. My cell number is 123-456-7890. My website is www.hexedbits.com."
+                                                     text:@"It."
                                              isDBOPayment:NO
                                            dboPaymentView:nil
                                            dboSupportName:nil],
@@ -136,7 +136,7 @@
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdJobs
                                         senderDisplayName:kJSQDemoAvatarDisplayNameJobs
                                                      date:[NSDate date]
-                                                     text:@"JSQMessagesViewController is nearly an exact replica of the iOS Messages App. And perhaps, better."
+                                                     text:@"JSQMessagesViewController."
                                              isDBOPayment:NO
                                            dboPaymentView:nil
                                            dboSupportName:@"Steave Jobs"],
@@ -145,7 +145,7 @@
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdCook
                                         senderDisplayName:kJSQDemoAvatarDisplayNameCook
                                                      date:[NSDate date]
-                                                     text:@"It is unit-tested, free, open-source, and documented."
+                                                     text:@"It is unit-tested."
                                              isDBOPayment:YES
                                            dboPaymentView:view3
                                            dboSupportName:@"Tim Cook"],

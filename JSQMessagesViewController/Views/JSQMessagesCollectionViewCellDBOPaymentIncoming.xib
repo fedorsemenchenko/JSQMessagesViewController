@@ -54,7 +54,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0Q-K1-hiE">
-                                <rect key="frame" x="18" y="10" width="211" height="16"/>
+                                <rect key="frame" x="20" y="10" width="209" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.23921568630000001" green="0.67843137249999996" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                             <constraint firstAttribute="bottom" secondItem="hR4-Re-Qhy" secondAttribute="bottom" id="3t2-uF-tDy"/>
                             <constraint firstAttribute="bottom" secondItem="zmC-Q4-6e9" secondAttribute="bottom" constant="10" id="4iK-uM-NVJ"/>
                             <constraint firstAttribute="trailing" secondItem="hR4-Re-Qhy" secondAttribute="trailing" id="M91-To-0AH"/>
-                            <constraint firstItem="R0Q-K1-hiE" firstAttribute="leading" secondItem="0C1-kQ-Gwc" secondAttribute="leading" constant="18" id="Ozy-eu-1qr"/>
+                            <constraint firstItem="R0Q-K1-hiE" firstAttribute="leading" secondItem="0C1-kQ-Gwc" secondAttribute="leading" constant="20" id="Ozy-eu-1qr"/>
                             <constraint firstAttribute="trailing" secondItem="R0Q-K1-hiE" secondAttribute="trailing" constant="15" id="Qne-hS-Oew"/>
                             <constraint firstAttribute="width" constant="244" id="VJS-Ka-iiD"/>
                             <constraint firstItem="zmC-Q4-6e9" firstAttribute="top" secondItem="Jc9-1A-Rvw" secondAttribute="bottom" constant="8" id="Veq-Zr-daN"/>

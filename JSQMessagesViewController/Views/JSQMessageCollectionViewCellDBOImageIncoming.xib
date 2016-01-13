@@ -41,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="244" height="300"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="viD-G0-ZG2" customClass="JSQMessagesCellTextView">
-                                <rect key="frame" x="6" y="24" width="238" height="46"/>
+                                <rect key="frame" x="6" y="30" width="238" height="40"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -54,7 +54,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmk-FW-Rih">
-                                <rect key="frame" x="6" y="4" width="228" height="16"/>
+                                <rect key="frame" x="20" y="10" width="214" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.23921568630000001" green="0.67843137249999996" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                             <constraint firstItem="viD-G0-ZG2" firstAttribute="leading" secondItem="rUr-jd-LPU" secondAttribute="leading" constant="6" id="2UV-93-zZo"/>
                             <constraint firstAttribute="trailing" secondItem="ZcF-wl-bUm" secondAttribute="trailing" constant="6" id="6p9-3c-8As"/>
                             <constraint firstAttribute="bottom" secondItem="ZcF-wl-bUm" secondAttribute="bottom" constant="8" id="8zo-9d-yBV"/>
-                            <constraint firstItem="pmk-FW-Rih" firstAttribute="leading" secondItem="rUr-jd-LPU" secondAttribute="leading" constant="6" id="DMv-zH-gBd"/>
+                            <constraint firstItem="pmk-FW-Rih" firstAttribute="leading" secondItem="rUr-jd-LPU" secondAttribute="leading" constant="20" id="DMv-zH-gBd"/>
                             <constraint firstAttribute="trailing" secondItem="pmk-FW-Rih" secondAttribute="trailing" constant="10" id="F9h-c8-PeV"/>
                             <constraint firstItem="ZcF-wl-bUm" firstAttribute="leading" secondItem="rUr-jd-LPU" secondAttribute="leading" constant="13" id="M5V-0h-VcD"/>
                             <constraint firstAttribute="bottom" secondItem="PIQ-Wb-oCH" secondAttribute="bottom" id="ZfW-UJ-gNl"/>
@@ -75,7 +75,7 @@
                             <constraint firstAttribute="width" constant="244" id="hDA-AI-sTM"/>
                             <constraint firstItem="PIQ-Wb-oCH" firstAttribute="top" secondItem="rUr-jd-LPU" secondAttribute="top" id="jLf-Fe-0eq"/>
                             <constraint firstItem="PIQ-Wb-oCH" firstAttribute="leading" secondItem="rUr-jd-LPU" secondAttribute="leading" id="m0m-Ac-8JU"/>
-                            <constraint firstItem="pmk-FW-Rih" firstAttribute="top" secondItem="rUr-jd-LPU" secondAttribute="top" constant="4" id="mO7-aL-201"/>
+                            <constraint firstItem="pmk-FW-Rih" firstAttribute="top" secondItem="rUr-jd-LPU" secondAttribute="top" constant="10" id="mO7-aL-201"/>
                             <constraint firstAttribute="trailing" secondItem="viD-G0-ZG2" secondAttribute="trailing" id="qW6-y9-aMl"/>
                         </constraints>
                     </view>

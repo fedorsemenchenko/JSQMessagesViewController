@@ -41,13 +41,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="244" height="94"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYU-B8-cUW" customClass="JSQMessagesCellTextView">
-                                <rect key="frame" x="6" y="24" width="238" height="70"/>
+                                <rect key="frame" x="6" y="30" width="238" height="64"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crI-7T-015">
-                                <rect key="frame" x="15" y="4" width="214" height="16"/>
+                                <rect key="frame" x="20" y="10" width="209" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.23921568627450979" green="0.67843137254901964" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -58,10 +58,10 @@
                             <constraint firstAttribute="trailing" secondItem="KYU-B8-cUW" secondAttribute="trailing" id="4qS-03-PFO"/>
                             <constraint firstAttribute="trailing" secondItem="crI-7T-015" secondAttribute="trailing" constant="15" id="9fz-co-BPE"/>
                             <constraint firstAttribute="bottom" secondItem="KYU-B8-cUW" secondAttribute="bottom" id="B2v-Gq-Y1L"/>
-                            <constraint firstItem="crI-7T-015" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="15" id="TKk-MO-njL"/>
+                            <constraint firstItem="crI-7T-015" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="20" id="TKk-MO-njL"/>
                             <constraint firstAttribute="trailing" secondItem="OCS-Fu-acq" secondAttribute="trailing" id="TdB-8V-aUc"/>
                             <constraint firstItem="KYU-B8-cUW" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="6" id="Tg9-9l-vr8"/>
-                            <constraint firstItem="crI-7T-015" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="top" constant="4" id="XUB-Ge-2f4"/>
+                            <constraint firstItem="crI-7T-015" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="top" constant="10" id="XUB-Ge-2f4"/>
                             <constraint firstAttribute="bottom" secondItem="OCS-Fu-acq" secondAttribute="bottom" id="aJ4-ZD-tk9"/>
                             <constraint firstItem="KYU-B8-cUW" firstAttribute="top" secondItem="crI-7T-015" secondAttribute="bottom" constant="4" id="coF-6y-I6T"/>
                             <constraint firstItem="OCS-Fu-acq" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" id="qpQ-dc-2V5"/>
