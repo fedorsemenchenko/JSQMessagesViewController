@@ -371,7 +371,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     });
 }
 
-- (void)removeLoadViewFromMediaView:(UIView *)loadView {
+- (void)removeLoadViewFromMediaView {
     
     dispatch_async(dispatch_get_main_queue(), ^{
         for (NSUInteger i = 0; i < self.mediaView.subviews.count; i++) {

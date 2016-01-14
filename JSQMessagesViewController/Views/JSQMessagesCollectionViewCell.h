@@ -213,6 +213,6 @@
 - (void)setMessageWithTextImage:(UIView *)mediaView;
 - (void)setSupportNameText:(NSString *)supportName;
 - (void)setLoadViewOnMediaView:(UIView *)loadView;
-- (void)removeLoadViewFromMediaView:(UIView *)loadView;
+- (void)removeLoadViewFromMediaView;
 
 @end
