@@ -392,10 +392,13 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     [self.dboImageContainerView jsq_pinAllEdgesOfSubview:loadView];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        for (NSUInteger i = 0; i < self.mediaView.subviews.count; i++) {
-            if (self.dboImageContainerView.subviews[i] != loadView) {
-                [self.dboImageContainerView.subviews[i] removeFromSuperview];
+        if (self.dboImageContainerView.subviews.count > 0) {
+            for (NSUInteger i = 1; i < self.dboImageContainerView.subviews.count; i++) {
+                if (self.dboImageContainerView.subviews[i] != loadView) {
+                    [self.dboImageContainerView.subviews[i] removeFromSuperview];
+                }
             }
+
         }
     });
 }
@@ -404,8 +407,10 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 - (void)removeLoadViewFromImageContainer {
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        for (NSUInteger i = 0; i < self.dboImageContainerView.subviews.count; i++) {
-            [self.dboImageContainerView.subviews[i] removeFromSuperview];
+        if (self.dboImageContainerView.subviews.count > 0) {
+            for (NSUInteger i = 1; i < self.dboImageContainerView.subviews.count; i++) {
+                [self.dboImageContainerView.subviews[i] removeFromSuperview];
+            }
         }
     });
 }
