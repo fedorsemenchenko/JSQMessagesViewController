@@ -209,8 +209,9 @@
  */
 + (void)registerMenuAction:(SEL)action;
 
-
+//DBO methods
 - (void)setMessageWithTextImage:(UIView *)mediaView;
 - (void)setSupportNameText:(NSString *)supportName;
+- (void)setLoadViewOnMediaView:(UIView *)loadView;
 
 @end

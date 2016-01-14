@@ -355,6 +355,10 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     });
 }
 
+- (void)setLoadViewOnMediaView:(UIView *)loadView {
+    [self.mediaView addSubview:loadView];
+}
+
 - (void)setSupportNameText:(NSString *)supportName {
     self.supportNameLabel.text = supportName;
 }

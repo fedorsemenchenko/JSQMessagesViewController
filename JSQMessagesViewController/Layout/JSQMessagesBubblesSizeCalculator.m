@@ -27,7 +27,7 @@
 
 static CGFloat const kMinDBOImageCellWidth = 210.f;
 static CGFloat const kDBOCellTextWidth = 180.f;
-static CGFloat const kDBOMinimumSupportBubbleWidth = 120.f;
+//static CGFloat const kDBOMinimumSupportBubbleWidth = 120.f;
 static CGFloat const kDBOSupportLabelHeight = 35.f;
 
 static CGFloat const kMinDBOPaymentWidth = 270.f;
@@ -130,7 +130,8 @@ static CGFloat const kDBOPaymentVerticalInset = 65.f;
         CGFloat horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
         CGFloat maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
 
-        CGRect stringRect = [self rectForText:[messageData text] withLayout:layout textWidth:maximumTextWidth];
+        NSString * calculateString = [[messageData text] length] >= [[messageData dboSupportName] length] ? [messageData text] : [messageData dboSupportName];
+        CGRect stringRect = [self rectForText:calculateString withLayout:layout textWidth:maximumTextWidth];
         
         CGSize stringSize = CGRectIntegral(stringRect).size;
 
@@ -142,7 +143,7 @@ static CGFloat const kDBOPaymentVerticalInset = 65.f;
         CGFloat verticalInsets = verticalContainerInsets + verticalFrameInsets + self.additionalInset;
 
         //  same as above, an extra 2 points of magix
-        _minimumBubbleWidth = [[messageData dboSupportName] length] > 0 ? kDBOMinimumSupportBubbleWidth : self.minimumBubbleWidth;
+//        _minimumBubbleWidth = [[messageData dboSupportName] length] > 0 ? kDBOMinimumSupportBubbleWidth : self.minimumBubbleWidth;
         CGFloat finalWidth = MAX(stringSize.width + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
 
         CGFloat dboPaymentVerticalInset = .0f;
