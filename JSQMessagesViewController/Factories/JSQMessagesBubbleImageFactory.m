@@ -100,8 +100,11 @@
     UIImage *highlightedBubble = [self.bubbleImage jsq_imageMaskedWithColor:[color jsq_colorByDarkeningColorWithValue:0.12f]];
     
     if (flippedForIncoming) {
-        normalBubble = [self jsq_horizontallyFlippedImageFromImage:normalBubble];
-        highlightedBubble = [self jsq_horizontallyFlippedImageFromImage:highlightedBubble];
+//        normalBubble = [self jsq_horizontallyFlippedImageFromImage:normalBubble];
+//        highlightedBubble = [self jsq_horizontallyFlippedImageFromImage:highlightedBubble];
+        
+        normalBubble = [self jsq_verticallyFlippedImageFromImage:normalBubble];
+        highlightedBubble = [self jsq_verticallyFlippedImageFromImage:highlightedBubble];
     }
     
     normalBubble = [self jsq_stretchableImageFromImage:normalBubble withCapInsets:self.capInsets];
@@ -110,12 +113,20 @@
     return [[JSQMessagesBubbleImage alloc] initWithMessageBubbleImage:normalBubble highlightedImage:highlightedBubble];
 }
 
-- (UIImage *)jsq_horizontallyFlippedImageFromImage:(UIImage *)image
+//- (UIImage *)jsq_horizontallyFlippedImageFromImage:(UIImage *)image
+//{
+//    return [UIImage imageWithCGImage:image.CGImage
+//                               scale:image.scale
+//                         orientation:UIImageOrientationUpMirrored];
+//}
+
+- (UIImage *)jsq_verticallyFlippedImageFromImage:(UIImage *)image
 {
     return [UIImage imageWithCGImage:image.CGImage
                                scale:image.scale
-                         orientation:UIImageOrientationUpMirrored];
+                         orientation:UIImageOrientationDown];
 }
+
 
 - (UIImage *)jsq_stretchableImageFromImage:(UIImage *)image withCapInsets:(UIEdgeInsets)capInsets
 {

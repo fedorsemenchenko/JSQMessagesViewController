@@ -80,7 +80,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNp-hp-owB" userLabel="Avatar container">
-                        <rect key="frame" x="3" y="140" width="34" height="34"/>
+                        <rect key="frame" x="3" y="44" width="34" height="34"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pVi-Zr-ray" userLabel="Avatar Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
@@ -117,9 +117,9 @@
                 <constraint firstItem="0C1-kQ-Gwc" firstAttribute="leading" secondItem="qNp-hp-owB" secondAttribute="trailing" constant="2" id="RIT-GF-kgj"/>
                 <constraint firstAttribute="bottom" secondItem="2Ol-gx-Lau" secondAttribute="bottom" id="Xca-qE-R6L"/>
                 <constraint firstItem="qNp-hp-owB" firstAttribute="leading" secondItem="xdf-Ro-J2d" secondAttribute="leading" constant="3" id="aRa-so-eRl"/>
+                <constraint firstItem="qNp-hp-owB" firstAttribute="top" secondItem="7Tt-2o-gMu" secondAttribute="bottom" constant="4" id="azq-ob-Iq3"/>
                 <constraint firstItem="2Ol-gx-Lau" firstAttribute="leading" secondItem="xdf-Ro-J2d" secondAttribute="leading" constant="5" id="hNT-1E-rmM"/>
                 <constraint firstAttribute="trailing" secondItem="2Ol-gx-Lau" secondAttribute="trailing" constant="5" id="jD7-eE-Bc7"/>
-                <constraint firstItem="2Ol-gx-Lau" firstAttribute="top" secondItem="qNp-hp-owB" secondAttribute="bottom" id="lE8-6L-tE2"/>
                 <constraint firstAttribute="trailing" secondItem="WDp-tw-xvS" secondAttribute="trailing" id="sij-t1-mbe"/>
                 <constraint firstItem="7Tt-2o-gMu" firstAttribute="leading" secondItem="xdf-Ro-J2d" secondAttribute="leading" id="suz-mk-LXJ"/>
                 <constraint firstAttribute="trailing" secondItem="7Tt-2o-gMu" secondAttribute="trailing" id="wKo-7A-A0a"/>
