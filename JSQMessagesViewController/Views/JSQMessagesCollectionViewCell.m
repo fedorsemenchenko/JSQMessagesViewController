@@ -356,9 +356,19 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 }
 
 - (void)setLoadViewOnMediaView:(UIView *)loadView {
-    CGPoint center = self.messageBubbleContainerView.center;
-    loadView.center = center;
+    
+    [loadView setTranslatesAutoresizingMaskIntoConstraints:NO];
+
     [self.mediaView addSubview:loadView];
+    [self.mediaView jsq_pinAllEdgesOfSubview:loadView];
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        for (NSUInteger i = 0; i < self.mediaView.subviews.count; i++) {
+            if (self.mediaView.subviews[i] != loadView) {
+                [self.mediaView.subviews[i] removeFromSuperview];
+            }
+        }
+    });
 }
 
 - (void)setSupportNameText:(NSString *)supportName {

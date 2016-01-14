@@ -534,7 +534,12 @@
         
         cell.textView.linkTextAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,
                                               NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid) };
-    }     
+    } else {
+        UIView *loadView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, 210.f, 250.f)];
+        [loadView setBackgroundColor:[[UIColor redColor] colorWithAlphaComponent:0.2]];
+        [cell setLoadViewOnMediaView:loadView];
+    }
+    
     return cell;
 }
 
