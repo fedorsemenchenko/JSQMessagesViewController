@@ -214,5 +214,7 @@
 - (void)setSupportNameText:(NSString *)supportName;
 - (void)setLoadViewOnMediaView:(UIView *)loadView;
 - (void)removeLoadViewFromMediaView;
+- (void)setLoadViewOnImageContainerView:(UIView *)loadView;
+- (void)removeLoadViewFromImageContainer;
 
 @end

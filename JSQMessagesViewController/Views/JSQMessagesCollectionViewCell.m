@@ -355,6 +355,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     });
 }
 
+#pragma mark - Add Load View At Media View
+
 - (void)setLoadViewOnMediaView:(UIView *)loadView {
     
     [loadView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -379,6 +381,36 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
         }
     });
 }
+
+#pragma mark - Add Load View At Image Container
+
+- (void)setLoadViewOnImageContainerView:(UIView *)loadView {
+    
+    [loadView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [self.dboImageContainerView addSubview:loadView];
+    [self.dboImageContainerView jsq_pinAllEdgesOfSubview:loadView];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        for (NSUInteger i = 0; i < self.mediaView.subviews.count; i++) {
+            if (self.dboImageContainerView.subviews[i] != loadView) {
+                [self.dboImageContainerView.subviews[i] removeFromSuperview];
+            }
+        }
+    });
+}
+
+
+- (void)removeLoadViewFromImageContainer {
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        for (NSUInteger i = 0; i < self.dboImageContainerView.subviews.count; i++) {
+            [self.dboImageContainerView.subviews[i] removeFromSuperview];
+        }
+    });
+}
+
+#pragma mark - Support Name
 
 - (void)setSupportNameText:(NSString *)supportName {
     self.supportNameLabel.text = supportName;
