@@ -195,8 +195,8 @@
     JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
                                                    displayName:kJSQDemoAvatarDisplayNameSquires
                                                          media:photoItem
-                                               isMediaWithText:NO
-                                                          text:nil
+                                               isMediaWithText:YES
+                                                          text:@"gesuyaf dsfkuyadshlu gdsaf gdlsab dhalbljhas"
                                                 dboSupportName:nil];
     [self.messages addObject:photoMessage];
 }

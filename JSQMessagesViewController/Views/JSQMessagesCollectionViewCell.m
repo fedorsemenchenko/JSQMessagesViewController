@@ -386,32 +386,40 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 - (void)setLoadViewOnImageContainerView:(UIView *)loadView {
     
+    UIView *dboContentView;
+    if (self.dboImageContainerView.subviews.count > 0) {
+        dboContentView = self.dboImageContainerView.subviews[0];
+    } else {
+        return;
+    }
+
     [loadView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
-    [self.dboImageContainerView addSubview:loadView];
-    [self.dboImageContainerView jsq_pinAllEdgesOfSubview:loadView];
+
+    [dboContentView addSubview:loadView];
+    [dboContentView jsq_pinAllEdgesOfSubview:loadView];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.dboImageContainerView.subviews.count > 0) {
-            for (NSUInteger i = 1; i < self.dboImageContainerView.subviews.count; i++) {
-                if (self.dboImageContainerView.subviews[i] != loadView) {
-                    [self.dboImageContainerView.subviews[i] removeFromSuperview];
+            for (NSUInteger i = 0; i < dboContentView.subviews.count; i++) {
+                if (dboContentView.subviews[i] != loadView) {
+                    [dboContentView.subviews[i] removeFromSuperview];
                 }
             }
-
-        }
     });
 }
 
-
 - (void)removeLoadViewFromImageContainer {
     
+    UIView *dboContentView;
+    if (self.dboImageContainerView.subviews.count > 0) {
+        dboContentView = self.dboImageContainerView.subviews[0];
+    } else {
+        return;
+    }
+
     dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.dboImageContainerView.subviews.count > 0) {
-            for (NSUInteger i = 1; i < self.dboImageContainerView.subviews.count; i++) {
-                [self.dboImageContainerView.subviews[i] removeFromSuperview];
+            for (NSUInteger i = 0; i < dboContentView.subviews.count; i++) {
+                [dboContentView.subviews[i] removeFromSuperview];
             }
-        }
     });
 }
 
@@ -423,6 +431,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 - (void)setMessageWithTextImage:(UIView *)mediaView {
     
+    [self.dboImageContainerView addSubview:mediaView];
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         for (NSUInteger i = 0; i < self.dboImageContainerView.subviews.count; i++) {
             if (self.dboImageContainerView.subviews[i] != mediaView) {
@@ -430,7 +440,6 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
             }
         }
     });
-    [self.dboImageContainerView addSubview:mediaView];
 }
 
 #pragma mark - Getters
