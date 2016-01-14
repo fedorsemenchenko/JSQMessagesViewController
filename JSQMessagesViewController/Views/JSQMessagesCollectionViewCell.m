@@ -356,6 +356,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 }
 
 - (void)setLoadViewOnMediaView:(UIView *)loadView {
+    CGPoint center = self.messageBubbleContainerView.center;
+    loadView.center = center;
     [self.mediaView addSubview:loadView];
 }
 
