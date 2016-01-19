@@ -402,6 +402,14 @@
     
     JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
     
+    if ([message.senderId isEqualToString:self.senderId] && [message media]) {
+        return self.demoData.outgoingMediaBubbleImageData;
+    }
+  
+    if (![message.senderId isEqualToString:self.senderId] && [message media]) {
+        return self.demoData.incomingBubbleImageData;
+    }
+
     if ([message.senderId isEqualToString:self.senderId]) {
         return self.demoData.outgoingBubbleImageData;
     }

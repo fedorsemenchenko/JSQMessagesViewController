@@ -84,8 +84,12 @@
          */
         JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
         
-        self.outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
-        self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor]];
+        self.outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor] isPhotoMessage:NO];
+        self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor] isPhotoMessage:NO];
+        
+        self.outgoingMediaBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor] isPhotoMessage:NO];
+        self.incomingMediaBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor] isPhotoMessage:NO];
+
     }
     
     return self;
@@ -195,8 +199,8 @@
     JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
                                                    displayName:kJSQDemoAvatarDisplayNameSquires
                                                          media:photoItem
-                                               isMediaWithText:YES
-                                                          text:@"gesuyaf dsfkuyadshlu gdsaf gdlsab dhalbljhas"
+                                               isMediaWithText:NO
+                                                          text:nil
                                                 dboSupportName:nil];
     [self.messages addObject:photoMessage];
 }

@@ -33,8 +33,6 @@ const CGFloat kJSQMessagesLoadEarlierHeaderViewHeight = 32.0f;
 
 @end
 
-
-
 @implementation JSQMessagesLoadEarlierHeaderView
 
 #pragma mark - Class methods

@@ -52,13 +52,13 @@
 
 - (void)applyOutgoingBubbleImageMaskToMediaView:(UIView *)mediaView
 {
-    JSQMessagesBubbleImage *bubbleImageData = [self.bubbleImageFactory outgoingMessagesBubbleImageWithColor:[UIColor whiteColor]];
+    JSQMessagesBubbleImage *bubbleImageData = [self.bubbleImageFactory outgoingMessagesBubbleImageWithColor:[UIColor whiteColor] isPhotoMessage:YES];
     [self jsq_maskView:mediaView withImage:[bubbleImageData messageBubbleImage]];
 }
 
 - (void)applyIncomingBubbleImageMaskToMediaView:(UIView *)mediaView
 {
-    JSQMessagesBubbleImage *bubbleImageData = [self.bubbleImageFactory incomingMessagesBubbleImageWithColor:[UIColor whiteColor]];
+    JSQMessagesBubbleImage *bubbleImageData = [self.bubbleImageFactory incomingMessagesBubbleImageWithColor:[UIColor whiteColor] isPhotoMessage:YES];
     [self jsq_maskView:mediaView withImage:[bubbleImageData messageBubbleImage]];
 }
 

@@ -44,7 +44,7 @@
     CGPoint center = CGPointMake(bubble.size.width / 2.0f, bubble.size.height / 2.0f);
     UIEdgeInsets capInsets = UIEdgeInsetsMake(center.y, center.x, center.y, center.x);
     
-    JSQMessagesBubbleImage *bubbleImage = [self.factory outgoingMessagesBubbleImageWithColor:[UIColor lightGrayColor]];
+    JSQMessagesBubbleImage *bubbleImage = [self.factory outgoingMessagesBubbleImageWithColor:[UIColor lightGrayColor] isPhotoMessage:NO];
     XCTAssertNotNil(bubbleImage, @"Bubble image should not be nil");
     
     XCTAssertNotNil(bubbleImage.messageBubbleImage, "Image should not be nil");
@@ -69,7 +69,7 @@
     CGPoint center = CGPointMake(bubble.size.width / 2.0f, bubble.size.height / 2.0f);
     UIEdgeInsets capInsets = UIEdgeInsetsMake(center.y, center.x, center.y, center.x);
     
-    JSQMessagesBubbleImage *bubbleImage = [self.factory incomingMessagesBubbleImageWithColor:[UIColor lightGrayColor]];
+    JSQMessagesBubbleImage *bubbleImage = [self.factory incomingMessagesBubbleImageWithColor:[UIColor lightGrayColor] isPhotoMessage:NO];
     XCTAssertNotNil(bubbleImage, @"Bubble image should not be nil");
     
     XCTAssertNotNil(bubbleImage.messageBubbleImage, "Image should not be nil");
@@ -93,7 +93,7 @@
     
     UIEdgeInsets capInsets = UIEdgeInsetsMake(1, 1, 1, 1);
     JSQMessagesBubbleImageFactory *factory = [[JSQMessagesBubbleImageFactory alloc] initWithBubbleImage:bubble capInsets:capInsets];
-    JSQMessagesBubbleImage *bubbleImage = [factory outgoingMessagesBubbleImageWithColor:[UIColor lightGrayColor]];
+    JSQMessagesBubbleImage *bubbleImage = [factory outgoingMessagesBubbleImageWithColor:[UIColor lightGrayColor] isPhotoMessage:NO];
     XCTAssertNotNil(bubbleImage, @"Bubble image should not be nil");
     
     XCTAssertNotNil(bubbleImage.messageBubbleImage, "Image should not be nil");
@@ -116,7 +116,7 @@
     
     UIEdgeInsets capInsets = UIEdgeInsetsMake(1, 1, 1, 1);
     JSQMessagesBubbleImageFactory *factory = [[JSQMessagesBubbleImageFactory alloc] initWithBubbleImage:bubble capInsets:capInsets];
-    JSQMessagesBubbleImage *bubbleImage = [factory incomingMessagesBubbleImageWithColor:[UIColor lightGrayColor]];
+    JSQMessagesBubbleImage *bubbleImage = [factory incomingMessagesBubbleImageWithColor:[UIColor lightGrayColor] isPhotoMessage:NO];
     XCTAssertNotNil(bubbleImage, @"Bubble image should not be nil");
     
     XCTAssertNotNil(bubbleImage.messageBubbleImage, "Image should not be nil");
