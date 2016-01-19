@@ -142,10 +142,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jsq_handleTapGesture:)];
     [self addGestureRecognizer:tap];
-    self.tapGestureRecognizer = tap;
-    
-    [self.supportNameLabel setFont:[UIFont fontWithName:@"Roboto-Regular" size:11.f]];
-    [self.textView setFont:[UIFont fontWithName:@"Roboto-Regular" size:14.f]];
+    self.tapGestureRecognizer = tap;    
+//    [self.supportNameLabel setFont:[UIFont fontWithName:@"Roboto-Regular" size:11.f]];
+//    [self.textView setFont:[UIFont fontWithName:@"Roboto-Regular" size:14.f]];
 }
 
 - (void)dealloc
@@ -507,6 +506,13 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     }
     
     return YES;
+}
+
+#pragma mark - Set Font For Text 
+
+- (void)setFontsForText:(UIFont *)fontText fontSupport:(UIFont *)fontSupport {
+    [self.supportNameLabel setFont:fontSupport];
+    [self.textView setFont:fontText];
 }
 
 @end

@@ -216,5 +216,6 @@
 - (void)removeLoadViewFromMediaView;
 - (void)setLoadViewOnImageContainerView:(UIView *)loadView;
 - (void)removeLoadViewFromImageContainer;
+- (void)setFontsForText:(UIFont *)fontText fontSupport:(UIFont *)fontSupport;
 
 @end
