@@ -995,7 +995,10 @@ static NSInteger const kMaxMessageLenght = 200;
 
 - (BOOL)jsq_inputToolbarHasReachedMaximumHeight
 {
-    return CGRectGetMinY(self.inputToolbar.frame) == (self.topLayoutGuide.length + self.topContentAdditionalInset);
+//    return CGRectGetMinY(self.inputToolbar.frame) == (self.topLayoutGuide.length + self.topContentAdditionalInset);
+    UITextView *textView = self.inputToolbar.contentView.textView;
+    return textView.contentSize.height > 90;
+
 }
 
 - (void)jsq_adjustInputToolbarForComposerTextViewContentSizeChange:(CGFloat)dy
