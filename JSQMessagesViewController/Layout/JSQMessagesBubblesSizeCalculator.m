@@ -131,7 +131,7 @@ static CGFloat const kDBOSupportNameDelta = 35.f;
         CGFloat horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
         CGFloat maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
 
-        BOOL isSupportNameShorter = [[messageData text] length] >= [[messageData dboSupportName] length];
+        BOOL isSupportNameShorter = [[messageData text] length] >= [[messageData dboSupportName] length] - 5;
         NSString * calculateString =  isSupportNameShorter ? [messageData text] : [messageData dboSupportName];
     
         CGRect stringRect = [self rectForText:calculateString withLayout:layout textWidth:maximumTextWidth];
