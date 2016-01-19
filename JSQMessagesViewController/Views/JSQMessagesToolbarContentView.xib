@@ -20,15 +20,15 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Myo-1S-Vg1" userLabel="Right button container">
-                    <rect key="frame" x="266" y="7" width="50" height="32"/>
+                    <rect key="frame" x="271" y="7" width="45" height="32"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="NaR-re-dJ4"/>
-                        <constraint firstAttribute="width" constant="50" id="yde-S9-dHe"/>
+                        <constraint firstAttribute="width" constant="45" id="yde-S9-dHe"/>
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dm4-NT-mvr" customClass="JSQMessagesComposerTextView">
-                    <rect key="frame" x="45" y="7" width="215" height="33"/>
+                    <rect key="frame" x="45" y="7" width="220" height="33"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
