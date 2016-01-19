@@ -41,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="244" height="300"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="viD-G0-ZG2" customClass="JSQMessagesCellTextView">
-                                <rect key="frame" x="6" y="30" width="238" height="40"/>
+                                <rect key="frame" x="6" y="24" width="238" height="46"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -54,8 +54,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmk-FW-Rih">
-                                <rect key="frame" x="20" y="10" width="214" height="16"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <rect key="frame" x="20" y="10" width="214" height="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                                 <color key="textColor" red="0.23921568630000001" green="0.67843137249999996" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -69,7 +69,7 @@
                             <constraint firstAttribute="trailing" secondItem="pmk-FW-Rih" secondAttribute="trailing" constant="10" id="F9h-c8-PeV"/>
                             <constraint firstItem="ZcF-wl-bUm" firstAttribute="leading" secondItem="rUr-jd-LPU" secondAttribute="leading" constant="13" id="M5V-0h-VcD"/>
                             <constraint firstAttribute="bottom" secondItem="PIQ-Wb-oCH" secondAttribute="bottom" id="ZfW-UJ-gNl"/>
-                            <constraint firstItem="viD-G0-ZG2" firstAttribute="top" secondItem="pmk-FW-Rih" secondAttribute="bottom" constant="4" id="bPK-Yg-UCi"/>
+                            <constraint firstItem="viD-G0-ZG2" firstAttribute="top" secondItem="pmk-FW-Rih" secondAttribute="bottom" id="bPK-Yg-UCi"/>
                             <constraint firstAttribute="trailing" secondItem="PIQ-Wb-oCH" secondAttribute="trailing" id="bru-YV-Fo8"/>
                             <constraint firstItem="ZcF-wl-bUm" firstAttribute="top" secondItem="viD-G0-ZG2" secondAttribute="bottom" constant="2" id="g41-Ww-iDg"/>
                             <constraint firstAttribute="width" constant="244" id="hDA-AI-sTM"/>

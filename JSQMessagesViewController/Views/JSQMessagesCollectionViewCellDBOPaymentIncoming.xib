@@ -41,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="244" height="134"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jc9-1A-Rvw" customClass="JSQMessagesCellTextView">
-                                <rect key="frame" x="6" y="30" width="238" height="36"/>
+                                <rect key="frame" x="6" y="24" width="238" height="42"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -54,8 +54,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0Q-K1-hiE">
-                                <rect key="frame" x="20" y="10" width="209" height="16"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <rect key="frame" x="20" y="10" width="209" height="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                                 <color key="textColor" red="0.23921568630000001" green="0.67843137249999996" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -70,7 +70,7 @@
                             <constraint firstAttribute="trailing" secondItem="R0Q-K1-hiE" secondAttribute="trailing" constant="15" id="Qne-hS-Oew"/>
                             <constraint firstAttribute="width" constant="244" id="VJS-Ka-iiD"/>
                             <constraint firstItem="zmC-Q4-6e9" firstAttribute="top" secondItem="Jc9-1A-Rvw" secondAttribute="bottom" constant="8" id="Veq-Zr-daN"/>
-                            <constraint firstItem="Jc9-1A-Rvw" firstAttribute="top" secondItem="R0Q-K1-hiE" secondAttribute="bottom" constant="4" id="Zty-Ig-Eu9"/>
+                            <constraint firstItem="Jc9-1A-Rvw" firstAttribute="top" secondItem="R0Q-K1-hiE" secondAttribute="bottom" id="Zty-Ig-Eu9"/>
                             <constraint firstItem="zmC-Q4-6e9" firstAttribute="leading" secondItem="0C1-kQ-Gwc" secondAttribute="leading" constant="15" id="beg-2G-8Qi"/>
                             <constraint firstItem="Jc9-1A-Rvw" firstAttribute="leading" secondItem="0C1-kQ-Gwc" secondAttribute="leading" constant="6" id="fqv-Kc-hus"/>
                             <constraint firstItem="R0Q-K1-hiE" firstAttribute="top" secondItem="0C1-kQ-Gwc" secondAttribute="top" constant="10" id="gp3-04-kbh"/>
