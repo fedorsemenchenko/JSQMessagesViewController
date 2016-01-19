@@ -32,7 +32,6 @@ static CGFloat const kDBOSupportLabelHeight = 22.f;
 
 static CGFloat const kMinDBOPaymentWidth = 270.f;
 static CGFloat const kDBOPaymentVerticalInset = 65.f;
-static CGFloat const kDBOSupportNameDelta = 35.f;
 
 @interface JSQMessagesBubblesSizeCalculator ()
 
@@ -112,7 +111,7 @@ static CGFloat const kDBOSupportNameDelta = 35.f;
 
     if ([messageData isMediaMessage]) {
         if ([messageData isMediaMessageWithText]) {
-            CGRect stringRect = [self rectForText:[messageData text] withLayout:layout textWidth:kDBOCellTextWidth];
+            CGRect stringRect = [self rectForText:[messageData text] withLayout:layout textWidth:kDBOCellTextWidth font:layout.messageBubbleFont];
             CGSize stringSize = CGRectIntegral(stringRect).size;
             CGFloat stringHeight = stringSize.height;
             finalSize = CGSizeMake(kMinDBOImageCellWidth, stringHeight + 250.f);
@@ -131,12 +130,14 @@ static CGFloat const kDBOSupportNameDelta = 35.f;
         CGFloat horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
         CGFloat maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
 
-        BOOL isSupportNameShorter = [[messageData text] length] >= [[messageData dboSupportName] length] - 5;
-        NSString * calculateString =  isSupportNameShorter ? [messageData text] : [messageData dboSupportName];
+//        BOOL isSupportNameShorter = [[messageData text] length] >= [[messageData dboSupportName] length];
+//        NSString * calculateString =  isSupportNameShorter ? [messageData text] : [messageData dboSupportName];
     
-        CGRect stringRect = [self rectForText:calculateString withLayout:layout textWidth:maximumTextWidth];
-        
+        CGRect stringRect = [self rectForText:[messageData text] withLayout:layout textWidth:maximumTextWidth font:layout.messageBubbleFont];
+        CGRect stringRectSupport = [self rectForText:[messageData dboSupportName] withLayout:layout textWidth:maximumTextWidth font:[UIFont systemFontOfSize:11.f]];
+
         CGSize stringSize = CGRectIntegral(stringRect).size;
+        CGSize stringSizeSupport = CGRectIntegral(stringRectSupport).size;
 
         CGFloat verticalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.top + layout.messageBubbleTextViewTextContainerInsets.bottom;
         CGFloat verticalFrameInsets = layout.messageBubbleTextViewFrameInsets.top + layout.messageBubbleTextViewFrameInsets.bottom;
@@ -147,8 +148,9 @@ static CGFloat const kDBOSupportNameDelta = 35.f;
 
         //  same as above, an extra 2 points of magix
 //        _minimumBubbleWidth = [[messageData dboSupportName] length] > 0 ? kDBOMinimumSupportBubbleWidth : self.minimumBubbleWidth;
-        CGFloat dboSupportDelta = isSupportNameShorter ? 0.f : kDBOSupportNameDelta;
-        CGFloat finalWidth = MAX(stringSize.width + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset - dboSupportDelta;
+//        CGFloat dboSupportDelta = isSupportNameShorter ? 0.f : kDBOSupportNameDelta;
+        CGFloat maxWidth = stringSize.width >= stringSizeSupport.width ? stringSize.width : stringSizeSupport.width;
+        CGFloat finalWidth = MAX(maxWidth + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
 
         CGFloat dboPaymentVerticalInset = .0f;
         CGFloat dboPaymentMinWidht = .0f;
@@ -173,11 +175,13 @@ static CGFloat const kDBOSupportNameDelta = 35.f;
 
 - (CGRect)rectForText:(NSString *)text
            withLayout:(JSQMessagesCollectionViewFlowLayout *)layout
-            textWidth:(CGFloat)width {
+            textWidth:(CGFloat)width
+                 font:(UIFont *)font
+{
 
     CGRect stringRect = [text boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX)
                                            options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
-                                        attributes:@{ NSFontAttributeName : layout.messageBubbleFont }
+                                        attributes:@{ NSFontAttributeName :font }
                                            context:nil];
     
     return stringRect;
