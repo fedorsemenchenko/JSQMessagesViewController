@@ -54,7 +54,7 @@
     
     self.scrollIndicatorInsets = UIEdgeInsetsMake(cornerRadius, 0.0f, cornerRadius, 0.0f);
     
-    self.textContainerInset = UIEdgeInsetsMake(4.0f, 2.0f, 5.0f, 2.0f);
+    self.textContainerInset = UIEdgeInsetsMake(5.0f, 2.0f, 6.0f, 2.0f);
     self.contentInset = UIEdgeInsetsMake(1.0f, 0.0f, 1.0f, 0.0f);
     
     self.scrollEnabled = YES;
@@ -172,7 +172,7 @@
     if ([self.text length] == 0 && self.placeHolder) {
         [self.placeHolderTextColor set];
         
-        [self.placeHolder drawInRect:CGRectInset(rect, 7.0f, 5.0f)
+        [self.placeHolder drawInRect:CGRectInset(rect, 7.0f, 6.0f)
                       withAttributes:[self jsq_placeholderTextAttributes]];
     }
 }
