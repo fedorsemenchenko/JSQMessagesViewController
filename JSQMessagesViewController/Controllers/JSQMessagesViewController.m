@@ -50,7 +50,7 @@
 static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObservingContext;
 
 static NSInteger const kMaxMessageLenght = 200;
-static CGFloat const kAdditionalToolbarHeight = 20.f;
+static CGFloat const kAdditionalToolbarHeight = 10.f;
 
 
 @interface JSQMessagesViewController () <JSQMessagesInputToolbarDelegate,
