@@ -1048,13 +1048,14 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
 
     if (self.toolbarHeightConstraint.constant != finalHeight) {
         self.toolbarHeightConstraint.constant = finalHeight;
-       
-        NSString *text = self.inputToolbar.contentView.textView.text;
-        self.inputToolbar.contentView.textView.text = nil;
-        self.inputToolbar.contentView.textView.text = text;
         
         [self.view setNeedsUpdateConstraints];
         [self.view layoutIfNeeded];
+        
+        NSString *text = self.inputToolbar.contentView.textView.text;
+        self.inputToolbar.contentView.textView.text = nil;
+        self.inputToolbar.contentView.textView.text = text;
+
 //        NSLog(@"self.inputToolbar.contentView = %@\n\n%@", self.inputToolbar.contentView, self.inputToolbar.contentView.textView.contentOffset);
     }
 }
