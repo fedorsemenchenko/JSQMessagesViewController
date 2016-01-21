@@ -1030,10 +1030,10 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
     [self jsq_adjustInputToolbarHeightConstraintByDelta:dy];
 
     [self jsq_updateKeyboardTriggerPoint];
-
-    if (dy < 0) {
-        [self jsq_scrollComposerTextViewToBottomAnimated:YES];
-    }
+//
+//    if (dy < 0) {
+//        [self jsq_scrollComposerTextViewToBottomAnimated:NO];
+//    }
 }
 
 - (void)jsq_adjustInputToolbarHeightConstraintByDelta:(CGFloat)dy
