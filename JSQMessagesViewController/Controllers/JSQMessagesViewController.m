@@ -50,6 +50,7 @@
 static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObservingContext;
 
 static NSInteger const kMaxMessageLenght = 200;
+static CGFloat const kAdditionalToolbarHeight = 20.f;
 
 
 @interface JSQMessagesViewController () <JSQMessagesInputToolbarDelegate,
@@ -907,11 +908,11 @@ static NSInteger const kMaxMessageLenght = 200;
 
 - (void)addToolbarView:(UIView *)additionalView {
     self.additionalToolbarView = additionalView;
-    [self jsq_adjustInputToolbarHeightConstraintByDelta:self.additionalToolbarView.frame.size.height + 10.f];
+    [self jsq_adjustInputToolbarHeightConstraintByDelta:self.additionalToolbarView.frame.size.height + kAdditionalToolbarHeight];
 }
 
 - (void)removeToolbarView {
-    [self jsq_adjustInputToolbarHeightConstraintByDelta:-self.additionalToolbarView.frame.size.height - 10.f];
+    [self jsq_adjustInputToolbarHeightConstraintByDelta:-self.additionalToolbarView.frame.size.height - kAdditionalToolbarHeight];
     self.additionalToolbarView = nil;
 }
 
