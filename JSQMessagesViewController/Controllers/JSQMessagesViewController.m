@@ -1032,7 +1032,7 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
     [self jsq_updateKeyboardTriggerPoint];
 
     if (dy < 0) {
-        [self jsq_scrollComposerTextViewToBottomAnimated:NO];
+        [self jsq_scrollComposerTextViewToBottomAnimated:YES];
     }
 }
 
@@ -1051,10 +1051,6 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
         
         [self.view setNeedsUpdateConstraints];
         [self.view layoutIfNeeded];
-    }
-    
-    if (dy < 0 && [UIDevice jsq_isCurrentDeviceBeforeiOS8]) {
-        [self jsq_adjustInputToolbarHeightConstraintByDelta:1];
     }
 }
 
