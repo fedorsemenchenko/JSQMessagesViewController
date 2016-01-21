@@ -1051,12 +1051,10 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
         
         [self.view setNeedsUpdateConstraints];
         [self.view layoutIfNeeded];
-        
-        NSString *text = self.inputToolbar.contentView.textView.text;
-        self.inputToolbar.contentView.textView.text = nil;
-        self.inputToolbar.contentView.textView.text = text;
-
-//        NSLog(@"self.inputToolbar.contentView = %@\n\n%@", self.inputToolbar.contentView, self.inputToolbar.contentView.textView.contentOffset);
+    }
+    
+    if (dy < 0 && [UIDevice jsq_isCurrentDeviceBeforeiOS8]) {
+        [self jsq_adjustInputToolbarHeightConstraintByDelta:1];
     }
 }
 
