@@ -909,6 +909,9 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
 - (void)addToolbarView:(UIView *)additionalView {
     self.additionalToolbarView = additionalView;
     [self jsq_adjustInputToolbarHeightConstraintByDelta:self.additionalToolbarView.frame.size.height + kAdditionalToolbarHeight];
+    CGRect frame = self.inputToolbar.contentView.textView.frame;
+    frame.size.height = frame.size.height - self.additionalToolbarView.frame.size.height - kAdditionalToolbarHeight;
+    self.inputToolbar.contentView.textView.frame = frame;
 }
 
 - (void)removeToolbarView {
@@ -1047,6 +1050,7 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
         self.toolbarHeightConstraint.constant = finalHeight;
         [self.view setNeedsUpdateConstraints];
         [self.view layoutIfNeeded];
+//        NSLog(@"self.inputToolbar.contentView = %@\n\n%@", self.inputToolbar.contentView, self.inputToolbar.contentView.textView.contentOffset);
     }
 }
 
