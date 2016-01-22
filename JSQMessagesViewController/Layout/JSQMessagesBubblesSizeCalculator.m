@@ -27,7 +27,7 @@
 
 static CGFloat const kMinDBOImageCellWidth = 210.f;
 static CGFloat const kDBOCellTextWidth = 180.f;
-static CGFloat const kDBOSupportLabelHeight = 18.f;
+static CGFloat const kDBOSupportLabelHeight = 19.f;
 
 static CGFloat const kMinDBOPaymentWidth = 270.f;
 static CGFloat const kDBOPaymentVerticalInset = 65.f;
