@@ -48,9 +48,19 @@
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWb-cY-Gju">
                                 <rect key="frame" x="6" y="52" width="225" height="220"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYD-kC-7rI">
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="220"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="WYD-kC-7rI" secondAttribute="bottom" id="6Fy-9k-fgD"/>
+                                    <constraint firstItem="WYD-kC-7rI" firstAttribute="top" secondItem="dWb-cY-Gju" secondAttribute="top" id="DPE-nC-V5S"/>
+                                    <constraint firstItem="WYD-kC-7rI" firstAttribute="leading" secondItem="dWb-cY-Gju" secondAttribute="leading" id="HNf-x8-J1q"/>
                                     <constraint firstAttribute="height" constant="220" id="dhW-kt-Maw"/>
+                                    <constraint firstAttribute="trailing" secondItem="WYD-kC-7rI" secondAttribute="trailing" id="s43-bi-Qvv"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -127,6 +137,7 @@
                 <outlet property="cellTopLabel" destination="RUr-0v-1C8" id="Laa-g1-kD9"/>
                 <outlet property="cellTopLabelHeightConstraint" destination="aek-x0-Nwq" id="fgK-9Q-wUj"/>
                 <outlet property="dboImageContainerView" destination="dWb-cY-Gju" id="con-mw-JBP"/>
+                <outlet property="dboLoaderContainerView" destination="WYD-kC-7rI" id="26g-IF-Pdv"/>
                 <outlet property="messageBubbleContainerView" destination="fFL-Ji-75P" id="QUi-UK-tQd"/>
                 <outlet property="messageBubbleContainerWidthConstraint" destination="Rur-zu-chh" id="FCQ-TS-pbG"/>
                 <outlet property="messageBubbleImageView" destination="mky-xd-I6c" id="dbP-Bh-oje"/>

@@ -48,9 +48,19 @@
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZcF-wl-bUm">
                                 <rect key="frame" x="13" y="72" width="225" height="220"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zie-Cq-gz4">
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="220"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Zie-Cq-gz4" secondAttribute="trailing" id="1Nj-bC-s9N"/>
+                                    <constraint firstItem="Zie-Cq-gz4" firstAttribute="leading" secondItem="ZcF-wl-bUm" secondAttribute="leading" id="JLp-Gg-YvC"/>
                                     <constraint firstAttribute="height" constant="220" id="LZA-Wn-nRb"/>
+                                    <constraint firstItem="Zie-Cq-gz4" firstAttribute="top" secondItem="ZcF-wl-bUm" secondAttribute="top" id="VVh-aP-GGD"/>
+                                    <constraint firstAttribute="bottom" secondItem="Zie-Cq-gz4" secondAttribute="bottom" id="hzm-PO-pit"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmk-FW-Rih">
@@ -136,6 +146,7 @@
                 <outlet property="cellTopLabel" destination="9vX-ZL-wac" id="Tvh-RX-nme"/>
                 <outlet property="cellTopLabelHeightConstraint" destination="7Hw-8e-Lei" id="b1C-9m-JUu"/>
                 <outlet property="dboImageContainerView" destination="ZcF-wl-bUm" id="r2s-VQ-OJa"/>
+                <outlet property="dboLoaderContainerView" destination="Zie-Cq-gz4" id="Jyw-6m-rth"/>
                 <outlet property="messageBubbleContainerView" destination="rUr-jd-LPU" id="NB3-vD-xsS"/>
                 <outlet property="messageBubbleContainerWidthConstraint" destination="hDA-AI-sTM" id="S1O-aU-K9u"/>
                 <outlet property="messageBubbleImageView" destination="PIQ-Wb-oCH" id="sis-dw-KyJ"/>
