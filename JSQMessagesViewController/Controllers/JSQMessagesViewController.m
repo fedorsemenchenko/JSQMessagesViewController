@@ -909,9 +909,6 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
 - (void)addToolbarView:(UIView *)additionalView {
     self.additionalToolbarView = additionalView;
     [self jsq_adjustInputToolbarHeightConstraintByDelta:self.additionalToolbarView.frame.size.height + kAdditionalToolbarHeight];
-//    CGRect frame = self.inputToolbar.contentView.textView.frame;
-//    frame.size.height = frame.size.height - self.additionalToolbarView.frame.size.height - kAdditionalToolbarHeight;
-//    self.inputToolbar.contentView.textView.frame = frame;
 }
 
 - (void)removeToolbarView {

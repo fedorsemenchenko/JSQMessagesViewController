@@ -223,7 +223,12 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     else if ([self isKindOfClass:[JSQMessagesCollectionViewCellOutgoing class]]) {
         self.avatarViewSize = customAttributes.outgoingAvatarViewSize;
     }
-  
+    
+    // This will force cell in correct size in current execute loop https://github.com/jessesquires/JSQMessagesViewController/issues/451
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    
+
 //    if ([self isKindOfClass:[JSQMessagesCollectionViewCellDBOPayment class]]) {
 //        [self jsq_updateConstraint:self.textViewBottomVerticalSpaceConstraint
 //                      withConstant:60.f];
@@ -387,46 +392,6 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 #pragma mark - Add Load View At Image Container
 
-//- (void)setLoadViewOnImageContainerView:(UIView *)loadView {
-//    
-//    UIView *dboContentView;
-//    if (self.dboImageContainerView.subviews.count > 0) {
-//        dboContentView = self.dboImageContainerView.subviews[0];
-//    } else {
-//        return;
-//    }
-//
-//    [loadView setTranslatesAutoresizingMaskIntoConstraints:NO];
-//
-//    [dboContentView addSubview:loadView];
-//    [dboContentView jsq_pinAllEdgesOfSubview:loadView];
-//    
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        for (NSUInteger i = 0; i < dboContentView.subviews.count; i++) {
-//            if (dboContentView.subviews[i] != loadView) {
-//                [dboContentView.subviews[i] removeFromSuperview];
-//            }
-//        }
-//    });
-//}
-//
-//- (void)removeLoadViewFromImageContainer {
-//    
-//    UIView *dboContentView;
-//    if (self.dboImageContainerView.subviews.count > 0) {
-//        dboContentView = self.dboImageContainerView.subviews[0];
-//    } else {
-//        return;
-//    }
-//
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        for (NSUInteger i = 0; i < dboContentView.subviews.count; i++) {
-//            [dboContentView.subviews[i] removeFromSuperview];
-//        }
-//    });
-//}
-
-
 - (void)setLoadViewOnImageContainerView:(UIView *)loadView {
     
     [loadView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -434,22 +399,17 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     [self.dboLoaderContainerView addSubview:loadView];
     [self.dboLoaderContainerView jsq_pinAllEdgesOfSubview:loadView];
     
-//    dispatch_async(dispatch_get_main_queue(), ^{
-        for (NSUInteger i = 0; i < self.dboLoaderContainerView.subviews.count; i++) {
-            if (self.dboLoaderContainerView.subviews[i] != loadView) {
-                [self.dboLoaderContainerView.subviews[i] removeFromSuperview];
-            }
+    for (NSUInteger i = 0; i < self.dboLoaderContainerView.subviews.count; i++) {
+        if (self.dboLoaderContainerView.subviews[i] != loadView) {
+            [self.dboLoaderContainerView.subviews[i] removeFromSuperview];
         }
-//    });
+    }
 }
 
 - (void)removeLoadViewFromImageContainer {
-    
-//    dispatch_async(dispatch_get_main_queue(), ^{
-        for (NSUInteger i = 0; i < self.dboLoaderContainerView.subviews.count; i++) {
-            [self.dboLoaderContainerView.subviews[i] removeFromSuperview];
-        }
-//    });
+    for (NSUInteger i = 0; i < self.dboLoaderContainerView.subviews.count; i++) {
+        [self.dboLoaderContainerView.subviews[i] removeFromSuperview];
+    }
 }
 
 
