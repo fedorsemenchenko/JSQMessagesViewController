@@ -434,22 +434,22 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     [self.dboLoaderContainerView addSubview:loadView];
     [self.dboLoaderContainerView jsq_pinAllEdgesOfSubview:loadView];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
+//    dispatch_async(dispatch_get_main_queue(), ^{
         for (NSUInteger i = 0; i < self.dboLoaderContainerView.subviews.count; i++) {
             if (self.dboLoaderContainerView.subviews[i] != loadView) {
                 [self.dboLoaderContainerView.subviews[i] removeFromSuperview];
             }
         }
-    });
+//    });
 }
 
 - (void)removeLoadViewFromImageContainer {
     
-    dispatch_async(dispatch_get_main_queue(), ^{
+//    dispatch_async(dispatch_get_main_queue(), ^{
         for (NSUInteger i = 0; i < self.dboLoaderContainerView.subviews.count; i++) {
             [self.dboLoaderContainerView.subviews[i] removeFromSuperview];
         }
-    });
+//    });
 }
 
 
