@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -41,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="244" height="114"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnP-aa-M0d">
-                                <rect key="frame" x="15" y="54" width="214" height="50"/>
+                                <rect key="frame" x="12" y="54" width="214" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bEm-jR-z8B"/>
@@ -57,13 +57,13 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="cKt-lI-ECh" secondAttribute="bottom" id="5IA-5g-FKM"/>
-                            <constraint firstItem="vnP-aa-M0d" firstAttribute="leading" secondItem="Hj6-J3-qB5" secondAttribute="leading" constant="15" id="BAu-We-5x3"/>
+                            <constraint firstItem="vnP-aa-M0d" firstAttribute="leading" secondItem="Hj6-J3-qB5" secondAttribute="leading" constant="12" id="BAu-We-5x3"/>
                             <constraint firstItem="cKt-lI-ECh" firstAttribute="leading" secondItem="Hj6-J3-qB5" secondAttribute="leading" id="DTm-l5-cfh"/>
                             <constraint firstAttribute="trailing" secondItem="hQ1-Wh-sH2" secondAttribute="trailing" constant="6" id="FXf-BI-VpA"/>
                             <constraint firstItem="cKt-lI-ECh" firstAttribute="top" secondItem="Hj6-J3-qB5" secondAttribute="top" id="Is8-pX-Zmx"/>
                             <constraint firstItem="hQ1-Wh-sH2" firstAttribute="leading" secondItem="Hj6-J3-qB5" secondAttribute="leading" id="MER-x9-gjQ"/>
                             <constraint firstItem="hQ1-Wh-sH2" firstAttribute="top" secondItem="Hj6-J3-qB5" secondAttribute="top" id="WuR-Mi-gAK"/>
-                            <constraint firstAttribute="trailing" secondItem="vnP-aa-M0d" secondAttribute="trailing" constant="15" id="XhR-3W-oyK"/>
+                            <constraint firstAttribute="trailing" secondItem="vnP-aa-M0d" secondAttribute="trailing" constant="18" id="XhR-3W-oyK"/>
                             <constraint firstItem="vnP-aa-M0d" firstAttribute="top" secondItem="hQ1-Wh-sH2" secondAttribute="bottom" constant="8" id="ler-Xq-F6J"/>
                             <constraint firstAttribute="width" constant="244" id="mhR-mA-ZhO"/>
                             <constraint firstAttribute="bottom" secondItem="vnP-aa-M0d" secondAttribute="bottom" constant="10" id="tdE-xF-U1a"/>
