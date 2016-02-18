@@ -140,11 +140,6 @@
                                                                                  withReuseIdentifier:[JSQMessagesTypingIndicatorFooterView footerReuseIdentifier]
                                                                                         forIndexPath:indexPath];
 
-    [footerView configureWithEllipsisColor:self.typingIndicatorEllipsisColor
-                        messageBubbleColor:self.typingIndicatorMessageBubbleColor
-                       shouldDisplayOnLeft:self.typingIndicatorDisplaysOnLeft
-                         forCollectionView:self];
-
     return footerView;
 }
 
