@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="JSQMessagesTypingIndicatorFooterView" id="ajJ-uk-b04" customClass="JSQMessagesTypingIndicatorFooterView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вам пишут сообщение..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4se-g6-vzO">
@@ -21,13 +21,13 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="4se-g6-vzO" secondAttribute="trailing" constant="8" id="2p9-KS-cqf"/>
                 <constraint firstItem="4se-g6-vzO" firstAttribute="top" secondItem="ajJ-uk-b04" secondAttribute="top" id="7K5-Ou-IOZ"/>
-                <constraint firstAttribute="bottom" secondItem="4se-g6-vzO" secondAttribute="bottom" id="R8a-Cw-SzU"/>
+                <constraint firstAttribute="bottom" secondItem="4se-g6-vzO" secondAttribute="bottom" constant="10" id="R8a-Cw-SzU"/>
                 <constraint firstItem="4se-g6-vzO" firstAttribute="leading" secondItem="ajJ-uk-b04" secondAttribute="leading" constant="8" id="XwQ-Ik-i76"/>
             </constraints>
             <connections>
                 <outlet property="notifyWritingLabel" destination="4se-g6-vzO" id="Fhc-8Y-fYg"/>
             </connections>
-            <point key="canvasLocation" x="452" y="374"/>
+            <point key="canvasLocation" x="452" y="379"/>
         </collectionReusableView>
     </objects>
 </document>
