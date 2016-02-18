@@ -22,7 +22,7 @@
 
 #import "UIImage+JSQMessages.h"
 
-const CGFloat kJSQMessagesTypingIndicatorFooterViewHeight = 25.f;
+const CGFloat kJSQMessagesTypingIndicatorFooterViewHeight = 20.f;
 
 @interface JSQMessagesTypingIndicatorFooterView ()
 
