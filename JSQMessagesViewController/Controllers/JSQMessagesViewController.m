@@ -916,12 +916,12 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
 }
 
 - (void)removeToolbarView {
-    self.additionalToolbarView = nil;
     [self jsq_adjustInputToolbarHeightConstraintByDelta:-self.additionalToolbarView.frame.size.height - kAdditionalToolbarHeight];
     [self jsq_updateCollectionViewInsets];
     if (self.automaticallyScrollsToMostRecentMessage) {
         [self scrollToBottomAnimated:NO];
     }
+    self.additionalToolbarView = nil;
 }
 
 #pragma mark - Keyboard controller delegate
