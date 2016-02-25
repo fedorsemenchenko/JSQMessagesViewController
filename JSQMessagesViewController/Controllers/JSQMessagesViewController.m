@@ -909,11 +909,19 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
 - (void)addToolbarView:(UIView *)additionalView {
     self.additionalToolbarView = additionalView;
     [self jsq_adjustInputToolbarHeightConstraintByDelta:self.additionalToolbarView.frame.size.height + kAdditionalToolbarHeight];
+    [self jsq_updateCollectionViewInsets];
+    if (self.automaticallyScrollsToMostRecentMessage) {
+        [self scrollToBottomAnimated:NO];
+    }
 }
 
 - (void)removeToolbarView {
-    [self jsq_adjustInputToolbarHeightConstraintByDelta:-self.additionalToolbarView.frame.size.height - kAdditionalToolbarHeight];
     self.additionalToolbarView = nil;
+    [self jsq_adjustInputToolbarHeightConstraintByDelta:-self.additionalToolbarView.frame.size.height - kAdditionalToolbarHeight];
+    [self jsq_updateCollectionViewInsets];
+    if (self.automaticallyScrollsToMostRecentMessage) {
+        [self scrollToBottomAnimated:NO];
+    }
 }
 
 #pragma mark - Keyboard controller delegate
