@@ -127,7 +127,7 @@
                                                      text:@"It"
                                              isDBOPayment:NO
                                            dboPaymentView:nil
-                                           dboSupportName:@"Steve Wozniak"],
+                                           dboSupportName:@"Операторов Оператор"],
 
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
                                         senderDisplayName:kJSQDemoAvatarDisplayNameSquires
@@ -143,7 +143,7 @@
                                                      text:@"JSQMessagesViewController."
                                              isDBOPayment:NO
                                            dboPaymentView:nil
-                                           dboSupportName:@"Steave Jobs"],
+                                           dboSupportName:@"Операторов Оператор"],
 
                      
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdCook
