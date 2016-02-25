@@ -107,6 +107,7 @@
 		88C00A521A44D4E500B004B3 /* JSQVideoMediaItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C00A511A44D4E500B004B3 /* JSQVideoMediaItemTests.m */; };
 		88C4583019F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C4582F19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m */; };
 		94A4FA20C2FBD0D62614D5A8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6750B77E8A7042BA0754B /* libPods.a */; };
+		E1629B031C7F7EA80054651B /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1629B021C7F7EA80054651B /* Roboto-Regular.ttf */; };
 		E1B17A891C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B17A871C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.m */; };
 		E1B17A8A1C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B17A881C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.xib */; };
 		E1BB424B1C20511A00F47897 /* DBOActivityCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BB42491C20511A00F47897 /* DBOActivityCollectionReusableView.m */; };
@@ -280,6 +281,7 @@
 		88C4582E19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesMediaViewBubbleImageMasker.h; sourceTree = "<group>"; };
 		88C4582F19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesMediaViewBubbleImageMasker.m; sourceTree = "<group>"; };
 		97E6750B77E8A7042BA0754B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1629B021C7F7EA80054651B /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		E1B17A861C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesCollectionViewCellDBOPaymentIncoming.h; sourceTree = "<group>"; };
 		E1B17A871C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesCollectionViewCellDBOPaymentIncoming.m; sourceTree = "<group>"; };
 		E1B17A881C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSQMessagesCollectionViewCellDBOPaymentIncoming.xib; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 		88A25F2B19D8DF2500924534 /* JSQMessagesDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E1629B021C7F7EA80054651B /* Roboto-Regular.ttf */,
 				88A25F2C19D8DF2500924534 /* AppDelegate.h */,
 				88A25F2D19D8DF2500924534 /* AppDelegate.m */,
 				88A25FD919D8E0C400924534 /* DemoMessagesViewController.h */,
@@ -781,6 +784,7 @@
 			files = (
 				E1B17A8A1C1CEB1300ABE5B9 /* JSQMessagesCollectionViewCellDBOPaymentIncoming.xib in Resources */,
 				886C33FF19F45E30006B4997 /* JSQMessagesViewController.podspec in Resources */,
+				E1629B031C7F7EA80054651B /* Roboto-Regular.ttf in Resources */,
 				8861666D19F492B70025B958 /* JSQMessagesAssets.bundle in Resources */,
 				E1E0DD001C45605100857255 /* JSQMessageCollectionViewCellDBOImageIncoming.xib in Resources */,
 				88A25FCF19D8E01A00924534 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
