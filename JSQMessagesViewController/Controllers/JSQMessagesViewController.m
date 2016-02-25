@@ -910,17 +910,13 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
     self.additionalToolbarView = additionalView;
     [self jsq_adjustInputToolbarHeightConstraintByDelta:self.additionalToolbarView.frame.size.height + kAdditionalToolbarHeight];
     [self jsq_updateCollectionViewInsets];
-    if (self.automaticallyScrollsToMostRecentMessage) {
-        [self scrollToBottomAnimated:NO];
-    }
+    [self scrollToBottomAnimated:YES];
 }
 
 - (void)removeToolbarView {
     [self jsq_adjustInputToolbarHeightConstraintByDelta:-self.additionalToolbarView.frame.size.height - kAdditionalToolbarHeight];
     [self jsq_updateCollectionViewInsets];
-    if (self.automaticallyScrollsToMostRecentMessage) {
-        [self scrollToBottomAnimated:NO];
-    }
+    [self scrollToBottomAnimated:YES];
     self.additionalToolbarView = nil;
 }
 
