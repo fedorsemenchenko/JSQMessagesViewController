@@ -441,12 +441,12 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
     //  possibly a UIKit bug, see #480 on GitHub
     NSUInteger finalRow = MAX(0, [self.collectionView numberOfItemsInSection:0] - 1);
     NSIndexPath *finalIndexPath = [NSIndexPath indexPathForItem:finalRow inSection:0];
-    CGSize finalCellSize = [self.collectionView.collectionViewLayout sizeForItemAtIndexPath:finalIndexPath];
+//    CGSize finalCellSize = [self.collectionView.collectionViewLayout sizeForItemAtIndexPath:finalIndexPath];
 
-    CGFloat maxHeightForVisibleMessage = CGRectGetHeight(self.collectionView.bounds) - self.collectionView.contentInset.top - CGRectGetHeight(self.inputToolbar.bounds);
+//    CGFloat maxHeightForVisibleMessage = CGRectGetHeight(self.collectionView.bounds) - self.collectionView.contentInset.top - CGRectGetHeight(self.inputToolbar.bounds);
 
-    UICollectionViewScrollPosition scrollPosition = (finalCellSize.height > maxHeightForVisibleMessage) ? UICollectionViewScrollPositionBottom : UICollectionViewScrollPositionTop;
-
+//    UICollectionViewScrollPosition scrollPosition = (finalCellSize.height > maxHeightForVisibleMessage) ? UICollectionViewScrollPositionBottom : UICollectionViewScrollPositionTop;
+    UICollectionViewScrollPosition scrollPosition = UICollectionViewScrollPositionBottom;
     [self.collectionView scrollToItemAtIndexPath:finalIndexPath
                                 atScrollPosition:scrollPosition
                                         animated:animated];
