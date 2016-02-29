@@ -109,10 +109,10 @@ static CGFloat const spacingBetweenAvatarAndBubble = 2.0f;
 
     CGSize finalSize = CGSizeZero;
     CGRect stringRect = CGRectZero;
-    CGRect stringRectSupport = CGRectZero;
+   
+    CGSize stringSizeSupport = CGSizeZero;
     
     CGSize stringSize = CGSizeZero;
-    CGSize stringSizeSupport = CGSizeZero;
     CGFloat stringHeight = 0.f;
     
     
@@ -146,10 +146,9 @@ static CGFloat const spacingBetweenAvatarAndBubble = 2.0f;
             maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
             
             stringRect = [self rectForText:[messageData text] withLayout:layout textWidth:maximumTextWidth font:layout.messageBubbleFont];
-            stringRectSupport = [self rectForText:[messageData dboSupportName] withLayout:layout textWidth:maximumTextWidth font:[UIFont fontWithName:@"Roboto-Regular" size:12.f]];
-            
+            stringSizeSupport = [[messageData dboSupportName] sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Roboto-Regular" size:12.f]}];
+
             stringSize = CGRectIntegral(stringRect).size;
-            stringSizeSupport = CGRectIntegral(stringRectSupport).size;
             
             verticalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.top + layout.messageBubbleTextViewTextContainerInsets.bottom;
             verticalFrameInsets = layout.messageBubbleTextViewFrameInsets.top + layout.messageBubbleTextViewFrameInsets.bottom;
@@ -173,10 +172,9 @@ static CGFloat const spacingBetweenAvatarAndBubble = 2.0f;
             maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
             
             stringRect = [self rectForText:[messageData text] withLayout:layout textWidth:maximumTextWidth font:layout.messageBubbleFont];
-            stringRectSupport = [self rectForText:[messageData dboSupportName] withLayout:layout textWidth:maximumTextWidth font:[UIFont fontWithName:@"Roboto-Regular" size:12.f]];
-            
+            stringSizeSupport = [[messageData dboSupportName] sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Roboto-Regular" size:12.f]}];
+
             stringSize = CGRectIntegral(stringRect).size;
-            stringSizeSupport = CGRectIntegral(stringRectSupport).size;
             
             verticalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.top + layout.messageBubbleTextViewTextContainerInsets.bottom;
             verticalFrameInsets = layout.messageBubbleTextViewFrameInsets.top + layout.messageBubbleTextViewFrameInsets.bottom;
