@@ -564,23 +564,9 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
     CGFloat bubbleTopLabelInset = (avatarImageDataSource != nil) ? 60.0f : 15.0f;
 
     if (isOutgoingMessage) {
-        [cell setSupportNameText:[messageItem dboSupportName]];
         cell.messageBubbleTopLabel.textInsets = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, bubbleTopLabelInset);
-
-//        avatarImageDataSource = [collectionView.dataSource collectionView:collectionView avatarImageDataForItemAtIndexPath:indexPath];
-//        if (avatarImageDataSource != nil) {
-//            
-//            UIImage *avatarImage = [avatarImageDataSource avatarImage];
-//            if (avatarImage == nil) {
-//                cell.avatarImageView.image = [avatarImageDataSource avatarPlaceholderImage];
-//                cell.avatarImageView.highlightedImage = nil;
-//            }
-//            else {
-//                cell.avatarImageView.image = avatarImage;
-//                cell.avatarImageView.highlightedImage = [avatarImageDataSource avatarHighlightedImage];
-//            }
-//        }
     } else {
+        [cell setSupportNameText:[messageItem dboSupportName]];
         cell.messageBubbleTopLabel.textInsets = UIEdgeInsetsMake(0.0f, bubbleTopLabelInset, 0.0f, 0.0f);
     }
     

@@ -131,7 +131,8 @@ static CGFloat const spacingBetweenAvatarAndBubble = 2.0f;
     
     CGFloat dboPaymentVerticalInset = .0f;
     CGFloat dboPaymentMinWidht = .0f;
-
+    CGFloat dboSupportNameHeight = [[messageData dboSupportName] length] > 0 ? kDBOSupportLabelHeight : 0.f;
+    
     MessageType type = [messageData messageType];
     
     switch (type) {
@@ -159,7 +160,7 @@ static CGFloat const spacingBetweenAvatarAndBubble = 2.0f;
             
             stringHeight = stringSize.height;
             
-            finalSize = CGSizeMake(finalWidth, stringHeight + verticalInsets);
+            finalSize = CGSizeMake(finalWidth, stringHeight + verticalInsets + dboSupportNameHeight);
             
             break;
             
@@ -189,7 +190,7 @@ static CGFloat const spacingBetweenAvatarAndBubble = 2.0f;
             
             stringHeight = stringSize.height;
             
-            finalSize = CGSizeMake(MAX(finalWidth, dboPaymentMinWidht), stringHeight + dboPaymentVerticalInset + verticalInsets + kDBOSupportLabelHeight);
+            finalSize = CGSizeMake(MAX(finalWidth, dboPaymentMinWidht), stringHeight + dboPaymentVerticalInset + verticalInsets + dboSupportNameHeight);
             
             break;
             
