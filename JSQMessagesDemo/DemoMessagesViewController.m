@@ -459,7 +459,7 @@
     return [self.demoData.avatars objectForKey:message.senderId];
 }
 
-- (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath
+- (NSString *)collectionView:(JSQMessagesCollectionView *)collectionView textForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath
 {
     /**
      *  This logic should be consistent with what you return from `heightForCellTopLabelAtIndexPath:`
@@ -468,14 +468,15 @@
      *  Show a timestamp for every 3rd message
      */
     if (indexPath.item % 3 == 0) {
-        JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
-        return [[JSQMessagesTimestampFormatter sharedFormatter] attributedTimestampForDate:message.date withTextAlligment:NSTextAlignmentRight];
+//        JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
+//        return [[JSQMessagesTimestampFormatter sharedFormatter] attributedTimestampForDate:message.date withTextAlligment:NSTextAlignmentRight];
+        return @"Новая дата";
     }
     
     return nil;
 }
 
-- (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:(NSIndexPath *)indexPath
+- (NSString *)collectionView:(JSQMessagesCollectionView *)collectionView textForMessageBubbleTopLabelAtIndexPath:(NSIndexPath *)indexPath
 {
     JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
     
@@ -496,10 +497,10 @@
     /**
      *  Don't specify attributes to use the defaults.
      */
-    return [[NSAttributedString alloc] initWithString:message.senderDisplayName];
+    return message.senderDisplayName;
 }
 
-- (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
+- (NSString *)collectionView:(JSQMessagesCollectionView *)collectionView textForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
 {
     return nil;
 }

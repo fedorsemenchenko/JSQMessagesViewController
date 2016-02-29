@@ -570,9 +570,9 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
         cell.messageBubbleTopLabel.textInsets = UIEdgeInsetsMake(0.0f, bubbleTopLabelInset, 0.0f, 0.0f);
     }
     
-    cell.cellTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellTopLabelAtIndexPath:indexPath];
+    cell.cellTopLabel.text = [collectionView.dataSource collectionView:collectionView textForCellTopLabelAtIndexPath:indexPath];
 //    cell.messageBubbleTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:indexPath];
-    cell.cellBottomLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellBottomLabelAtIndexPath:indexPath];
+    cell.cellBottomLabel.text = [collectionView.dataSource collectionView:collectionView textForCellBottomLabelAtIndexPath:indexPath];
     
     cell.textView.dataDetectorTypes = UIDataDetectorTypeAll;
     

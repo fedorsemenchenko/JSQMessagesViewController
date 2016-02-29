@@ -122,7 +122,9 @@
  *
  *  @see JSQMessagesCollectionViewCell.
  */
-- (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath;
+//- (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath;
+
+- (NSString *)collectionView:(JSQMessagesCollectionView *)collectionView textForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  *  Asks the data source for the text to display in the `messageBubbleTopLabel` for the specified
@@ -136,7 +138,11 @@
  *
  *  @see JSQMessagesCollectionViewCell.
  */
-- (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:(NSIndexPath *)indexPath;
+//- (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:(NSIndexPath *)indexPath;
+
+
+- (NSString *)collectionView:(JSQMessagesCollectionView *)collectionView textForMessageBubbleTopLabelAtIndexPath:(NSIndexPath *)indexPath;
+
 
 /**
  *  Asks the data source for the text to display in the `cellBottomLabel` for the the specified
@@ -150,6 +156,7 @@
  *
  *  @see JSQMessagesCollectionViewCell.
  */
-- (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath;
+//- (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath;
+- (NSString *)collectionView:(JSQMessagesCollectionView *)collectionView textForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
