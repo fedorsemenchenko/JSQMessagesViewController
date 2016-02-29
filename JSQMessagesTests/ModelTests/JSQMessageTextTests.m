@@ -57,7 +57,8 @@
                                                       text:self.text
                                             dboPaymentView:nil
                                             dboSupportName:nil
-                                               messageType:MessageTypeText];
+                                               messageType:MessageTypeText
+                                               messageSize:CGSizeZero];
     XCTAssertNotNil(msg, @"Message should not be nil");
 }
 
@@ -70,7 +71,8 @@
                                                     text:nil
                                           dboPaymentView:nil
                                           dboSupportName:nil
-                                             messageType:MessageTypeText], @"Invalid init should throw" );
+                                             messageType:MessageTypeText
+                                             messageSize:CGSizeZero], @"Invalid init should throw" );
 }
 
 - (void)testTextMessageIsEqual
@@ -81,7 +83,8 @@
                                                       text:self.text
                                             dboPaymentView:nil
                                             dboSupportName:nil
-                                               messageType:MessageTypeText];
+                                               messageType:MessageTypeText
+                                               messageSize:CGSizeZero];
     JSQMessage *copy = [msg copy];
     
     XCTAssertEqualObjects(msg, copy, @"Copied messages should be equal");
@@ -99,7 +102,8 @@
                                                       text:self.text
                                             dboPaymentView:nil
                                             dboSupportName:nil
-                                               messageType:MessageTypeText];
+                                               messageType:MessageTypeText
+                                               messageSize:CGSizeZero];
     
     NSData *msgData = [NSKeyedArchiver archivedDataWithRootObject:msg];
     

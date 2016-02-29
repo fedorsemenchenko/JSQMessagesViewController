@@ -79,7 +79,8 @@
                                                      media:self.mockMediaData
                                                       text:nil
                                             dboSupportName:nil
-                                               messageType:MessageTypeImage];
+                                               messageType:MessageTypeImage
+                                               messageSize:CGSizeZero];
     XCTAssertNotNil(msg, @"Message should not be nil");
 }
 
@@ -92,7 +93,8 @@
                                                    media:nil
                                                     text:nil
                                           dboSupportName:nil
-                                             messageType:MessageTypeImage], @"Invalid init should throw");
+                                             messageType:MessageTypeImage
+                                             messageSize:CGSizeZero], @"Invalid init should throw");
 }
 
 - (void)testMediaMessageIsEqual
@@ -103,7 +105,8 @@
                                                      media:self.mockMediaData
                                                       text:nil
                                             dboSupportName:nil
-                                               messageType:MessageTypeImage];
+                                               messageType:MessageTypeImage
+                                               messageSize:CGSizeZero];
     JSQMessage *copy = [msg copy];
     
     XCTAssertEqualObjects(msg, copy, @"Copied messages should be equal");
@@ -121,7 +124,8 @@
                                                      media:[FakeMedia new]
                                                       text:nil
                                             dboSupportName:nil
-                                               messageType:MessageTypeImage];
+                                               messageType:MessageTypeImage
+                                               messageSize:CGSizeZero];
     
     NSData *msgData = [NSKeyedArchiver archivedDataWithRootObject:msg];
     

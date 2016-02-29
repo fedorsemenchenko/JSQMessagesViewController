@@ -164,7 +164,8 @@
                                                  text:@"First received!"
                                        dboPaymentView:nil
                                        dboSupportName:@"Steave test"
-                                          messageType:MessageTypeText];
+                                          messageType:MessageTypeText
+                                          messageSize:CGSizeZero];
     }
     
     /**
@@ -233,7 +234,8 @@
                                                    media:newMediaData
                                                     text:@"Test text"
                                           dboSupportName:nil
-                                             messageType:MessageTypeImage];
+                                             messageType:MessageTypeImage
+                                             messageSize:CGSizeZero];
         }
         else {
             /**
@@ -244,7 +246,8 @@
                                                     text:copyMessage.text
                                           dboPaymentView:nil
                                           dboSupportName:@"Test user"
-                                             messageType:MessageTypeText];
+                                             messageType:MessageTypeText
+                                             messageSize:CGSizeZero];
         }
         
         /**
@@ -327,7 +330,8 @@
                                                           text:text
                                                 dboPaymentView:nil
                                                 dboSupportName:nil
-                                                   messageType:MessageTypeText];
+                                                   messageType:MessageTypeText
+                                                   messageSize:CGSizeZero];
     
     [self.demoData.messages addObject:message];
     
@@ -683,7 +687,8 @@
                                                              media:item
                                                               text:@"Test 1221312312432"
                                                     dboSupportName:nil
-                                                       messageType:MessageTypeImageWithText];
+                                                       messageType:MessageTypeImageWithText
+                                                       messageSize:CGSizeZero];
         [self.demoData.messages addObject:message];
         [self finishSendingMessage];
         return NO;

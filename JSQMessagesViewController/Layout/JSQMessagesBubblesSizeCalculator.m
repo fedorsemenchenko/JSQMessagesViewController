@@ -25,13 +25,13 @@
 
 #import "UIImage+JSQMessages.h"
 
-static CGFloat const kMinDBOImageCellWidth = 210.f;
-static CGFloat const kDBOCellTextWidth = 180.f;
-static CGFloat const kDBOSupportLabelHeight = 21.f;
-
-static CGFloat const kMinDBOPaymentWidth = 270.f;
-static CGFloat const kDBOPaymentVerticalInset = 65.f;
-static CGFloat const spacingBetweenAvatarAndBubble = 2.0f;
+//static CGFloat const kMinDBOImageCellWidth = 210.f;
+//static CGFloat const kDBOCellTextWidth = 180.f;
+//static CGFloat const kDBOSupportLabelHeight = 21.f;
+//
+//static CGFloat const kMinDBOPaymentWidth = 270.f;
+//static CGFloat const kDBOPaymentVerticalInset = 65.f;
+//static CGFloat const spacingBetweenAvatarAndBubble = 2.0f;
 
 @interface JSQMessagesBubblesSizeCalculator ()
 
@@ -107,102 +107,103 @@ static CGFloat const spacingBetweenAvatarAndBubble = 2.0f;
         return [cachedSize CGSizeValue];
     }
 
-    CGSize finalSize = CGSizeZero;
-    CGRect stringRect = CGRectZero;
-   
-    CGSize stringSizeSupport = CGSizeZero;
-    
-    CGSize stringSize = CGSizeZero;
-    CGFloat stringHeight = 0.f;
-    
-    
-    CGSize avatarSize = CGSizeZero;
-    CGFloat horizontalContainerInsets = .0f;
-    CGFloat horizontalFrameInsets = .0f;
-    CGFloat horizontalInsetsTotal = 0.f;
-    CGFloat maximumTextWidth = .0f;
-    
-    CGFloat verticalContainerInsets = .0f;
-    CGFloat verticalFrameInsets = .0f;
-    CGFloat verticalInsets = .0f;
-    
-    CGFloat maxWidth = .0f;
-    CGFloat finalWidth = .0f;
-    
-    CGFloat dboPaymentVerticalInset = .0f;
-    CGFloat dboPaymentMinWidht = .0f;
-    CGFloat dboSupportNameHeight = [[messageData dboSupportName] length] > 0 ? kDBOSupportLabelHeight : 0.f;
-    
-    MessageType type = [messageData messageType];
-    
-    switch (type) {
-        case MessageTypeText:
-            avatarSize = [self jsq_avatarSizeForMessageData:messageData withLayout:layout];
-           
-            horizontalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.left + layout.messageBubbleTextViewTextContainerInsets.right;
-            horizontalFrameInsets = layout.messageBubbleTextViewFrameInsets.left + layout.messageBubbleTextViewFrameInsets.right;
-            horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
-           
-            maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
-            
-            stringRect = [self rectForText:[messageData text] withLayout:layout textWidth:maximumTextWidth font:layout.messageBubbleFont];
-            stringSizeSupport = [[messageData dboSupportName] sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Roboto-Regular" size:12.f]}];
-
-            stringSize = CGRectIntegral(stringRect).size;
-            
-            verticalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.top + layout.messageBubbleTextViewTextContainerInsets.bottom;
-            verticalFrameInsets = layout.messageBubbleTextViewFrameInsets.top + layout.messageBubbleTextViewFrameInsets.bottom;
-            verticalInsets = verticalContainerInsets + verticalFrameInsets + self.additionalInset;
-            
-            maxWidth = stringSize.width >= stringSizeSupport.width ? stringSize.width : stringSizeSupport.width;
-            finalWidth = MAX(maxWidth + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
-            
-            stringHeight = stringSize.height;
-            
-            finalSize = CGSizeMake(finalWidth, stringHeight + verticalInsets + dboSupportNameHeight);
-            
-            break;
-            
-        case MessageTypeTransaction:
-            
-            horizontalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.left + layout.messageBubbleTextViewTextContainerInsets.right;
-            horizontalFrameInsets = layout.messageBubbleTextViewFrameInsets.left + layout.messageBubbleTextViewFrameInsets.right;
-            horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
-            
-            maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
-            
-            stringRect = [self rectForText:[messageData text] withLayout:layout textWidth:maximumTextWidth font:layout.messageBubbleFont];
-            stringSizeSupport = [[messageData dboSupportName] sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Roboto-Regular" size:12.f]}];
-
-            stringSize = CGRectIntegral(stringRect).size;
-            
-            verticalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.top + layout.messageBubbleTextViewTextContainerInsets.bottom;
-            verticalFrameInsets = layout.messageBubbleTextViewFrameInsets.top + layout.messageBubbleTextViewFrameInsets.bottom;
-            verticalInsets = verticalContainerInsets + verticalFrameInsets + self.additionalInset;
-            
-            maxWidth = stringSize.width >= stringSizeSupport.width ? stringSize.width : stringSizeSupport.width;
-            finalWidth = MAX(maxWidth + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
-
-            dboPaymentVerticalInset = kDBOPaymentVerticalInset;
-            dboPaymentMinWidht = kMinDBOPaymentWidth;
-            
-            stringHeight = stringSize.height;
-            
-            finalSize = CGSizeMake(MAX(finalWidth, dboPaymentMinWidht), stringHeight + dboPaymentVerticalInset + verticalInsets + dboSupportNameHeight);
-            
-            break;
-            
-        case MessageTypeImage:
-            finalSize = [[messageData media] mediaViewDisplaySize];
-            break;
-            
-        case MessageTypeImageWithText:
-            stringRect = [self rectForText:[messageData text] withLayout:layout textWidth:kDBOCellTextWidth font:layout.messageBubbleFont];
-            stringSize = CGRectIntegral(stringRect).size;
-            stringHeight = stringSize.height;
-            finalSize = CGSizeMake(kMinDBOImageCellWidth, stringHeight + 250.f);
-            break;
-    }
+    CGSize finalSize = [messageData messageSize];
+//    CGSize finalSize = CGSizeMake(250.f, 60.f);
+//    CGRect stringRect = CGRectZero;
+//   
+//    CGSize stringSizeSupport = CGSizeZero;
+//    
+//    CGSize stringSize = CGSizeZero;
+//    CGFloat stringHeight = 0.f;
+//    
+//    
+//    CGSize avatarSize = CGSizeZero;
+//    CGFloat horizontalContainerInsets = .0f;
+//    CGFloat horizontalFrameInsets = .0f;
+//    CGFloat horizontalInsetsTotal = 0.f;
+//    CGFloat maximumTextWidth = .0f;
+//    
+//    CGFloat verticalContainerInsets = .0f;
+//    CGFloat verticalFrameInsets = .0f;
+//    CGFloat verticalInsets = .0f;
+//    
+//    CGFloat maxWidth = .0f;
+//    CGFloat finalWidth = .0f;
+//    
+//    CGFloat dboPaymentVerticalInset = .0f;
+//    CGFloat dboPaymentMinWidht = .0f;
+//    CGFloat dboSupportNameHeight = [[messageData dboSupportName] length] > 0 ? kDBOSupportLabelHeight : 0.f;
+//    
+//    MessageType type = [messageData messageType];
+//    
+//    switch (type) {
+//        case MessageTypeText:
+//            avatarSize = [self jsq_avatarSizeForMessageData:messageData withLayout:layout];
+//           
+//            horizontalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.left + layout.messageBubbleTextViewTextContainerInsets.right;
+//            horizontalFrameInsets = layout.messageBubbleTextViewFrameInsets.left + layout.messageBubbleTextViewFrameInsets.right;
+//            horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
+//           
+//            maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
+//            
+//            stringRect = [self rectForText:[messageData text] textWidth:maximumTextWidth font:layout.messageBubbleFont];
+//            stringSizeSupport = [[messageData dboSupportName] sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Roboto-Regular" size:12.f]}];
+//
+//            stringSize = CGRectIntegral(stringRect).size;
+//            
+//            verticalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.top + layout.messageBubbleTextViewTextContainerInsets.bottom;
+//            verticalFrameInsets = layout.messageBubbleTextViewFrameInsets.top + layout.messageBubbleTextViewFrameInsets.bottom;
+//            verticalInsets = verticalContainerInsets + verticalFrameInsets + self.additionalInset;
+//            
+//            maxWidth = stringSize.width >= stringSizeSupport.width ? stringSize.width : stringSizeSupport.width;
+//            finalWidth = MAX(maxWidth + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
+//            
+//            stringHeight = stringSize.height;
+//            
+//            finalSize = CGSizeMake(finalWidth, stringHeight + verticalInsets + dboSupportNameHeight);
+//            
+//            break;
+//            
+//        case MessageTypeTransaction:
+//            
+//            horizontalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.left + layout.messageBubbleTextViewTextContainerInsets.right;
+//            horizontalFrameInsets = layout.messageBubbleTextViewFrameInsets.left + layout.messageBubbleTextViewFrameInsets.right;
+//            horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
+//            
+//            maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
+//            
+//            stringRect = [self rectForText:[messageData text] textWidth:maximumTextWidth font:layout.messageBubbleFont];
+//            stringSizeSupport = [[messageData dboSupportName] sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Roboto-Regular" size:12.f]}];
+//
+//            stringSize = CGRectIntegral(stringRect).size;
+//            
+//            verticalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.top + layout.messageBubbleTextViewTextContainerInsets.bottom;
+//            verticalFrameInsets = layout.messageBubbleTextViewFrameInsets.top + layout.messageBubbleTextViewFrameInsets.bottom;
+//            verticalInsets = verticalContainerInsets + verticalFrameInsets + self.additionalInset;
+//            
+//            maxWidth = stringSize.width >= stringSizeSupport.width ? stringSize.width : stringSizeSupport.width;
+//            finalWidth = MAX(maxWidth + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
+//
+//            dboPaymentVerticalInset = kDBOPaymentVerticalInset;
+//            dboPaymentMinWidht = kMinDBOPaymentWidth;
+//            
+//            stringHeight = stringSize.height;
+//            
+//            finalSize = CGSizeMake(MAX(finalWidth, dboPaymentMinWidht), stringHeight + dboPaymentVerticalInset + verticalInsets + dboSupportNameHeight);
+//            
+//            break;
+//            
+//        case MessageTypeImage:
+//            finalSize = [[messageData media] mediaViewDisplaySize];
+//            break;
+//            
+//        case MessageTypeImageWithText:
+//            stringRect = [self rectForText:[messageData text] textWidth:kDBOCellTextWidth font:layout.messageBubbleFont];
+//            stringSize = CGRectIntegral(stringRect).size;
+//            stringHeight = stringSize.height;
+//            finalSize = CGSizeMake(kMinDBOImageCellWidth, stringHeight + 250.f);
+//            break;
+//    }
 
 
 //    if ([messageData isMediaMessage]) {
@@ -259,14 +260,13 @@ static CGFloat const spacingBetweenAvatarAndBubble = 2.0f;
 //        finalSize = CGSizeMake(MAX(finalWidth, dboPaymentMinWidht), stringHeight + dboPaymentVerticalInset + verticalInsets + dboSupportNameHeight);
 //    }
 //
-    [self.cache setObject:[NSValue valueWithCGSize:finalSize] forKey:@([messageData messageHash])];
+//    [self.cache setObject:[NSValue valueWithCGSize:finalSize] forKey:@([messageData messageHash])];
 
     return finalSize;
 }
 
 
 - (CGRect)rectForText:(NSString *)text
-           withLayout:(JSQMessagesCollectionViewFlowLayout *)layout
             textWidth:(CGFloat)width
                  font:(UIFont *)font
 {

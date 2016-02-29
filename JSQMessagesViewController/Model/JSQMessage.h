@@ -55,6 +55,8 @@
 
 @property (assign, nonatomic, readonly) MessageType messageType;
 
+@property (assign, nonatomic, readonly) CGSize messageSize;
+
 //// is DBO media message with text
 //@property (assign, nonatomic, readonly) BOOL isMediaMessageWithText;
 
@@ -93,7 +95,8 @@
                                text:(NSString *)text
                      dboPaymentView:(UIView *)dboPaymentView
                      dboSupportName:(NSString *)dboSupportName
-                        messageType:(MessageType)messageType;
+                        messageType:(MessageType)messageType
+                        messageSize:(CGSize)messageSize;
 
 /**
  *  Initializes and returns a message object having the given senderId, senderDisplayName, date, and text.
@@ -113,7 +116,8 @@
                             text:(NSString *)text
                   dboPaymentView:(UIView *)dboPaymentView
                   dboSupportName:(NSString *)dboSupportName
-                     messageType:(MessageType)messageType;
+                     messageType:(MessageType)messageType
+                     messageSize:(CGSize)messageSize;
 /**
  *  Initializes and returns a message object having the given senderId, displayName, media,
  *  and current system date.
@@ -131,7 +135,8 @@
                               media:(id<JSQMessageMediaData>)media
                                text:(NSString *)text
                      dboSupportName:(NSString *)dboSupportName
-                        messageType:(MessageType)messageType;
+                        messageType:(MessageType)messageType
+                        messageSize:(CGSize)messageSize;
 
 /**
  *  Initializes and returns a message object having the given senderId, displayName, date, and media.
@@ -151,6 +156,7 @@
                            media:(id<JSQMessageMediaData>)media
                             text:(NSString *)text
                   dboSupportName:(NSString *)dboSupportName
-                     messageType:(MessageType)messageType;
+                     messageType:(MessageType)messageType
+                     messageSize:(CGSize)messageSize;
 
 @end

@@ -81,6 +81,8 @@ typedef NS_ENUM(NSUInteger, MessageType) {
 
 - (MessageType)messageType;
 
+- (CGSize)messageSize;
+
 // dbo payment view
 - (UIView *)dboPaymentView;
 

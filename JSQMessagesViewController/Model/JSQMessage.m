@@ -26,7 +26,9 @@
                             date:(NSDate *)date
                   dboPaymentView:(UIView *)dboPaymentView
                   dboSupportName:(NSString *)dboSupportName
-                     messageType:(MessageType)messageType;
+                     messageType:(MessageType)messageType
+                     messageSize:(CGSize)messageSize;
+
 
 @end
 
@@ -42,6 +44,7 @@
                      dboPaymentView:(UIView *)dboPaymentView
                      dboSupportName:(NSString *)dboSupportName
                         messageType:(MessageType)messageType
+                        messageSize:(CGSize)messageSize
 {
     return [[self alloc] initWithSenderId:senderId
                         senderDisplayName:displayName
@@ -49,7 +52,8 @@
                                      text:text
                            dboPaymentView:dboPaymentView
                            dboSupportName:dboSupportName
-                              messageType:messageType];
+                              messageType:messageType
+                              messageSize:(CGSize)messageSize];
 }
 
 - (instancetype)initWithSenderId:(NSString *)senderId
@@ -59,6 +63,7 @@
                   dboPaymentView:(UIView *)dboPaymentView
                   dboSupportName:(NSString *)dboSupportName
                      messageType:(MessageType)messageType
+                     messageSize:(CGSize)messageSize
 {
     NSParameterAssert(text != nil);
 
@@ -67,10 +72,12 @@
                              date:date
                    dboPaymentView:dboPaymentView
                    dboSupportName:dboSupportName
-                      messageType:messageType];
+                      messageType:messageType
+                      messageSize:(CGSize)messageSize];
     if (self) {
         _text = [text copy];
         _messageType = messageType;
+        _messageSize = messageSize;
     }
     return self;
 }
@@ -81,6 +88,7 @@
                                text:(NSString *)text
                      dboSupportName:(NSString *)dboSupportName
                         messageType:(MessageType)messageType
+                        messageSize:(CGSize)messageSize
 {
     return [[self alloc] initWithSenderId:senderId
                         senderDisplayName:displayName
@@ -88,7 +96,8 @@
                                     media:media
                                      text:text
                            dboSupportName:dboSupportName
-                              messageType:messageType];
+                              messageType:messageType
+                              messageSize:(CGSize)messageSize];
 }
 
 - (instancetype)initWithSenderId:(NSString *)senderId
@@ -98,6 +107,7 @@
                             text:(NSString *)text
                   dboSupportName:(NSString *)dboSupportName
                      messageType:(MessageType)messageType
+                     messageSize:(CGSize)messageSize
 {
     NSParameterAssert(media != nil);
 
@@ -106,11 +116,13 @@
                              date:date
                    dboPaymentView:nil
                    dboSupportName:dboSupportName
-                      messageType:messageType];
+                      messageType:messageType
+                      messageSize:(CGSize)messageSize];
     if (self) {
         _text = text;
         _media = media;
         _messageType = messageType;
+        _messageSize = messageSize;
     }
     return self;
 }
@@ -121,6 +133,7 @@
                   dboPaymentView:(UIView *)dboPaymentView
                   dboSupportName:(NSString *)dboSupportName
                      messageType:(MessageType)messageType
+                     messageSize:(CGSize)messageSize
 {
     NSParameterAssert(senderId != nil);
     NSParameterAssert(senderDisplayName != nil);
@@ -134,6 +147,7 @@
         _dboPaymentView = dboPaymentView;
         _dboSupportName = dboSupportName;
         _messageType = messageType;
+        _messageSize = messageSize;
     }
     return self;
 }
@@ -213,9 +227,8 @@
         _text = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(text))];
         _media = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(media))];
         _dboPaymentView = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(dboPaymentView))];
-        _messageType = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(messageType))];
+        _messageType = [aDecoder decodeIntegerForKey:NSStringFromSelector(@selector(messageType))];
         _dboSupportName = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(dboSupportName))];
-
     }
     return self;
 }
@@ -246,7 +259,8 @@
                                                              media:self.media
                                                               text:self.text
                                                     dboSupportName:self.dboSupportName
-                                                       messageType:self.messageType];
+                                                       messageType:self.messageType
+                                                       messageSize:self.messageSize];
     }
 
     return [[[self class] allocWithZone:zone] initWithSenderId:self.senderId
@@ -255,7 +269,8 @@
                                                           text:self.text
                                                 dboPaymentView:self.dboPaymentView
                                                 dboSupportName:self.dboSupportName
-                                                   messageType:self.messageType];
+                                                   messageType:self.messageType
+                                                   messageSize:self.messageSize];
 }
 
 @end
