@@ -49,16 +49,11 @@
  *  If `NO`, the message contains text. If `YES`, the message contains media.
  *  The value of this property depends on how the object was initialized.
  */
-//@property (assign, nonatomic, readonly) BOOL isMediaMessage;
-//
-//
-//// is DBO Payment message
-//@property (assign, nonatomic, readonly) BOOL isDBOPaymentMessage;
 
 //DBO Payment View
 @property (strong, nonatomic, readonly) UIView *dboPaymentView;
 
-@property (assign, nonatomic, readonly) BOOL messageType;
+@property (assign, nonatomic, readonly) MessageType messageType;
 
 //// is DBO media message with text
 //@property (assign, nonatomic, readonly) BOOL isMediaMessageWithText;
