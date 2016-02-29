@@ -576,7 +576,6 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
     
     cell.textView.dataDetectorTypes = UIDataDetectorTypeAll;
     
-    cell.backgroundColor = [UIColor clearColor];
     cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
     cell.layer.shouldRasterize = YES;
 
