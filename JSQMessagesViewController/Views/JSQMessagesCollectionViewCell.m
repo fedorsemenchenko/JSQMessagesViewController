@@ -172,16 +172,16 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 {
     [super prepareForReuse];
 
-    self.cellTopLabel.text = nil;
-    self.messageBubbleTopLabel.text = nil;
-    self.cellBottomLabel.text = nil;
-
-    self.textView.dataDetectorTypes = UIDataDetectorTypeNone;
-    self.textView.text = nil;
-    self.textView.attributedText = nil;
-
-    self.avatarImageView.image = nil;
-    self.avatarImageView.highlightedImage = nil;
+//    self.cellTopLabel.text = nil;
+//    self.messageBubbleTopLabel.text = nil;
+//    self.cellBottomLabel.text = nil;
+//
+//    self.textView.dataDetectorTypes = UIDataDetectorTypeNone;
+//    self.textView.text = nil;
+//    self.textView.attributedText = nil;
+//
+//    self.avatarImageView.image = nil;
+//    self.avatarImageView.highlightedImage = nil;
 }
 
 - (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
@@ -220,12 +220,12 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     if ([self isKindOfClass:[JSQMessagesCollectionViewCellIncoming class]]) {
         self.avatarViewSize = customAttributes.incomingAvatarViewSize;
     }
-    else if ([self isKindOfClass:[JSQMessagesCollectionViewCellOutgoing class]]) {
-        self.avatarViewSize = customAttributes.outgoingAvatarViewSize;
-    }
+//    else if ([self isKindOfClass:[JSQMessagesCollectionViewCellOutgoing class]]) {
+//        self.avatarViewSize = customAttributes.outgoingAvatarViewSize;
+//    }
     
     // This will force cell in correct size in current execute loop https://github.com/jessesquires/JSQMessagesViewController/issues/451
-    [self layoutSubviews];
+//    [self layoutSubviews];
     [self setNeedsLayout];
     [self layoutIfNeeded];
     
