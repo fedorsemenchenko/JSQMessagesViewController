@@ -20,6 +20,13 @@
 
 #import "JSQMessageMediaData.h"
 
+typedef NS_ENUM(NSUInteger, MessageType) {
+    MessageTypeText = 0,
+    MessageTypeTransaction = 1,
+    MessageTypeImage = 2,
+    MessageTypeImageWithText = 3
+};
+
 /**
  *  The `JSQMessageData` protocol defines the common interface through which 
  *  a `JSQMessagesViewController` and `JSQMessagesCollectionView` interact with message model objects.
@@ -71,14 +78,8 @@
  *  @return A boolean value specifying whether or not this is a media message or a text message.
  *  Return `YES` if this item is a media message, and `NO` if it is a text message.
  */
-- (BOOL)isMediaMessage;
 
-// is dbo payment cell
-- (BOOL)isDBOPaymentMessage;
-
-
-// is dbo mesasge with text
-- (BOOL)isMediaMessageWithText;
+- (MessageType)messageType;
 
 // dbo payment view
 - (UIView *)dboPaymentView;

@@ -117,51 +117,51 @@
                                         senderDisplayName:kJSQDemoAvatarDisplayNameSquires
                                                      date:[NSDate distantPast]
                                                      text:@"Welcome to JSQMessages: A messaging UI framework for iOS."
-                                             isDBOPayment:NO
                                            dboPaymentView:nil
-                                           dboSupportName:nil],
+                                           dboSupportName:nil
+                                              messageType:MessageTypeText],
                      
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdWoz
                                         senderDisplayName:kJSQDemoAvatarDisplayNameWoz
                                                      date:[NSDate distantPast]
                                                      text:@"It"
-                                             isDBOPayment:NO
                                            dboPaymentView:nil
-                                           dboSupportName:@"Операторов Оператор"],
+                                           dboSupportName:@"Операторов Оператор"
+                                              messageType:MessageTypeText],
 
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
                                         senderDisplayName:kJSQDemoAvatarDisplayNameSquires
                                                      date:[NSDate distantPast]
                                                      text:@"It."
-                                             isDBOPayment:NO
                                            dboPaymentView:nil
-                                           dboSupportName:nil],
+                                           dboSupportName:nil
+                                              messageType:MessageTypeText],
                      
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdJobs
                                         senderDisplayName:kJSQDemoAvatarDisplayNameJobs
                                                      date:[NSDate date]
                                                      text:@"JSQMessagesViewController."
-                                             isDBOPayment:NO
                                            dboPaymentView:nil
-                                           dboSupportName:@"Операторов Оператор"],
+                                           dboSupportName:@"Операторов Оператор"
+                                              messageType:MessageTypeText],
 
                      
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdCook
                                         senderDisplayName:kJSQDemoAvatarDisplayNameCook
                                                      date:[NSDate date]
                                                      text:@"It is unit-tested."
-                                             isDBOPayment:YES
                                            dboPaymentView:view3
-                                           dboSupportName:@"Tim Cook"],
+                                           dboSupportName:@"Tim Cook"
+                                              messageType:MessageTypeTransaction],
 
                      
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
                                         senderDisplayName:kJSQDemoAvatarDisplayNameSquires
                                                      date:[NSDate date]
                                                      text:@"Now with media messages!"
-                                             isDBOPayment:NO
                                            dboPaymentView:nil
-                                           dboSupportName:nil],
+                                           dboSupportName:nil
+                                              messageType:MessageTypeText],
 
                      nil];
     
@@ -185,9 +185,10 @@
     if ([NSUserDefaults longMessageSetting]) {
         JSQMessage *reallyLongMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
                                                             displayName:kJSQDemoAvatarDisplayNameSquires
-                                                                   text:@"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? END Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? END" isDBOPayment:NO
-                                         dboPaymentView:nil
-                                        dboSupportName:nil];
+                                                                   text:@"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? END Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? END"
+                                                         dboPaymentView:nil
+                                                         dboSupportName:nil
+                                                            messageType:MessageTypeText];
         
         [self.messages addObject:reallyLongMessage];
     }
@@ -199,9 +200,9 @@
     JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
                                                    displayName:kJSQDemoAvatarDisplayNameSquires
                                                          media:photoItem
-                                               isMediaWithText:YES
                                                           text:@"Test text for some testing^ whta do u think about it"
-                                                dboSupportName:nil];
+                                                dboSupportName:nil
+                                                   messageType:MessageTypeImageWithText];
     [self.messages addObject:photoMessage];
 }
 
@@ -215,9 +216,9 @@
     JSQMessage *locationMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
                                                       displayName:kJSQDemoAvatarDisplayNameSquires
                                                             media:locationItem
-                                                  isMediaWithText:NO
                                                              text:nil
-                                                   dboSupportName:nil];
+                                                   dboSupportName:nil
+                                                      messageType:MessageTypeText];
     [self.messages addObject:locationMessage];
 }
 
@@ -229,7 +230,10 @@
     JSQVideoMediaItem *videoItem = [[JSQVideoMediaItem alloc] initWithFileURL:videoURL isReadyToPlay:YES];
     JSQMessage *videoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
                                                    displayName:kJSQDemoAvatarDisplayNameSquires
-                                                         media:videoItem isMediaWithText:NO text:nil dboSupportName:nil];
+                                                         media:videoItem
+                                                          text:nil
+                                                dboSupportName:nil
+                                                   messageType:MessageTypeImage];
     [self.messages addObject:videoMessage];
 }
 

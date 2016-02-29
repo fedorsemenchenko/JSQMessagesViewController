@@ -162,9 +162,9 @@
         copyMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdJobs
                                           displayName:kJSQDemoAvatarDisplayNameJobs
                                                  text:@"First received!"
-                                         isDBOPayment:NO
                                        dboPaymentView:nil
-                                       dboSupportName:@"Steave test"];
+                                       dboSupportName:@"Steave test"
+                                          messageType:MessageTypeText];
     }
     
     /**
@@ -180,7 +180,7 @@
         id<JSQMessageMediaData> newMediaData = nil;
         id newMediaAttachmentCopy = nil;
         
-        if (copyMessage.isMediaMessage) {
+        if (copyMessage.messageType == MessageTypeImage) {
             /**
              *  Last message was a media message
              */
@@ -231,9 +231,9 @@
             newMessage = [JSQMessage messageWithSenderId:randomUserId
                                              displayName:self.demoData.users[randomUserId]
                                                    media:newMediaData
-                                         isMediaWithText:YES
                                                     text:@"Test text"
-                                          dboSupportName:nil];
+                                          dboSupportName:nil
+                                             messageType:MessageTypeImage];
         }
         else {
             /**
@@ -241,7 +241,10 @@
              */
             newMessage = [JSQMessage messageWithSenderId:randomUserId
                                              displayName:self.demoData.users[randomUserId]
-                                                    text:copyMessage.text isDBOPayment:NO dboPaymentView:nil dboSupportName:@"Test user"];
+                                                    text:copyMessage.text
+                                          dboPaymentView:nil
+                                          dboSupportName:@"Test user"
+                                             messageType:MessageTypeText];
         }
         
         /**
@@ -256,7 +259,7 @@
         [self finishReceivingMessageAnimated:YES];
         
         
-        if (newMessage.isMediaMessage) {
+        if (newMessage.messageType == MessageTypeImage) {
             /**
              *  Simulate "downloading" media
              */
@@ -322,9 +325,9 @@
                                              senderDisplayName:senderDisplayName
                                                           date:date
                                                           text:text
-                                                  isDBOPayment:NO
                                                 dboPaymentView:nil
-                                                dboSupportName:nil];
+                                                dboSupportName:nil
+                                                   messageType:MessageTypeText];
     
     [self.demoData.messages addObject:message];
     
@@ -531,7 +534,7 @@
     
     JSQMessage *msg = [self.demoData.messages objectAtIndex:indexPath.item];
     
-    if (!msg.isMediaMessage) {
+    if (msg.messageType != MessageTypeImage) {
         
         if ([msg.senderId isEqualToString:self.senderId]) {
             cell.textView.textColor = [UIColor blackColor];
@@ -543,7 +546,7 @@
         cell.textView.linkTextAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,
                                               NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid) };
     } else {
-        if (msg.isMediaMessageWithText) {
+        if (msg.messageType == MessageTypeImageWithText) {
             UIView *loadView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, 210.f, 250.f)];
             [loadView setBackgroundColor:[[UIColor redColor] colorWithAlphaComponent:0.5]];
             [cell setLoadViewOnImageContainerView:loadView];
@@ -677,9 +680,9 @@
                                                  senderDisplayName:self.senderDisplayName
                                                               date:[NSDate date]
                                                              media:item
-                                                   isMediaWithText:YES
                                                               text:@"Test 1221312312432"
-                                                    dboSupportName:nil];
+                                                    dboSupportName:nil
+                                                       messageType:MessageTypeImageWithText];
         [self.demoData.messages addObject:message];
         [self finishSendingMessage];
         return NO;

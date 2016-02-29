@@ -49,17 +49,19 @@
  *  If `NO`, the message contains text. If `YES`, the message contains media.
  *  The value of this property depends on how the object was initialized.
  */
-@property (assign, nonatomic, readonly) BOOL isMediaMessage;
-
-
-// is DBO Payment message
-@property (assign, nonatomic, readonly) BOOL isDBOPaymentMessage;
+//@property (assign, nonatomic, readonly) BOOL isMediaMessage;
+//
+//
+//// is DBO Payment message
+//@property (assign, nonatomic, readonly) BOOL isDBOPaymentMessage;
 
 //DBO Payment View
 @property (strong, nonatomic, readonly) UIView *dboPaymentView;
 
-// is DBO media message with text
-@property (assign, nonatomic, readonly) BOOL isMediaMessageWithText;
+@property (assign, nonatomic, readonly) BOOL messageType;
+
+//// is DBO media message with text
+//@property (assign, nonatomic, readonly) BOOL isMediaMessageWithText;
 
 // is DBO support name
 @property (copy, nonatomic, readonly) NSString *dboSupportName;
@@ -94,9 +96,9 @@
 + (instancetype)messageWithSenderId:(NSString *)senderId
                         displayName:(NSString *)displayName
                                text:(NSString *)text
-                       isDBOPayment:(BOOL)isDBOPayment
                      dboPaymentView:(UIView *)dboPaymentView
-                     dboSupportName:(NSString *)dboSupportName;
+                     dboSupportName:(NSString *)dboSupportName
+                        messageType:(MessageType)messageType;
 
 /**
  *  Initializes and returns a message object having the given senderId, senderDisplayName, date, and text.
@@ -114,9 +116,9 @@
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
                             text:(NSString *)text
-                    isDBOPayment:(BOOL)isDBOPayment
                   dboPaymentView:(UIView *)dboPaymentView
-                  dboSupportName:(NSString *)dboSupportName;
+                  dboSupportName:(NSString *)dboSupportName
+                     messageType:(MessageType)messageType;
 /**
  *  Initializes and returns a message object having the given senderId, displayName, media,
  *  and current system date.
@@ -132,9 +134,9 @@
 + (instancetype)messageWithSenderId:(NSString *)senderId
                         displayName:(NSString *)displayName
                               media:(id<JSQMessageMediaData>)media
-                    isMediaWithText:(BOOL)isMediaWithText
                                text:(NSString *)text
-                     dboSupportName:(NSString *)dboSupportName;
+                     dboSupportName:(NSString *)dboSupportName
+                        messageType:(MessageType)messageType;
 
 /**
  *  Initializes and returns a message object having the given senderId, displayName, date, and media.
@@ -152,8 +154,8 @@
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
                            media:(id<JSQMessageMediaData>)media
-                 isMediaWithText:(BOOL)isMediaWithText
                             text:(NSString *)text
-                  dboSupportName:(NSString *)dboSupportName;
+                  dboSupportName:(NSString *)dboSupportName
+                     messageType:(MessageType)messageType;
 
 @end

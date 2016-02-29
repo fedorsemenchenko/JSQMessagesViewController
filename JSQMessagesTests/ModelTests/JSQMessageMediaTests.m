@@ -76,14 +76,23 @@
     JSQMessage *msg = [[JSQMessage alloc] initWithSenderId:self.senderId
                                          senderDisplayName:self.senderDisplayName
                                                       date:self.date
-                                                     media:self.mockMediaData isMediaWithText:NO text:nil dboSupportName:nil];
+                                                     media:self.mockMediaData
+                                                      text:nil
+                                            dboSupportName:nil
+                                               messageType:MessageTypeImage];
     XCTAssertNotNil(msg, @"Message should not be nil");
 }
 
 - (void)testMediaMessageInvalidInit
 {
     XCTAssertThrows([[JSQMessage alloc] init], @"Invalid init should throw");
-    XCTAssertThrows([[JSQMessage alloc] initWithSenderId:nil senderDisplayName:nil date:nil media:nil isMediaWithText:NO text:nil dboSupportName:nil], @"Invalid init should throw");
+    XCTAssertThrows([[JSQMessage alloc] initWithSenderId:nil
+                                       senderDisplayName:nil
+                                                    date:nil
+                                                   media:nil
+                                                    text:nil
+                                          dboSupportName:nil
+                                             messageType:MessageTypeImage], @"Invalid init should throw");
 }
 
 - (void)testMediaMessageIsEqual
@@ -91,7 +100,10 @@
     JSQMessage *msg = [[JSQMessage alloc] initWithSenderId:self.senderId
                                          senderDisplayName:self.senderDisplayName
                                                       date:self.date
-                                                     media:self.mockMediaData isMediaWithText:NO text:nil dboSupportName:nil];
+                                                     media:self.mockMediaData
+                                                      text:nil
+                                            dboSupportName:nil
+                                               messageType:MessageTypeImage];
     JSQMessage *copy = [msg copy];
     
     XCTAssertEqualObjects(msg, copy, @"Copied messages should be equal");
@@ -106,7 +118,10 @@
     JSQMessage *msg = [[JSQMessage alloc] initWithSenderId:self.senderId
                                          senderDisplayName:self.senderDisplayName
                                                       date:self.date
-                                                     media:[FakeMedia new] isMediaWithText:NO text:nil dboSupportName:nil];
+                                                     media:[FakeMedia new]
+                                                      text:nil
+                                            dboSupportName:nil
+                                               messageType:MessageTypeImage];
     
     NSData *msgData = [NSKeyedArchiver archivedDataWithRootObject:msg];
     

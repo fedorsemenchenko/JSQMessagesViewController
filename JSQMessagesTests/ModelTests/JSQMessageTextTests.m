@@ -55,16 +55,22 @@
                                          senderDisplayName:self.senderDisplayName
                                                       date:self.date
                                                       text:self.text
-                                              isDBOPayment:NO
                                             dboPaymentView:nil
-                                            dboSupportName:nil];
+                                            dboSupportName:nil
+                                               messageType:MessageTypeText];
     XCTAssertNotNil(msg, @"Message should not be nil");
 }
 
 - (void)testTextMessageInvalidInit
 {
     XCTAssertThrows([[JSQMessage alloc] init], @"Invalid init should throw");
-    XCTAssertThrows([[JSQMessage alloc] initWithSenderId:nil senderDisplayName:nil date:nil text:nil isDBOPayment:NO dboPaymentView:nil dboSupportName:nil], @"Invalid init should throw" );
+    XCTAssertThrows([[JSQMessage alloc] initWithSenderId:nil
+                                       senderDisplayName:nil
+                                                    date:nil
+                                                    text:nil
+                                          dboPaymentView:nil
+                                          dboSupportName:nil
+                                             messageType:MessageTypeText], @"Invalid init should throw" );
 }
 
 - (void)testTextMessageIsEqual
@@ -73,9 +79,9 @@
                                          senderDisplayName:self.senderDisplayName
                                                       date:self.date
                                                       text:self.text
-                                              isDBOPayment:NO
                                             dboPaymentView:nil
-                                            dboSupportName:nil];
+                                            dboSupportName:nil
+                                               messageType:MessageTypeText];
     JSQMessage *copy = [msg copy];
     
     XCTAssertEqualObjects(msg, copy, @"Copied messages should be equal");
@@ -91,9 +97,10 @@
                                          senderDisplayName:self.senderDisplayName
                                                       date:self.date
                                                       text:self.text
-                                              isDBOPayment:NO
                                             dboPaymentView:nil
-                                            dboSupportName:nil];
+                                            dboSupportName:nil
+                                               messageType:MessageTypeText];
+    
     NSData *msgData = [NSKeyedArchiver archivedDataWithRootObject:msg];
     
     JSQMessage *unarchivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:msgData];
