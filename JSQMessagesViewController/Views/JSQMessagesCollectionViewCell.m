@@ -226,8 +226,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     
     // This will force cell in correct size in current execute loop https://github.com/jessesquires/JSQMessagesViewController/issues/451
 //    [self layoutSubviews];
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
+//    [self setNeedsLayout];
+//    [self layoutIfNeeded];
     
 
 //    if ([self isKindOfClass:[JSQMessagesCollectionViewCellDBOPayment class]]) {
