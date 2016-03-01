@@ -34,7 +34,6 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @interface JSQMessagesCollectionViewCell ()
 
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellTopLabel;
-@property (weak, nonatomic) IBOutlet JSQMessagesLabel *messageBubbleTopLabel;
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellBottomLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *supportNameLabel;
@@ -54,7 +53,6 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewMarginHorizontalSpaceConstraint;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cellTopLabelHeightConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBubbleTopLabelHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cellBottomLabelHeightConstraint;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewWidthConstraint;
@@ -126,7 +124,6 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     [self.dboImageContainerView.layer setCornerRadius:20.f];
     
     self.cellTopLabelHeightConstraint.constant = 0.0f;
-    self.messageBubbleTopLabelHeightConstraint.constant = 0.0f;
     self.cellBottomLabelHeightConstraint.constant = 0.0f;
 
     self.avatarViewSize = CGSizeZero;
@@ -168,6 +165,12 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     _tapGestureRecognizer = nil;
 }
 
+#pragma mark - Frames
+
+- (void)setFramesWithMessageData:(id<JSQMessageData>)messageData {
+    self.messageBubbleImageView.frame = CGRectMake(0.f, 0.f, messageData.messageSize.width, messageData.messageSize.height);
+}
+
 #pragma mark - Collection view cell
 
 - (void)prepareForReuse
@@ -191,12 +194,11 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     return layoutAttributes;
 }
 
-- (void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
-{
-    [super applyLayoutAttributes:layoutAttributes];
-
-//    JSQMessagesCollectionViewLayoutAttributes *customAttributes = (JSQMessagesCollectionViewLayoutAttributes *)layoutAttributes;
+//- (void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
+//{
+//    [super applyLayoutAttributes:layoutAttributes];
 //
+//    JSQMessagesCollectionViewLayoutAttributes *customAttributes = (JSQMessagesCollectionViewLayoutAttributes *)layoutAttributes;
 //    if (self.textView.font != customAttributes.messageBubbleFont) {
 //        self.textView.font = customAttributes.messageBubbleFont;
 //    }
@@ -227,7 +229,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 //    }
     
     // This will force cell in correct size in current execute loop https://github.com/jessesquires/JSQMessagesViewController/issues/451
-    [self layoutSubviews];
+//    [self layoutSubviews];
 //    [self setNeedsLayout];
 //    [self layoutIfNeeded];
     
@@ -242,7 +244,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 //        frame.size.height = frame.size.height + 60.f;
 //        self.frame = frame;
 //    }
-}
+//}
 
 - (void)setHighlighted:(BOOL)highlighted
 {

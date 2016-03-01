@@ -124,8 +124,7 @@
                                                      media:[FakeMedia new]
                                                       text:nil
                                             dboSupportName:nil
-                                               messageType:MessageTypeImage
-                                               messageSize:CGSizeZero];
+                                               messageType:MessageTypeImage messageSize:CGSizeZero];
     
     NSData *msgData = [NSKeyedArchiver archivedDataWithRootObject:msg];
     

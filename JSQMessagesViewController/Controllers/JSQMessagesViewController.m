@@ -519,7 +519,7 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
     MessageType type = [messageItem messageType];
     NSString *cellIdentifier = nil;
     JSQMessagesCollectionViewCell *cell;
-
+    
     switch (type) {
         case MessageTypeText:
             cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
@@ -570,6 +570,8 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
         cell.messageBubbleTopLabel.textInsets = UIEdgeInsetsMake(0.0f, bubbleTopLabelInset, 0.0f, 0.0f);
     }
     
+    [cell setFramesWithMessageData:messageItem];
+    
     cell.cellTopLabel.text = [collectionView.dataSource collectionView:collectionView textForCellTopLabelAtIndexPath:indexPath];
 //    cell.messageBubbleTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:indexPath];
     cell.cellBottomLabel.text = [collectionView.dataSource collectionView:collectionView textForCellBottomLabelAtIndexPath:indexPath];
@@ -578,7 +580,6 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
     
     cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
     cell.layer.shouldRasterize = YES;
-
 
     
 //    if (isMediaMessage) {

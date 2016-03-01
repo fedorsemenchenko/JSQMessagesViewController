@@ -120,7 +120,7 @@
                                            dboPaymentView:nil
                                            dboSupportName:nil
                                               messageType:MessageTypeText
-                                              messageSize:CGSizeZero],
+                                              messageSize:CGSizeMake(150.f, 60.f)],
                      
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdWoz
                                         senderDisplayName:kJSQDemoAvatarDisplayNameWoz
@@ -129,7 +129,7 @@
                                            dboPaymentView:nil
                                            dboSupportName:@"Операторов Оператор"
                                               messageType:MessageTypeText
-                                              messageSize:CGSizeZero],
+                                              messageSize:CGSizeMake(150.f, 60.f)],
 
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
                                         senderDisplayName:kJSQDemoAvatarDisplayNameSquires
@@ -138,7 +138,7 @@
                                            dboPaymentView:nil
                                            dboSupportName:nil
                                               messageType:MessageTypeText
-                                              messageSize:CGSizeZero],
+                                              messageSize:CGSizeMake(150.f, 60.f)],
                      
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdJobs
                                         senderDisplayName:kJSQDemoAvatarDisplayNameJobs
@@ -147,17 +147,17 @@
                                            dboPaymentView:nil
                                            dboSupportName:@"Операторов Оператор"
                                               messageType:MessageTypeText
-                                              messageSize:CGSizeZero],
+                                              messageSize:CGSizeMake(150.f, 60.f)],
 
                      
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdCook
                                         senderDisplayName:kJSQDemoAvatarDisplayNameCook
                                                      date:[NSDate date]
                                                      text:@"It is unit-tested."
-                                           dboPaymentView:view3
+                                           dboPaymentView:nil
                                            dboSupportName:@"Tim Cook"
-                                              messageType:MessageTypeTransaction
-                                              messageSize:CGSizeZero],
+                                              messageType:MessageTypeText
+                                              messageSize:CGSizeMake(150.f, 60.f)],
 
                      
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
@@ -167,7 +167,7 @@
                                            dboPaymentView:nil
                                            dboSupportName:nil
                                               messageType:MessageTypeText
-                                              messageSize:CGSizeZero],
+                                              messageSize:CGSizeMake(150.f, 60.f)],
 
                      nil];
     
@@ -195,7 +195,7 @@
                                                          dboPaymentView:nil
                                                          dboSupportName:nil
                                                             messageType:MessageTypeText
-                                                            messageSize:CGSizeZero];
+                                                            messageSize:CGSizeMake(150.f, 60.f)];
         
         [self.messages addObject:reallyLongMessage];
     }
@@ -210,7 +210,7 @@
                                                           text:@"Test text for some testing^ whta do u think about it"
                                                 dboSupportName:nil
                                                    messageType:MessageTypeImageWithText
-                                                   messageSize:CGSizeZero];
+                                                   messageSize:CGSizeMake(150.f, 60.f)];
     [self.messages addObject:photoMessage];
 }
 
@@ -227,7 +227,7 @@
                                                              text:nil
                                                    dboSupportName:nil
                                                       messageType:MessageTypeText
-                                                      messageSize:CGSizeZero];
+                                                      messageSize:CGSizeMake(150.f, 60.f)];
     [self.messages addObject:locationMessage];
 }
 
@@ -243,7 +243,7 @@
                                                           text:nil
                                                 dboSupportName:nil
                                                    messageType:MessageTypeImage
-                                                   messageSize:CGSizeZero];
+                                                   messageSize:CGSizeMake(150.f, 60.f)];
     [self.messages addObject:videoMessage];
 }
 

@@ -20,6 +20,7 @@
 
 #import "JSQMessagesLabel.h"
 #import "JSQMessagesCellTextView.h"
+#import "JSQMessageData.h"
 
 @class JSQMessagesCollectionViewCell;
 
@@ -217,5 +218,7 @@
 - (void)setLoadViewOnImageContainerView:(UIView *)loadView;
 - (void)removeLoadViewFromImageContainer;
 - (void)setFontsForText:(UIFont *)fontText fontSupport:(UIFont *)fontSupport;
+
+- (void)setFramesWithMessageData:(id<JSQMessageData>)messageData;
 
 @end
