@@ -236,7 +236,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 //        [self jsq_updateConstraint:self.textViewBottomVerticalSpaceConstraint
 //                      withConstant:60.f];
 //    }
-
+//
 //    if ([self isKindOfClass:[JSQMessagesCollectionViewCellDBOPayment class]]) {
 //        CGRect frame = self.frame;
 //        frame.size.height = frame.size.height + 60.f;
