@@ -9,6 +9,7 @@
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -59,12 +60,20 @@
                                 <color key="textColor" red="0.23921568627450979" green="0.67843137254901964" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryo-VR-O7l">
+                                <rect key="frame" x="6" y="25" width="238" height="18"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="KYU-B8-cUW" secondAttribute="trailing" id="4qS-03-PFO"/>
                             <constraint firstAttribute="trailing" secondItem="crI-7T-015" secondAttribute="trailing" constant="15" id="9fz-co-BPE"/>
                             <constraint firstAttribute="bottom" secondItem="KYU-B8-cUW" secondAttribute="bottom" id="B2v-Gq-Y1L"/>
+                            <constraint firstItem="ryo-VR-O7l" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="6" id="CRR-Bq-boX"/>
+                            <constraint firstAttribute="trailing" secondItem="ryo-VR-O7l" secondAttribute="trailing" id="Ky5-2h-7bK"/>
                             <constraint firstItem="crI-7T-015" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="20" id="TKk-MO-njL"/>
                             <constraint firstAttribute="trailing" secondItem="OCS-Fu-acq" secondAttribute="trailing" id="TdB-8V-aUc"/>
                             <constraint firstItem="KYU-B8-cUW" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="6" id="Tg9-9l-vr8"/>
@@ -73,6 +82,7 @@
                             <constraint firstItem="KYU-B8-cUW" firstAttribute="top" secondItem="crI-7T-015" secondAttribute="bottom" id="coF-6y-I6T"/>
                             <constraint firstItem="OCS-Fu-acq" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" id="qpQ-dc-2V5"/>
                             <constraint firstAttribute="width" constant="244" id="stE-iz-VHo"/>
+                            <constraint firstItem="ryo-VR-O7l" firstAttribute="top" secondItem="crI-7T-015" secondAttribute="bottom" id="wSf-vP-iMi"/>
                             <constraint firstItem="OCS-Fu-acq" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="top" id="zTa-8g-VY4"/>
                         </constraints>
                     </view>
@@ -138,6 +148,7 @@
                 <outlet property="messageBubbleTopLabel" destination="Ufa-bF-l1Y" id="VtH-te-blR"/>
                 <outlet property="messageBubbleTopLabelHeightConstraint" destination="fal-sy-hrK" id="kgv-NO-Gud"/>
                 <outlet property="supportNameLabel" destination="crI-7T-015" id="DD7-To-gDC"/>
+                <outlet property="textLabel" destination="ryo-VR-O7l" id="phf-6L-xCZ"/>
                 <outlet property="textView" destination="KYU-B8-cUW" id="1Yv-ln-EUZ"/>
                 <outlet property="textViewAvatarHorizontalSpaceConstraint" destination="Tg9-9l-vr8" id="HWn-aO-NbR"/>
                 <outlet property="textViewBottomVerticalSpaceConstraint" destination="B2v-Gq-Y1L" id="oKV-Ti-Oci"/>

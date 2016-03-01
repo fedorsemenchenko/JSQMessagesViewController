@@ -116,6 +116,7 @@
  *  @warning If mediaView returns a non-nil view, then this value will be `nil`.
  */
 @property (weak, nonatomic, readonly) JSQMessagesCellTextView *textView;
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 
 /**
  *  Returns the bubble image view of the cell that is responsible for displaying message bubble images.

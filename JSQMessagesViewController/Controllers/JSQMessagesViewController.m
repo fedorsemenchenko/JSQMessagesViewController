@@ -525,7 +525,8 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
             cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
             cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
             cell.delegate = collectionView;
-//            cell.textView.text = [messageItem text];
+            //cell.textView.text = [messageItem text];
+            cell.textLabel.text = [messageItem text];
             break;
             
         case MessageTypeTransaction:
