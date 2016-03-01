@@ -55,7 +55,7 @@
 
 @property (assign, nonatomic, readonly) MessageType messageType;
 
-@property (assign, nonatomic, readonly) CGSize messageSize;
+@property (assign, nonatomic) CGSize messageSize;
 
 //// is DBO media message with text
 //@property (assign, nonatomic, readonly) BOOL isMediaMessageWithText;

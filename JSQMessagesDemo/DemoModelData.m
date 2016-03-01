@@ -120,54 +120,63 @@
                                            dboPaymentView:nil
                                            dboSupportName:nil
                                               messageType:MessageTypeText
-                                              messageSize:CGSizeMake(150.f, 60.f)],
-                     
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdWoz
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameWoz
-                                                     date:[NSDate distantPast]
-                                                     text:@"It"
-                                           dboPaymentView:nil
-                                           dboSupportName:@"Операторов Оператор"
-                                              messageType:MessageTypeText
-                                              messageSize:CGSizeMake(150.f, 60.f)],
-
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
-                                                     date:[NSDate distantPast]
-                                                     text:@"It."
-                                           dboPaymentView:nil
-                                           dboSupportName:nil
-                                              messageType:MessageTypeText
-                                              messageSize:CGSizeMake(150.f, 60.f)],
-                     
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdJobs
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameJobs
-                                                     date:[NSDate date]
-                                                     text:@"JSQMessagesViewController."
-                                           dboPaymentView:nil
-                                           dboSupportName:@"Операторов Оператор"
-                                              messageType:MessageTypeText
-                                              messageSize:CGSizeMake(150.f, 60.f)],
-
-                     
-                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdCook
-                                        senderDisplayName:kJSQDemoAvatarDisplayNameCook
-                                                     date:[NSDate date]
-                                                     text:@"It is unit-tested."
-                                           dboPaymentView:nil
-                                           dboSupportName:@"Tim Cook"
-                                              messageType:MessageTypeText
-                                              messageSize:CGSizeMake(150.f, 60.f)],
-
+                                              messageSize:CGSizeZero],
                      
                      [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
                                         senderDisplayName:kJSQDemoAvatarDisplayNameSquires
-                                                     date:[NSDate date]
-                                                     text:@"Now with media messages!"
+                                                     date:[NSDate distantPast]
+                                                     text:@"adsfihu wehqru ioeqwhruw up9sdhvu ierhnisad fbhiusdafh bisuhbiepsudfh uiweqfh u9sadhfdk'mflksdf."
                                            dboPaymentView:nil
                                            dboSupportName:nil
                                               messageType:MessageTypeText
-                                              messageSize:CGSizeMake(150.f, 60.f)],
+                                              messageSize:CGSizeZero],
+
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdWoz
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameWoz
+//                                                     date:[NSDate distantPast]
+//                                                     text:@"It"
+//                                           dboPaymentView:nil
+//                                           dboSupportName:@"Операторов Оператор"
+//                                              messageType:MessageTypeText
+//                                              messageSize:CGSizeMake(150.f, 60.f)],
+//
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+//                                                     date:[NSDate distantPast]
+//                                                     text:@"It."
+//                                           dboPaymentView:nil
+//                                           dboSupportName:nil
+//                                              messageType:MessageTypeText
+//                                              messageSize:CGSizeMake(150.f, 60.f)],
+//                     
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdJobs
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameJobs
+//                                                     date:[NSDate date]
+//                                                     text:@"JSQMessagesViewController."
+//                                           dboPaymentView:nil
+//                                           dboSupportName:@"Операторов Оператор"
+//                                              messageType:MessageTypeText
+//                                              messageSize:CGSizeMake(150.f, 60.f)],
+//
+//                     
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdCook
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameCook
+//                                                     date:[NSDate date]
+//                                                     text:@"It is unit-tested."
+//                                           dboPaymentView:nil
+//                                           dboSupportName:@"Tim Cook"
+//                                              messageType:MessageTypeText
+//                                              messageSize:CGSizeMake(150.f, 60.f)],
+//
+//                     
+//                     [[JSQMessage alloc] initWithSenderId:kJSQDemoAvatarIdSquires
+//                                        senderDisplayName:kJSQDemoAvatarDisplayNameSquires
+//                                                     date:[NSDate date]
+//                                                     text:@"Now with media messages!"
+//                                           dboPaymentView:nil
+//                                           dboSupportName:nil
+//                                              messageType:MessageTypeText
+//                                              messageSize:CGSizeMake(150.f, 60.f)],
 
                      nil];
     
@@ -189,62 +198,63 @@
      *  You should see "END" twice
      */
     if ([NSUserDefaults longMessageSetting]) {
-        JSQMessage *reallyLongMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
-                                                            displayName:kJSQDemoAvatarDisplayNameSquires
-                                                                   text:@"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? END Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? END"
-                                                         dboPaymentView:nil
-                                                         dboSupportName:nil
-                                                            messageType:MessageTypeText
-                                                            messageSize:CGSizeMake(150.f, 60.f)];
-        
-        [self.messages addObject:reallyLongMessage];
+//        JSQMessage *reallyLongMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
+//                                                            displayName:kJSQDemoAvatarDisplayNameSquires
+//                                                                   text:@"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? END Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? END"
+//                                                         dboPaymentView:nil
+//                                                         dboSupportName:nil
+//                                                            messageType:MessageTypeText
+//                                                            messageSize:CGSizeMake(150.f, 60.f)];
+//        
+//        [self.messages addObject:reallyLongMessage];
     }
 }
 
+
 - (void)addPhotoMediaMessage
 {
-    JSQPhotoMediaItem *photoItem = [[JSQPhotoMediaItem alloc] initWithImage:[UIImage imageNamed:@"goldengate"]];
-    JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
-                                                   displayName:kJSQDemoAvatarDisplayNameSquires
-                                                         media:photoItem
-                                                          text:@"Test text for some testing^ whta do u think about it"
-                                                dboSupportName:nil
-                                                   messageType:MessageTypeImageWithText
-                                                   messageSize:CGSizeMake(150.f, 60.f)];
-    [self.messages addObject:photoMessage];
+//    JSQPhotoMediaItem *photoItem = [[JSQPhotoMediaItem alloc] initWithImage:[UIImage imageNamed:@"goldengate"]];
+//    JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
+//                                                   displayName:kJSQDemoAvatarDisplayNameSquires
+//                                                         media:photoItem
+//                                                          text:@"Test text for some testing^ whta do u think about it"
+//                                                dboSupportName:nil
+//                                                   messageType:MessageTypeImageWithText
+//                                                   messageSize:CGSizeMake(150.f, 60.f)];
+//    [self.messages addObject:photoMessage];
 }
 
 - (void)addLocationMediaMessageCompletion:(JSQLocationMediaItemCompletionBlock)completion
 {
-    CLLocation *ferryBuildingInSF = [[CLLocation alloc] initWithLatitude:37.795313 longitude:-122.393757];
-    
-    JSQLocationMediaItem *locationItem = [[JSQLocationMediaItem alloc] init];
-    [locationItem setLocation:ferryBuildingInSF withCompletionHandler:completion];
-    
-    JSQMessage *locationMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
-                                                      displayName:kJSQDemoAvatarDisplayNameSquires
-                                                            media:locationItem
-                                                             text:nil
-                                                   dboSupportName:nil
-                                                      messageType:MessageTypeText
-                                                      messageSize:CGSizeMake(150.f, 60.f)];
-    [self.messages addObject:locationMessage];
+//    CLLocation *ferryBuildingInSF = [[CLLocation alloc] initWithLatitude:37.795313 longitude:-122.393757];
+//    
+//    JSQLocationMediaItem *locationItem = [[JSQLocationMediaItem alloc] init];
+//    [locationItem setLocation:ferryBuildingInSF withCompletionHandler:completion];
+//    
+//    JSQMessage *locationMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
+//                                                      displayName:kJSQDemoAvatarDisplayNameSquires
+//                                                            media:locationItem
+//                                                             text:nil
+//                                                   dboSupportName:nil
+//                                                      messageType:MessageTypeText
+//                                                      messageSize:CGSizeMake(150.f, 60.f)];
+//    [self.messages addObject:locationMessage];
 }
 
 - (void)addVideoMediaMessage
 {
     // don't have a real video, just pretending
-    NSURL *videoURL = [NSURL URLWithString:@"file://"];
-    
-    JSQVideoMediaItem *videoItem = [[JSQVideoMediaItem alloc] initWithFileURL:videoURL isReadyToPlay:YES];
-    JSQMessage *videoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
-                                                   displayName:kJSQDemoAvatarDisplayNameSquires
-                                                         media:videoItem
-                                                          text:nil
-                                                dboSupportName:nil
-                                                   messageType:MessageTypeImage
-                                                   messageSize:CGSizeMake(150.f, 60.f)];
-    [self.messages addObject:videoMessage];
+//    NSURL *videoURL = [NSURL URLWithString:@"file://"];
+//    
+//    JSQVideoMediaItem *videoItem = [[JSQVideoMediaItem alloc] initWithFileURL:videoURL isReadyToPlay:YES];
+//    JSQMessage *videoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
+//                                                   displayName:kJSQDemoAvatarDisplayNameSquires
+//                                                         media:videoItem
+//                                                          text:nil
+//                                                dboSupportName:nil
+//                                                   messageType:MessageTypeImage
+//                                                   messageSize:CGSizeMake(150.f, 60.f)];
+//    [self.messages addObject:videoMessage];
 }
 
 @end

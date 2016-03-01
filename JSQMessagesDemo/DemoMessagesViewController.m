@@ -617,9 +617,9 @@
      *
      *  Show a timestamp for every 3rd message
      */
-    if (indexPath.item % 3 == 0) {
-        return kJSQMessagesCollectionViewCellLabelHeightDefault;
-    }
+//    if (indexPath.item % 3 == 0) {
+//        return kJSQMessagesCollectionViewCellLabelHeightDefault;
+//    }
     
     return 0.0f;
 }
@@ -630,19 +630,19 @@
     /**
      *  iOS7-style sender name labels
      */
-    JSQMessage *currentMessage = [self.demoData.messages objectAtIndex:indexPath.item];
-    if ([[currentMessage senderId] isEqualToString:self.senderId]) {
+//    JSQMessage *currentMessage = [self.demoData.messages objectAtIndex:indexPath.item];
+//    if ([[currentMessage senderId] isEqualToString:self.senderId]) {
         return 0.0f;
-    }
-    
-    if (indexPath.item - 1 > 0) {
-        JSQMessage *previousMessage = [self.demoData.messages objectAtIndex:indexPath.item - 1];
-        if ([[previousMessage senderId] isEqualToString:[currentMessage senderId]]) {
-            return 0.0f;
-        }
-    }
-    
-    return kJSQMessagesCollectionViewCellLabelHeightDefault;
+//    }
+//    
+//    if (indexPath.item - 1 > 0) {
+//        JSQMessage *previousMessage = [self.demoData.messages objectAtIndex:indexPath.item - 1];
+//        if ([[previousMessage senderId] isEqualToString:[currentMessage senderId]]) {
+//            return 0.0f;
+//        }
+//    }
+//    
+//    return kJSQMessagesCollectionViewCellLabelHeightDefault;
 }
 
 - (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView

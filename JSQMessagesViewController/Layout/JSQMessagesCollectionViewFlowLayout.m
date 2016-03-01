@@ -443,9 +443,8 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     
     CGFloat finalHeight = messageBubbleSize.height;
     finalHeight += attributes.cellTopLabelHeight;
-    finalHeight += attributes.messageBubbleTopLabelHeight;
+//    finalHeight += attributes.messageBubbleTopLabelHeight;
     finalHeight += attributes.cellBottomLabelHeight;
-    
     return CGSizeMake(self.itemWidth, ceilf(finalHeight));
 }
 
@@ -467,13 +466,14 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     
     layoutAttributes.outgoingAvatarViewSize = self.outgoingAvatarViewSize;
     
+    
     layoutAttributes.cellTopLabelHeight = [self.collectionView.delegate collectionView:self.collectionView
                                                                                 layout:self
                                                       heightForCellTopLabelAtIndexPath:indexPath];
     
-    layoutAttributes.messageBubbleTopLabelHeight = [self.collectionView.delegate collectionView:self.collectionView
-                                                                                         layout:self
-                                                      heightForMessageBubbleTopLabelAtIndexPath:indexPath];
+//    layoutAttributes.messageBubbleTopLabelHeight = [self.collectionView.delegate collectionView:self.collectionView
+//                                                                                         layout:self
+//                                                      heightForMessageBubbleTopLabelAtIndexPath:indexPath];
     
     layoutAttributes.cellBottomLabelHeight = [self.collectionView.delegate collectionView:self.collectionView
                                                                                    layout:self

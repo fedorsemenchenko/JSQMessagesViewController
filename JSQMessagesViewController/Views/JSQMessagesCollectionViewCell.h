@@ -219,6 +219,6 @@
 - (void)removeLoadViewFromImageContainer;
 - (void)setFontsForText:(UIFont *)fontText fontSupport:(UIFont *)fontSupport;
 
-- (void)setFramesWithMessageData:(id<JSQMessageData>)messageData;
+- (void)setFramesWithMessageData:(id<JSQMessageData>)messageData isOutgoingMessage:(BOOL)isOutgoingMessage withSize:(CGSize)messageSize;
 
 @end

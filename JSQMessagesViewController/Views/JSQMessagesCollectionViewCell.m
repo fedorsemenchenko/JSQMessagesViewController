@@ -45,18 +45,18 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UIView *avatarContainerView;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBubbleContainerWidthConstraint;
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBubbleContainerWidthConstraint;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewTopVerticalSpaceConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewBottomVerticalSpaceConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewAvatarHorizontalSpaceConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewMarginHorizontalSpaceConstraint;
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewTopVerticalSpaceConstraint;
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewBottomVerticalSpaceConstraint;
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewAvatarHorizontalSpaceConstraint;
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewMarginHorizontalSpaceConstraint;
+//
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cellTopLabelHeightConstraint;
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cellBottomLabelHeightConstraint;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cellTopLabelHeightConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cellBottomLabelHeightConstraint;
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewWidthConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewHeightConstraint;
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewWidthConstraint;
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewHeightConstraint;
 
 //DBO Image with text
 @property (weak, nonatomic) IBOutlet UIView *dboImageContainerView;
@@ -65,7 +65,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 @property (weak, nonatomic) IBOutlet UIView *dboPaymentContainerView;
 
-@property (assign, nonatomic) UIEdgeInsets textViewFrameInsets;
+//@property (assign, nonatomic) UIEdgeInsets textViewFrameInsets;
 
 @property (assign, nonatomic) CGSize avatarViewSize;
 
@@ -123,17 +123,17 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     self.dboImageContainerView.clipsToBounds = YES;
     [self.dboImageContainerView.layer setCornerRadius:20.f];
     
-    self.cellTopLabelHeightConstraint.constant = 0.0f;
-    self.cellBottomLabelHeightConstraint.constant = 0.0f;
+//    self.cellTopLabelHeightConstraint.constant = 0.0f;
+//    self.cellBottomLabelHeightConstraint.constant = 0.0f;
 
     self.avatarViewSize = CGSizeZero;
 
     self.cellTopLabel.textAlignment = NSTextAlignmentCenter;
-    self.cellTopLabel.font = [UIFont boldSystemFontOfSize:12.0f];
+//    self.cellTopLabel.font = [UIFont boldSystemFontOfSize:12.0f];
     self.cellTopLabel.textColor = [UIColor lightGrayColor];
 
-    self.messageBubbleTopLabel.font = [UIFont systemFontOfSize:12.0f];
-    self.messageBubbleTopLabel.textColor = [UIColor lightGrayColor];
+//    self.messageBubbleTopLabel.font = [UIFont systemFontOfSize:12.0f];
+//    self.messageBubbleTopLabel.textColor = [UIColor lightGrayColor];
 
     self.cellBottomLabel.font = [UIFont systemFontOfSize:11.0f];
     self.cellBottomLabel.textColor = [UIColor lightGrayColor];
@@ -167,8 +167,21 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 #pragma mark - Frames
 
-- (void)setFramesWithMessageData:(id<JSQMessageData>)messageData {
-    self.messageBubbleImageView.frame = CGRectMake(0.f, 0.f, messageData.messageSize.width, messageData.messageSize.height);
+- (void)setFramesWithMessageData:(id<JSQMessageData>)messageData isOutgoingMessage:(BOOL)isOutgoingMessage withSize:(CGSize)messageSize {
+    
+    //messageSize заменить на messageData.messageSize
+    
+    CGRect frame = self.messageBubbleContainerView.frame;
+    frame.origin.y = 0.f;
+    self.messageBubbleContainerView.frame = frame;
+    
+    self.messageBubbleImageView.frame = CGRectMake(0.f, 0.f, messageSize.width - 70.f, messageSize.height);
+   
+    if (isOutgoingMessage) {
+        self.textView.frame = CGRectMake(20.f, 10.f, messageSize.width - 100.f, messageSize.height - 10.f);
+    } else {
+        self.textView.frame = CGRectMake(20.f, 31.f, messageSize.width - 100.f, messageSize.height - 10.f);
+    }
 }
 
 #pragma mark - Collection view cell
@@ -322,27 +335,27 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     self.avatarContainerView.backgroundColor = backgroundColor;
 }
 
-- (void)setAvatarViewSize:(CGSize)avatarViewSize
-{
-    if (CGSizeEqualToSize(avatarViewSize, self.avatarViewSize)) {
-        return;
-    }
+//- (void)setAvatarViewSize:(CGSize)avatarViewSize
+//{
+//    if (CGSizeEqualToSize(avatarViewSize, self.avatarViewSize)) {
+//        return;
+//    }
+//
+//    [self jsq_updateConstraint:self.avatarContainerViewWidthConstraint withConstant:avatarViewSize.width];
+//    [self jsq_updateConstraint:self.avatarContainerViewHeightConstraint withConstant:avatarViewSize.height];
+//}
 
-    [self jsq_updateConstraint:self.avatarContainerViewWidthConstraint withConstant:avatarViewSize.width];
-    [self jsq_updateConstraint:self.avatarContainerViewHeightConstraint withConstant:avatarViewSize.height];
-}
-
-- (void)setTextViewFrameInsets:(UIEdgeInsets)textViewFrameInsets
-{
-    if (UIEdgeInsetsEqualToEdgeInsets(textViewFrameInsets, self.textViewFrameInsets)) {
-        return;
-    }
-
-    [self jsq_updateConstraint:self.textViewTopVerticalSpaceConstraint withConstant:textViewFrameInsets.top];
-    [self jsq_updateConstraint:self.textViewBottomVerticalSpaceConstraint withConstant:textViewFrameInsets.bottom];
-    [self jsq_updateConstraint:self.textViewAvatarHorizontalSpaceConstraint withConstant:textViewFrameInsets.right];
-    [self jsq_updateConstraint:self.textViewMarginHorizontalSpaceConstraint withConstant:textViewFrameInsets.left];
-}
+//- (void)setTextViewFrameInsets:(UIEdgeInsets)textViewFrameInsets
+//{
+//    if (UIEdgeInsetsEqualToEdgeInsets(textViewFrameInsets, self.textViewFrameInsets)) {
+//        return;
+//    }
+//
+//    [self jsq_updateConstraint:self.textViewTopVerticalSpaceConstraint withConstant:textViewFrameInsets.top];
+//    [self jsq_updateConstraint:self.textViewBottomVerticalSpaceConstraint withConstant:textViewFrameInsets.bottom];
+//    [self jsq_updateConstraint:self.textViewAvatarHorizontalSpaceConstraint withConstant:textViewFrameInsets.right];
+//    [self jsq_updateConstraint:self.textViewMarginHorizontalSpaceConstraint withConstant:textViewFrameInsets.left];
+//}
 
 - (void)setMediaView:(UIView *)mediaView
 {
@@ -440,19 +453,19 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 #pragma mark - Getters
 
-- (CGSize)avatarViewSize
-{
-    return CGSizeMake(self.avatarContainerViewWidthConstraint.constant,
-                      self.avatarContainerViewHeightConstraint.constant);
-}
+//- (CGSize)avatarViewSize
+//{
+//    return CGSizeMake(self.avatarContainerViewWidthConstraint.constant,
+//                      self.avatarContainerViewHeightConstraint.constant);
+//}
 
-- (UIEdgeInsets)textViewFrameInsets
-{
-    return UIEdgeInsetsMake(self.textViewTopVerticalSpaceConstraint.constant,
-                            self.textViewMarginHorizontalSpaceConstraint.constant,
-                            self.textViewBottomVerticalSpaceConstraint.constant,
-                            self.textViewAvatarHorizontalSpaceConstraint.constant);
-}
+//- (UIEdgeInsets)textViewFrameInsets
+//{
+//    return UIEdgeInsetsMake(self.textViewTopVerticalSpaceConstraint.constant,
+//                            self.textViewMarginHorizontalSpaceConstraint.constant,
+//                            self.textViewBottomVerticalSpaceConstraint.constant,
+//                            self.textViewAvatarHorizontalSpaceConstraint.constant);
+//}
 
 #pragma mark - Set Payment
 
