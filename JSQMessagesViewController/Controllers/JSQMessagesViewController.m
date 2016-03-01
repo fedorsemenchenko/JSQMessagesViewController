@@ -525,14 +525,14 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
             cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
             cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
             cell.delegate = collectionView;
-            cell.textView.text = [messageItem text];
+//            cell.textView.text = [messageItem text];
             break;
             
         case MessageTypeTransaction:
             cellIdentifier = isOutgoingMessage ? self.dboOutgoingPaymentCellIdentifier : self.dboIncomingPaymentCellIdentifier;
             cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
             cell.delegate = collectionView;
-            cell.textView.text = [messageItem text];
+//            cell.textView.text = [messageItem text];
             cell.dboPaymentView = messageItem.dboPaymentView;
             break;
             
@@ -547,7 +547,7 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
             cellIdentifier = isOutgoingMessage ? self.dboOutgoingImageWithTextCellIdentifier : self.dboIncomingImageWithTextCellIdentifier;
             cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
             cell.delegate = collectionView;
-            cell.textView.text = [messageItem text];
+//            cell.textView.text = [messageItem text];
             [cell setMessageWithTextImage:[messageMedia mediaViewWithText]];
             
             break;
