@@ -9,7 +9,6 @@
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -48,42 +47,30 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OCS-Fu-acq" userLabel="Bubble Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="244" height="94"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYU-B8-cUW" customClass="JSQMessagesCellTextView">
-                                <rect key="frame" x="6" y="25" width="238" height="69"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crI-7T-015">
                                 <rect key="frame" x="20" y="10" width="209" height="15"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                 <color key="textColor" red="0.23921568627450979" green="0.67843137254901964" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4eb-rb-uog">
-                                <rect key="frame" x="6" y="25" width="238" height="69"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-uN-yyg">
+                                <rect key="frame" x="20" y="33" width="216" height="18"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4eb-rb-uog" firstAttribute="top" secondItem="crI-7T-015" secondAttribute="bottom" id="4ib-Cc-6dN"/>
-                            <constraint firstAttribute="trailing" secondItem="KYU-B8-cUW" secondAttribute="trailing" id="4qS-03-PFO"/>
                             <constraint firstAttribute="trailing" secondItem="crI-7T-015" secondAttribute="trailing" constant="15" id="9fz-co-BPE"/>
-                            <constraint firstAttribute="bottom" secondItem="KYU-B8-cUW" secondAttribute="bottom" id="B2v-Gq-Y1L"/>
-                            <constraint firstAttribute="trailing" secondItem="4eb-rb-uog" secondAttribute="trailing" id="OXC-wc-Jqn"/>
                             <constraint firstItem="crI-7T-015" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="20" id="TKk-MO-njL"/>
                             <constraint firstAttribute="trailing" secondItem="OCS-Fu-acq" secondAttribute="trailing" id="TdB-8V-aUc"/>
-                            <constraint firstItem="KYU-B8-cUW" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="6" id="Tg9-9l-vr8"/>
                             <constraint firstItem="crI-7T-015" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="top" constant="10" id="XUB-Ge-2f4"/>
-                            <constraint firstAttribute="bottom" secondItem="4eb-rb-uog" secondAttribute="bottom" id="Ykt-ok-L0j"/>
                             <constraint firstAttribute="bottom" secondItem="OCS-Fu-acq" secondAttribute="bottom" id="aJ4-ZD-tk9"/>
-                            <constraint firstItem="KYU-B8-cUW" firstAttribute="top" secondItem="crI-7T-015" secondAttribute="bottom" id="coF-6y-I6T"/>
                             <constraint firstItem="OCS-Fu-acq" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" id="qpQ-dc-2V5"/>
                             <constraint firstAttribute="width" constant="244" id="stE-iz-VHo"/>
-                            <constraint firstItem="4eb-rb-uog" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="6" id="v8j-jy-4gT"/>
+                            <constraint firstItem="ziY-uN-yyg" firstAttribute="top" secondItem="crI-7T-015" secondAttribute="bottom" constant="8" id="uvk-3h-FD1"/>
+                            <constraint firstAttribute="trailing" secondItem="ziY-uN-yyg" secondAttribute="trailing" constant="8" id="vLG-ny-bta"/>
+                            <constraint firstItem="ziY-uN-yyg" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="20" id="xbC-jM-30m"/>
                             <constraint firstItem="OCS-Fu-acq" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="top" id="zTa-8g-VY4"/>
                         </constraints>
                     </view>
@@ -149,11 +136,7 @@
                 <outlet property="messageBubbleTopLabel" destination="Ufa-bF-l1Y" id="VtH-te-blR"/>
                 <outlet property="messageBubbleTopLabelHeightConstraint" destination="fal-sy-hrK" id="kgv-NO-Gud"/>
                 <outlet property="supportNameLabel" destination="crI-7T-015" id="DD7-To-gDC"/>
-                <outlet property="textLabel" destination="4eb-rb-uog" id="TYj-Iq-j93"/>
-                <outlet property="textView" destination="KYU-B8-cUW" id="1Yv-ln-EUZ"/>
-                <outlet property="textViewAvatarHorizontalSpaceConstraint" destination="Tg9-9l-vr8" id="HWn-aO-NbR"/>
-                <outlet property="textViewBottomVerticalSpaceConstraint" destination="B2v-Gq-Y1L" id="oKV-Ti-Oci"/>
-                <outlet property="textViewMarginHorizontalSpaceConstraint" destination="4qS-03-PFO" id="1Qe-Ee-fUO"/>
+                <outlet property="textLabel" destination="ziY-uN-yyg" id="eai-y0-H45"/>
             </connections>
             <point key="canvasLocation" x="255" y="202"/>
         </collectionViewCell>
