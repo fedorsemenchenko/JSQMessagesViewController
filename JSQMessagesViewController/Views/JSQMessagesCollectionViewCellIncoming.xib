@@ -44,7 +44,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-uN-yyg">
-                                <rect key="frame" x="24" y="33" width="210" height="18"/>
+                                <rect key="frame" x="22" y="29" width="212" height="18"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -58,9 +58,9 @@
                             <constraint firstAttribute="bottom" secondItem="OCS-Fu-acq" secondAttribute="bottom" id="aJ4-ZD-tk9"/>
                             <constraint firstItem="OCS-Fu-acq" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" id="qpQ-dc-2V5"/>
                             <constraint firstAttribute="width" constant="244" id="stE-iz-VHo"/>
-                            <constraint firstItem="ziY-uN-yyg" firstAttribute="top" secondItem="crI-7T-015" secondAttribute="bottom" constant="8" id="uvk-3h-FD1"/>
+                            <constraint firstItem="ziY-uN-yyg" firstAttribute="top" secondItem="crI-7T-015" secondAttribute="bottom" constant="4" id="uvk-3h-FD1"/>
                             <constraint firstAttribute="trailing" secondItem="ziY-uN-yyg" secondAttribute="trailing" constant="10" id="vLG-ny-bta"/>
-                            <constraint firstItem="ziY-uN-yyg" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="24" id="xbC-jM-30m"/>
+                            <constraint firstItem="ziY-uN-yyg" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="22" id="xbC-jM-30m"/>
                             <constraint firstItem="OCS-Fu-acq" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="top" id="zTa-8g-VY4"/>
                         </constraints>
                     </view>
@@ -87,7 +87,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="xPR-Ph-Ze9"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
