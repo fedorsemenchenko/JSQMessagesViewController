@@ -34,7 +34,6 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @interface JSQMessagesCollectionViewCell ()
 
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellTopLabel;
-@property (weak, nonatomic) IBOutlet JSQMessagesLabel *messageBubbleTopLabel;
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellBottomLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *supportNameLabel;
@@ -55,7 +54,6 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewMarginHorizontalSpaceConstraint;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cellTopLabelHeightConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBubbleTopLabelHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cellBottomLabelHeightConstraint;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewWidthConstraint;
@@ -127,19 +125,12 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     [self.dboImageContainerView.layer setCornerRadius:20.f];
     
     self.cellTopLabelHeightConstraint.constant = 0.0f;
-    self.messageBubbleTopLabelHeightConstraint.constant = 0.0f;
     self.cellBottomLabelHeightConstraint.constant = 0.0f;
 
     self.avatarViewSize = CGSizeZero;
 
     self.cellTopLabel.textAlignment = NSTextAlignmentCenter;
-    self.cellTopLabel.font = [UIFont boldSystemFontOfSize:12.0f];
     self.cellTopLabel.textColor = [UIColor lightGrayColor];
-
-    self.messageBubbleTopLabel.font = [UIFont systemFontOfSize:12.0f];
-    self.messageBubbleTopLabel.textColor = [UIColor lightGrayColor];
-
-    self.cellBottomLabel.font = [UIFont systemFontOfSize:11.0f];
     self.cellBottomLabel.textColor = [UIColor lightGrayColor];
 
     self.backgroundColor = [UIColor clearColor];
@@ -147,8 +138,6 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jsq_handleTapGesture:)];
     [self addGestureRecognizer:tap];
     self.tapGestureRecognizer = tap;    
-//    [self.supportNameLabel setFont:[UIFont fontWithName:@"Roboto-Regular" size:11.f]];
-//    [self.textView setFont:[UIFont fontWithName:@"Roboto-Regular" size:14.f]];
 }
 
 - (void)dealloc
@@ -156,7 +145,6 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     _delegate = nil;
 
     _cellTopLabel = nil;
-    _messageBubbleTopLabel = nil;
     _cellBottomLabel = nil;
 
     _textView = nil;
@@ -213,9 +201,6 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     [self jsq_updateConstraint:self.cellTopLabelHeightConstraint
                   withConstant:customAttributes.cellTopLabelHeight];
-
-    [self jsq_updateConstraint:self.messageBubbleTopLabelHeightConstraint
-                  withConstant:customAttributes.messageBubbleTopLabelHeight];
 
     [self jsq_updateConstraint:self.cellBottomLabelHeightConstraint
                   withConstant:customAttributes.cellBottomLabelHeight];
@@ -311,7 +296,6 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     [super setBackgroundColor:backgroundColor];
 
     self.cellTopLabel.backgroundColor = backgroundColor;
-    self.messageBubbleTopLabel.backgroundColor = backgroundColor;
     self.cellBottomLabel.backgroundColor = backgroundColor;
 
     self.messageBubbleImageView.backgroundColor = backgroundColor;

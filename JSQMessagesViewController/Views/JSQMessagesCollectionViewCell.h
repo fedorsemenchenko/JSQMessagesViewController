@@ -99,12 +99,6 @@
 @property (weak, nonatomic, readonly) JSQMessagesLabel *cellTopLabel;
 
 /**
- *  Returns the label that is pinned just above the messageBubbleImageView, and below the cellTopLabel.
- *  This label is most commonly used to display the message sender.
- */
-@property (weak, nonatomic, readonly) JSQMessagesLabel *messageBubbleTopLabel;
-
-/**
  *  Returns the label that is pinned to the bottom of the cell.
  *  This label is most commonly used to display message delivery status.
  */

@@ -564,15 +564,11 @@ static CGFloat const kAdditionalToolbarHeight = 10.f;
 
     CGFloat bubbleTopLabelInset = (avatarImageDataSource != nil) ? 60.0f : 15.0f;
 
-    if (isOutgoingMessage) {
-        cell.messageBubbleTopLabel.textInsets = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, bubbleTopLabelInset);
-    } else {
+    if (!isOutgoingMessage) {
         [cell setSupportNameText:[messageItem dboSupportName]];
-        cell.messageBubbleTopLabel.textInsets = UIEdgeInsetsMake(0.0f, bubbleTopLabelInset, 0.0f, 0.0f);
     }
     
     cell.cellTopLabel.text = [collectionView.dataSource collectionView:collectionView textForCellTopLabelAtIndexPath:indexPath];
-//    cell.messageBubbleTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:indexPath];
     cell.cellBottomLabel.text = [collectionView.dataSource collectionView:collectionView textForCellBottomLabelAtIndexPath:indexPath];
     
     cell.textView.dataDetectorTypes = UIDataDetectorTypeAll;
