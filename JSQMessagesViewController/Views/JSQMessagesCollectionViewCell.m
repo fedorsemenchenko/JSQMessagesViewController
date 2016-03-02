@@ -182,31 +182,31 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 {
     [super applyLayoutAttributes:layoutAttributes];
 
-//    JSQMessagesCollectionViewLayoutAttributes *customAttributes = (JSQMessagesCollectionViewLayoutAttributes *)layoutAttributes;
-//
-//    if (!UIEdgeInsetsEqualToEdgeInsets(self.textView.textContainerInset, customAttributes.textViewTextContainerInsets)) {
-//        self.textView.textContainerInset = customAttributes.textViewTextContainerInsets;
-//    }
-//
-//    self.textViewFrameInsets = customAttributes.textViewFrameInsets;
-//
-//    [self jsq_updateConstraint:self.messageBubbleContainerWidthConstraint
-//                  withConstant:customAttributes.messageBubbleContainerViewWidth];
-//
-//    [self jsq_updateConstraint:self.cellTopLabelHeightConstraint
-//                  withConstant:customAttributes.cellTopLabelHeight];
-//
-//    [self jsq_updateConstraint:self.cellBottomLabelHeightConstraint
-//                  withConstant:customAttributes.cellBottomLabelHeight];
-//
-//    if ([self isKindOfClass:[JSQMessagesCollectionViewCellIncoming class]]) {
-//        self.avatarViewSize = customAttributes.incomingAvatarViewSize;
-//    }
+    JSQMessagesCollectionViewLayoutAttributes *customAttributes = (JSQMessagesCollectionViewLayoutAttributes *)layoutAttributes;
+
+    if (!UIEdgeInsetsEqualToEdgeInsets(self.textView.textContainerInset, customAttributes.textViewTextContainerInsets)) {
+        self.textView.textContainerInset = customAttributes.textViewTextContainerInsets;
+    }
+
+    self.textViewFrameInsets = customAttributes.textViewFrameInsets;
+
+    [self jsq_updateConstraint:self.messageBubbleContainerWidthConstraint
+                  withConstant:customAttributes.messageBubbleContainerViewWidth];
+
+    [self jsq_updateConstraint:self.cellTopLabelHeightConstraint
+                  withConstant:customAttributes.cellTopLabelHeight];
+
+    [self jsq_updateConstraint:self.cellBottomLabelHeightConstraint
+                  withConstant:customAttributes.cellBottomLabelHeight];
+
+    if ([self isKindOfClass:[JSQMessagesCollectionViewCellIncoming class]]) {
+        self.avatarViewSize = customAttributes.incomingAvatarViewSize;
+    }
     
     // This will force cell in correct size in current execute loop https://github.com/jessesquires/JSQMessagesViewController/issues/451
-    [self layoutSubviews];
-//    [self setNeedsLayout];
-//    [self layoutIfNeeded];
+//    [self layoutSubviews];
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 - (void)setHighlighted:(BOOL)highlighted
