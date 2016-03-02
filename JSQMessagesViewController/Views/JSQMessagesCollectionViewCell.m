@@ -133,8 +133,6 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     self.cellTopLabel.textColor = [UIColor lightGrayColor];
     self.cellBottomLabel.textColor = [UIColor lightGrayColor];
 
-    self.backgroundColor = [UIColor clearColor];
-
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jsq_handleTapGesture:)];
     [self addGestureRecognizer:tap];
     self.tapGestureRecognizer = tap;    
@@ -186,10 +184,6 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     JSQMessagesCollectionViewLayoutAttributes *customAttributes = (JSQMessagesCollectionViewLayoutAttributes *)layoutAttributes;
 
-    if (self.textView.font != customAttributes.messageBubbleFont) {
-        self.textView.font = customAttributes.messageBubbleFont;
-    }
-
     if (!UIEdgeInsetsEqualToEdgeInsets(self.textView.textContainerInset, customAttributes.textViewTextContainerInsets)) {
         self.textView.textContainerInset = customAttributes.textViewTextContainerInsets;
     }
@@ -208,26 +202,11 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     if ([self isKindOfClass:[JSQMessagesCollectionViewCellIncoming class]]) {
         self.avatarViewSize = customAttributes.incomingAvatarViewSize;
     }
-//    else if ([self isKindOfClass:[JSQMessagesCollectionViewCellOutgoing class]]) {
-//        self.avatarViewSize = customAttributes.outgoingAvatarViewSize;
-//    }
     
     // This will force cell in correct size in current execute loop https://github.com/jessesquires/JSQMessagesViewController/issues/451
 //    [self layoutSubviews];
 //    [self setNeedsLayout];
 //    [self layoutIfNeeded];
-    
-
-//    if ([self isKindOfClass:[JSQMessagesCollectionViewCellDBOPayment class]]) {
-//        [self jsq_updateConstraint:self.textViewBottomVerticalSpaceConstraint
-//                      withConstant:60.f];
-//    }
-
-//    if ([self isKindOfClass:[JSQMessagesCollectionViewCellDBOPayment class]]) {
-//        CGRect frame = self.frame;
-//        frame.size.height = frame.size.height + 60.f;
-//        self.frame = frame;
-//    }
 }
 
 - (void)setHighlighted:(BOOL)highlighted

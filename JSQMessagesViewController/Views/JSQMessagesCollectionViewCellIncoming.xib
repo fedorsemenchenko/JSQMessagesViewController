@@ -27,7 +27,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="fKS-MR-YPI"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -87,7 +87,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="xPR-Ph-Ze9"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
