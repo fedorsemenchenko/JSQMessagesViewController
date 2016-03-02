@@ -39,12 +39,15 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crI-7T-015">
                                 <rect key="frame" x="20" y="10" width="209" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="8dI-59-jjF"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                 <color key="textColor" red="0.23921568627450979" green="0.67843137254901964" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-uN-yyg">
-                                <rect key="frame" x="22" y="29" width="212" height="18"/>
+                                <rect key="frame" x="22" y="29" width="212" height="57"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -60,6 +63,7 @@
                             <constraint firstAttribute="width" constant="244" id="stE-iz-VHo"/>
                             <constraint firstItem="ziY-uN-yyg" firstAttribute="top" secondItem="crI-7T-015" secondAttribute="bottom" constant="4" id="uvk-3h-FD1"/>
                             <constraint firstAttribute="trailing" secondItem="ziY-uN-yyg" secondAttribute="trailing" constant="10" id="vLG-ny-bta"/>
+                            <constraint firstAttribute="bottom" secondItem="ziY-uN-yyg" secondAttribute="bottom" constant="8" id="xT4-Rw-xUa"/>
                             <constraint firstItem="ziY-uN-yyg" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="leading" constant="22" id="xbC-jM-30m"/>
                             <constraint firstItem="OCS-Fu-acq" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="top" id="zTa-8g-VY4"/>
                         </constraints>
